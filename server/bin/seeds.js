@@ -18,9 +18,20 @@ mongoose
   });
 
 
+  // ID's for users:
+const arrUsersId = Array(20)
+.fill()
+.map(() => {
+  return new mongoose.mongo.ObjectId()
+})
+
+console.log(arrUsersId);
+
+
 // Users array:
 let users = [
   {
+    _id: arrUsersId[0],
     firstName: "Arturo",
     lastName: "Gomez",
     email: "agomez@gmail.com",
@@ -29,6 +40,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[1],
     firstName: "Pablo",
     lastName: "Carceller",
     email: "pcarceller@gmail.com",
@@ -37,6 +49,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[2],
     firstName: "Fernando",
     lastName: "Comet",
     email: "fcomet@gmail.com",
@@ -45,6 +58,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[3],
     firstName: "Jaime",
     lastName: "Hidalgo",
     email: "jhidalgo@gmail.com",
@@ -53,6 +67,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[4],
     firstName: "Alejandro",
     lastName: "Sanchez",
     email: "asanchez@gmail.com",
@@ -61,6 +76,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[5],
     firstName: "Cristina",
     lastName: "Suarez",
     email: "csuarez@gmail.com",
@@ -69,6 +85,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[6],
     firstName: "Jose Manuel",
     lastName: "Henche",
     email: "jhenche@gmail.com",
@@ -77,6 +94,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[7],
     firstName: "Cesar",
     lastName: "Val",
     email: "cval@gmail.com",
@@ -85,6 +103,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[8],
     firstName: "Armando",
     lastName: "Momo",
     email: "amomo@gmail.com",
@@ -93,6 +112,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[9],
     firstName: "Laura",
     lastName: "Tobajas",
     email: "ltobajas@gmail.com",
@@ -101,6 +121,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[10],
     firstName: "Pedro",
     lastName: "Castañeda",
     email: "pcastañeda@gmail.com",
@@ -109,6 +130,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[11],
     firstName: "Manuel",
     lastName: "Freire",
     email: "mfreire@gmail.com",
@@ -117,6 +139,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[12],
     firstName: "Franky",
     lastName: "Molina",
     email: "fmolina@gmail.com",
@@ -125,6 +148,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[13],
     firstName: "Juan Carlos",
     lastName: "Mateo",
     email: "jmateo@gmail.com",
@@ -133,6 +157,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[14],
     firstName: "Luciano",
     lastName: "Sanchez",
     email: "lsanchez@gmail.com",
@@ -141,6 +166,7 @@ let users = [
     role: "organization",
   },
   {
+    _id: arrUsersId[15],
     firstName: "Pedro",
     lastName: "Sanchez",
     email: "psanchez@gmail.com",
@@ -149,6 +175,7 @@ let users = [
     role: "volunteer",
   },
   {
+    _id: arrUsersId[16],
     firstName: "Maria",
     lastName: "Simo",
     email: "msimo@gmail.com",
@@ -157,6 +184,7 @@ let users = [
     role: "volunteer",
   },
   {
+    _id: arrUsersId[17],
     firstName: "Enrique",
     lastName: "Montaño",
     email: "emontaño@gmail.com",
@@ -165,6 +193,7 @@ let users = [
     role: "volunteer",
   },
   {
+    _id: arrUsersId[18],
     firstName: "Fran",
     lastName: "Naranjo",
     email: "fnaranjo@gmail.com",
@@ -173,6 +202,7 @@ let users = [
     role: "volunteer",
   },
   {
+    _id: arrUsersId[19],
     firstName: "Dani",
     lastName: "Vicario",
     email: "dvicario@gmail.com",
@@ -183,34 +213,29 @@ let users = [
 ]
 
 
-// ID's for organizations:
-const arrOrganizationsId = Array(15)
-  .fill()
-  .map(() => {
-    return new mongoose.mongo.ObjectId()
-  })
+
 
 
 // Organizations array:
-let organizations = [
-  {
-    name: String,
-    address: String,
-    email: String,
-    phone: String,
-    description: String,
-    imgName: { type: String, default: "imagename" },
-    imgPath: {
-      type: String,
-      default:
-        "https://res.cloudinary.com/yelpcampagb/image/upload/v1583187522/ironhack-project3/ooupp2ez9quvgooe3biz.png"
-    },
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: "User"
-    }
-  }
-]
+// let organizations = [
+//   {
+//     name: String,
+//     address: String,
+//     email: String,
+//     phone: String,
+//     description: String,
+//     imgName: { type: String, default: "imagename" },
+//     imgPath: {
+//       type: String,
+//       default:
+//         "https://res.cloudinary.com/yelpcampagb/image/upload/v1583187522/ironhack-project3/ooupp2ez9quvgooe3biz.png"
+//     },
+//     user: {
+//       type: Schema.Types.ObjectId,
+//       ref: "User"
+//     }
+//   }
+// ]
 
 
 
