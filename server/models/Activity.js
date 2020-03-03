@@ -5,7 +5,7 @@ const activitySchema = new Schema(
   {
     title: String,
     description: String,
-    date: [{ type: Date }],
+    dates: [{ type: Date }],
     time: String,
     location: String,
     coord: {
@@ -40,10 +40,12 @@ const activitySchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Organization"
     },
-    participants: {
-      type: Schema.Types.ObjectId,
-      ref: "User"
-    }
+    participants: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+      }
+    ]
   },
   {
     timestamps: {

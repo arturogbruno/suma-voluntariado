@@ -36,13 +36,13 @@ app.use(cookieParser());
 
 const whitelist = ['http://localhost:3000']
   const corsOptions = {
-      origin: (origin, cb) => {
-          const originWhitelisted = whitelist.includes(origin)
-          cb(null, originWhitelisted)
-      },
-      credentials: true
+    origin: (origin, cb) => {
+        const originWhitelisted = whitelist.includes(origin)
+        cb(null, originWhitelisted)
+    },
+    credentials: true
   }
-  app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 
 // Express View engine setup
 

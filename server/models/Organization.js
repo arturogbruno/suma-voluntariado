@@ -7,6 +7,7 @@ const organizationSchema = new Schema(
     address: String,
     email: String,
     phone: String,
+    webpage: String,
     description: String,
     imgName: { type: String, default: "imagename" },
     imgPath: {
