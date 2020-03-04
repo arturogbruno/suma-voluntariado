@@ -5,6 +5,7 @@ import AuthServices from './services/auth';
 import Navbar from './components/navbar/Navbar';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
+import Home from './components/home/Home';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -49,16 +50,15 @@ export default class App extends React.Component {
     if (this.state.loggedInUser) {
       return (
         <React.Fragment>
-          <Redirect to="/private" />
           <div className="App">
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+              <Home></Home>
           </div>
         </React.Fragment>
       );
     } else {
       return (
         <React.Fragment>
-          <Redirect to="/" />
           <div className="App">
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
               <Switch>

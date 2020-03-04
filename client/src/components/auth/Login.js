@@ -1,5 +1,6 @@
 import React from 'react';
 import AuthServices from '../../services/auth';
+import { Link } from 'react-router-dom';
 import { FormControl, Button, TextField } from '@material-ui/core';
 import './Login.scss';
 
@@ -54,8 +55,9 @@ export default class Login extends React.Component {
                         <FormControl className="formControl">
                             <TextField label="Contraseña" variant="outlined" color="secondary" type="password" name="password" value={this.state.password} onChange={this.handleChange} required/>
                         </FormControl>
-                        <Button variant="outlined" color="secondary">Iniciar sesión</Button>
+                        <Button variant="outlined" color="secondary" size="large" type="submit">Iniciar sesión</Button>
                     </form>
+                    <span className="linkSignUp">¿Aún no tienes una cuenta? <Link to="/signup">Regístrate</Link></span>
 
                     <h1>{this.state.error ? 'Error' : ''}</h1>
                 </div>

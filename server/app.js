@@ -90,6 +90,9 @@ app.use('/', index);
 
 const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);
-      
+
+const activitiesRoutes = require('./routes/activities');
+app.use('/api/activities', activitiesRoutes);
+
 
 module.exports = app;
