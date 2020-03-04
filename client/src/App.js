@@ -10,7 +10,10 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {loggedInUser: null};
+    this.state = {
+      loggedInUser: null
+    };
+
     this.authServices = new AuthServices();
   }
 
@@ -22,17 +25,11 @@ export default class App extends React.Component {
     });
   };
 
-  logout = () => {
-    this.authServices.logout().then(() => {
-      this.setState({ loggedInUser: null });
-    });
-  };
-
   fetchUser() {
     return this.authServices.loggedin()
-    .then(response => {
+    .then(user => {
       this.setState({
-        loggedInUser: response,
+        loggedInUser: user,
       });
     })
     .catch(err => {
@@ -42,11 +39,17 @@ export default class App extends React.Component {
     });
   }
 
+  logout = () => {
+    this.authServices.logout().then(() => {
+      this.setState({ loggedInUser: null });
+    });
+  };
+
   render() {
     if (this.state.loggedInUser) {
       return (
         <React.Fragment>
-          {/* <Redirect to="/home" /> */}
+          <Redirect to="/private" />
           <div className="App">
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
           </div>
@@ -55,7 +58,7 @@ export default class App extends React.Component {
     } else {
       return (
         <React.Fragment>
-          {/* <Redirect to="/login" /> */}
+          <Redirect to="/" />
           <div className="App">
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
               <Switch>

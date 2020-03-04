@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AuthServices from '../../services/auth';
+import './Navbar.scss';
 
 export default class Navbar extends React.Component {
   constructor(props) {
@@ -19,30 +20,35 @@ export default class Navbar extends React.Component {
   };
 
   render() {
-    if (this.state.loggedInUser) {
+    if(this.state.loggedInUser) {
       return (
-        <nav className="nav-style">
+        <nav className="navbar">
+          <div className="navbar-brand">
+            <span>+SUMA</span>
+          </div>
           <ul>
             <li>
-              <Link to="/" onClick={this.handleLogout}>Logout</Link>
+              <span>Bienvenido, <Link className="nav-links" to="/profile">{this.state.loggedInUser.username}</Link></span>
+            </li>
+            <li>
+              <Link className="nav-links" to="/" onClick={this.handleLogout}>Logout</Link>
             </li>
           </ul>
-
-          <div className="header">
-            <h2>Welcome {this.state.loggedInUser.username}</h2>
-          </div>
         </nav>
       );
     } else {
       return (
         <div>
-          <nav className="nav-style">
+          <nav className="navbar">
+            <div className="navbar-brand">
+              <span>+SUMA</span>
+            </div>
             <ul>
               <li>
-                <Link to="/signup">Regístrate</Link>
+                <Link className="nav-links" to="/signup">Regístrate</Link>
               </li>
               <li>
-                <Link to="/login">Inicia sesión</Link>
+                <Link className="nav-links" to="/login">Inicia sesión</Link>
               </li>
             </ul>
           </nav>

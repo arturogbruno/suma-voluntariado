@@ -7,6 +7,7 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
+
 router.post("/signup", (req, res, next) => {
   const { username, password } = req.body;
 
@@ -22,7 +23,7 @@ router.post("/signup", (req, res, next) => {
     }
 
     if (foundUser) {
-      res.status(400).json({ message: "Username taken. Choose another one." });
+      res.status(400).json({ message: "The provided username is already registered. Log in or register a different username." });
       return;
     }
 
@@ -31,7 +32,9 @@ router.post("/signup", (req, res, next) => {
 
     const newUser = new User({
       username: username,
-      password: hashPass
+      password: hashPass,
+      email: req.body.email,
+      role: req.body.role,
     });
 
     newUser.save(err => {
@@ -57,6 +60,7 @@ router.post("/signup", (req, res, next) => {
     });
   });
 });
+
 
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, theUser, failureDetails) => {
@@ -87,11 +91,13 @@ router.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
+
 router.post("/logout", (req, res, next) => {
   // req.logout() is defined by passport
   req.logout();
   res.status(200).json({ message: "Log out success!" });
 });
+
 
 router.get("/loggedin", (req, res, next) => {
   // req.isAuthenticated() is defined by passport

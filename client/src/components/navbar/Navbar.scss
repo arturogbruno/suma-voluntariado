@@ -1,0 +1,35 @@
+.navbar {
+    background-color: rgb(215, 57, 101);
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    color: #fff;
+    
+    ul{
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+
+        li{
+            display: flex;
+            align-items: center;
+            margin-left: 25px;
+            height: 100%;
+            padding: 0 10px;
+
+            .nav-links{
+                color: #fff;
+                text-decoration: none;
+            }
+
+            
+        }
+
+        
+    }
+}
