@@ -1,7 +1,7 @@
 import React from 'react';
 import AuthServices from '../../services/auth';
 import { Link } from 'react-router-dom';
-import { FormControl, Button, TextField } from '@material-ui/core';
+import { Form, Button } from 'react-bootstrap';
 import './Login.scss';
 
 export default class Login extends React.Component {
@@ -48,15 +48,17 @@ export default class Login extends React.Component {
                 <div className="loginForm">
                     <h1>¡Nos encanta que vuelvas!</h1>
 
-                    <form onSubmit={this.handleSubmit}>
-                        <FormControl className="formControl"> 
-                            <TextField label="Usuario" variant="outlined" color="secondary" name="username" value={this.state.username} onChange={this.handleChange} required/>
-                        </FormControl>
-                        <FormControl className="formControl">
-                            <TextField label="Contraseña" variant="outlined" color="secondary" type="password" name="password" value={this.state.password} onChange={this.handleChange} required/>
-                        </FormControl>
-                        <Button variant="outlined" color="secondary" size="large" type="submit">Iniciar sesión</Button>
-                    </form>
+                    <Form onSubmit={this.handleSubmit}>
+                        <Form.Group className="formControl"> 
+                            <Form.Label>Usuario</Form.Label>
+                            <Form.Control type="text" name="username" value={this.state.username} onChange={this.handleChange} required />
+                        </Form.Group>
+                        <Form.Group className="formControl">
+                            <Form.Label>Contraseña</Form.Label>
+                            <Form.Control type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
+                        </Form.Group>
+                        <Button type="submit">Iniciar sesión</Button>
+                    </Form>
                     <span className="linkSignUp">¿Aún no tienes una cuenta? <Link to="/signup">Regístrate</Link></span>
 
                     <h1>{this.state.error ? 'Error' : ''}</h1>

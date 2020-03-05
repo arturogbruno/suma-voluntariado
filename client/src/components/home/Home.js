@@ -17,10 +17,12 @@ export default class Home extends React.Component {
     }
 
     getAllActivities = () => {
+        let allCategories = [];
         if(this.state.allActivities.length === 0) {
             this.activitiesServices.getAllActivities()
                 .then(allActivities => this.setState({ allActivities: allActivities.allActivities }))
-                .then(this.setState({ allCategories: [...new Set(this.state.allActivities.map(activity => activity.category))]}))
+                .then(allCategories = [...new Set(this.state.allActivities.map(activity => activity.category))])
+                .then(this.setState({ allCategories: allCategories}))
                 .catch(err => console.log(err))
         }
     }
