@@ -86,13 +86,18 @@ require('./passport')(app);
     
 
 const index = require('./routes/index');
-app.use('/', index);
+app.use('/api', index);
 
 const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);
 
 const activitiesRoutes = require('./routes/activities');
 app.use('/api/activities', activitiesRoutes);
+
+
+app.use((req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
 
 
 module.exports = app;
