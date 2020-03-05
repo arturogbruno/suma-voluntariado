@@ -47,26 +47,22 @@ export default class App extends React.Component {
   };
 
   render() {
-    if (this.state.loggedInUser) {
+    if(this.state.loggedInUser) {
       return (
-        <React.Fragment>
-          <div className="App">
-              <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
-              <Home></Home>
-          </div>
-        </React.Fragment>
+        <div className="App">
+            <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+            <Home userInSession={this.state.loggedInUser}></Home>
+        </div>
       );
     } else {
       return (
-        <React.Fragment>
-          <div className="App">
-              <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
-              <Switch>
-                <Route exact path="/signup" render={() => <Signup setUser={this.setUser} />} />
-                <Route exact path="/login" render={() => <Login setUser={this.setUser} />} />
-              </Switch>
-          </div>
-        </React.Fragment>
+        <div className="App">
+            <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+            <Switch>
+              <Route exact path="/signup" render={() => <Signup setUser={this.setUser} />} />
+              <Route exact path="/login" render={() => <Login setUser={this.setUser} />} />
+            </Switch>
+        </div>
       );
     }
   }

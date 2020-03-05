@@ -9,7 +9,8 @@ export default class Home extends React.Component {
   
       this.state = {
         loggedInUser: null,
-        allActivities: []
+        allActivities: [],
+        allCategories: []
       };
   
       this.activitiesServices = new ActivitiesServices();
@@ -19,6 +20,7 @@ export default class Home extends React.Component {
         if(this.state.allActivities.length === 0) {
             this.activitiesServices.getAllActivities()
                 .then(allActivities => this.setState({ allActivities: allActivities.allActivities }))
+                .then(this.setState({ allCategories: [...new Set(this.state.allActivities.map(activity => activity.category))]}))
                 .catch(err => console.log(err))
         }
     }
@@ -40,5 +42,4 @@ export default class Home extends React.Component {
             </div>
         )
     }
-
 }
