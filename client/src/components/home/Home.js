@@ -16,9 +16,11 @@ export default class Home extends React.Component {
     }
 
     getAllActivities = () => {
-        this.activitiesServices.getAllActivities()
-            .then(allActivities => this.setState({ allActivities: allActivities.allActivities }))
-            .catch(err => console.log(err))
+        if(this.state.allActivities.length === 0) {
+            this.activitiesServices.getAllActivities()
+                .then(allActivities => this.setState({ allActivities: allActivities.allActivities }))
+                .catch(err => console.log(err))
+        }
     }
 
     componentDidMount = () => this.getAllActivities();
