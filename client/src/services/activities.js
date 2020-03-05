@@ -1,10 +1,10 @@
-import axios from 'axios'
+import axios from 'axios';
 
 export default class Services {
 
     constructor() {
         this.service = axios.create({
-            baseURL: 'http://localhost:4000/api/activities',
+            baseURL: `${process.env.REACT_APP_API_URL}/activities`,
             withCredentials: true
         })
     }
