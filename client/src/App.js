@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import AuthServices from './services/auth';
-import Navbar from './components/navbar/Navbar';
+import NavBar from './components/navbar/NavBar';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 import Home from './components/home/Home';
@@ -50,14 +50,14 @@ export default class App extends React.Component {
     if(this.state.loggedInUser) {
       return (
         <div className="App">
-            <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+            <NavBar userInSession={this.state.loggedInUser} logout={this.logout} />
             <Home userInSession={this.state.loggedInUser}></Home>
         </div>
       );
     } else {
       return (
         <div className="App">
-            <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+            <NavBar userInSession={this.state.loggedInUser} logout={this.logout} />
             <Switch>
               <Route exact path="/signup" render={() => <Signup setUser={this.setUser} />} />
               <Route exact path="/login" render={() => <Login setUser={this.setUser} />} />

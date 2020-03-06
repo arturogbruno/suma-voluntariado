@@ -1,47 +1,50 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import ActivitiesServices from '../../services/activities';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import Spinner from 'react-bootstrap/Spinner'
+import ActivitiesServices from "../../services/activities";
 
 export default class Home extends React.Component {
-    constructor(props) {
-      super(props);
-  
-      this.state = {
-        loggedInUser: null,
-        allActivities: [],
-        allCategories: []
-      };
-  
-      this.activitiesServices = new ActivitiesServices();
-    }
+  constructor(props) {
+    super(props);
 
-    getAllActivities = () => {
-        let allCategories = [];
-        if(this.state.allActivities.length === 0) {
-            this.activitiesServices.getAllActivities()
-                .then(allActivities => this.setState({ allActivities: allActivities.allActivities }))
-                .then(allCategories = [...new Set(this.state.allActivities.map(activity => activity.category))])
-                .then(this.setState({ allCategories: allCategories}))
-                .catch(err => console.log(err))
-        }
-    }
+    this.state = {
+      loggedInUser: null,
+      allActivities: [],
+      allCategories: []
+    };
 
-    componentDidMount = () => this.getAllActivities();
+    this.activitiesServices = new ActivitiesServices();
+  }
 
-    render() {
-        return(
-            <div>
-                <h1>Estás en la Home</h1>
-                {this.state.allActivities.length ? (
-                    <ul>
-                        {this.state.allActivities.map(activity => <li><Link to={`/activities/${activity._id}`} key={activity._id}>{activity.title}</Link></li>)}
-                    </ul>
-                )
-                    :
-                    <p>CARGANDO...</p>
-                }
-            </div>
-        )
+  getAllActivities = () => {
+    if (this.state.allActivities.length === 0) {
+      this.activitiesServices.getAllActivities()
+        .then(allActivities => {
+          let allCategories = [...new Set(allActivities.map(activity => activity.category))]
+          this.setState({ allActivities: allActivities, allCategories: allCategories })
+        })
+        .catch(err => console.log(err));
     }
+  };
+
+  componentDidMount = () => {this.getAllActivities()}
+
+  render() {
+    return (
+      <div>
+        <h1>Estás en la Home</h1>
+        {this.state.allActivities.length ? (
+          <ul>
+            {this.state.allCategories.map(category => (
+              <li><Link to={`/category/${category}`}>{category}</Link></li>
+            ))}
+          </ul>
+        ) : (
+          <Spinner animation="border" role="status">
+            <span className="sr-only">Cargando...</span>
+          </Spinner>
+        )}
+      </div>
+    );
+  }
 }

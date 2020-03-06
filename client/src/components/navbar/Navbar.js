@@ -1,9 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import AuthServices from '../../services/auth';
-import './Navbar.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import AuthServices from "../../services/auth";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Button from "react-bootstrap/Button";
+import "./NavBar.scss";
 
-export default class Navbar extends React.Component {
+export default class NavBar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -11,7 +15,7 @@ export default class Navbar extends React.Component {
     this.authServices = new AuthServices();
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({ ...this.state, loggedInUser: nextProps["userInSession"] });
   }
 
@@ -20,39 +24,61 @@ export default class Navbar extends React.Component {
   };
 
   render() {
-    if(this.state.loggedInUser) {
+    if (this.state.loggedInUser) {
       return (
-        <nav className="navbar">
-          <div className="navbar-brand">
-            <span>+SUMA</span>
-          </div>
-          <ul>
-            <li>
-              <span>Bienvenido, <Link className="nav-links" to="/profile">{this.state.loggedInUser.username}</Link></span>
-            </li>
-            <li>
-              <Link className="nav-links" to="/" onClick={this.handleLogout}>Logout</Link>
-            </li>
-          </ul>
-        </nav>
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand><Link to="/">+SUMA</Link></Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#link">Link</Nav.Link>
+              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Something
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+              <Button className="navButton" variant="outline-primary"><Link to="/profile" className="navLink">{this.state.loggedInUser.username}</Link></Button>
+              <Button className="navButton" variant="outline-primary"><Link to="/" className="navLink" onClick={this.handleLogout}>Logout</Link></Button>
+          </Navbar.Collapse>
+        </Navbar>
       );
     } else {
       return (
-        <div>
-          <nav className="navbar">
-            <div className="navbar-brand">
-              <span>+SUMA</span>
-            </div>
-            <ul>
-              <li>
-                <Link className="nav-links" to="/signup">Regístrate</Link>
-              </li>
-              <li>
-                <Link className="nav-links" to="/login">Inicia sesión</Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand><Link to="/">+SUMA</Link></Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#link">Link</Nav.Link>
+              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Something
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+              <Button className="navButton" variant="outline-primary"><Link to="/signup" className="navLink">Regístrate</Link></Button>
+              <Button className="navButton" variant="outline-primary"><Link to="/login" className="navLink">Inicia sesión</Link></Button>
+          </Navbar.Collapse>
+        </Navbar>
       );
     }
   }

@@ -19,19 +19,8 @@ const activitySchema = new Schema(
         "https://res.cloudinary.com/yelpcampagb/image/upload/v1583187522/ironhack-project3/ciyeheb3hdeetj1fmddn.png"
     },
     category: {
-      type: String,
-      enum: [
-        "ambiental",
-        "comunitario",
-        "cultural",
-        "deportivo",
-        "educativo",
-        "ocio y tiempo libre",
-        "protección civil",
-        "socio-sanitario",
-        "social",
-        "otro"
-      ]
+      name: String,
+      imgPath: String
     },
     minParticipants: Number,
     maxParticipants: Number,

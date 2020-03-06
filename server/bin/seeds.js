@@ -327,7 +327,10 @@ let activities = [
       lng: -3.7172962
     },
     imgPath: "http://bokatas.org/wp-content/uploads/2016/11/foto-seccion-1.jpg",
-    category: "social",
+    category: {
+      name: "social",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
+    },
     minParticipants: 3,
     maxParticipants: 20,
     requirements: "Todo el mundo es bienvenido, solo se necesitan ganas de ayudar! Si puedes traer algo de comida o bebida para repartir a las personas sin hogar, mejor aún!",
@@ -346,7 +349,10 @@ let activities = [
       lng: -3.6958533
     },
     imgPath: "http://bokatas.org/wp-content/uploads/2016/11/foto-seccion-2.jpg",
-    category: "social",
+    category: {
+      name: "social",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
+    },
     minParticipants: 2,
     maxParticipants: 6,
     requirements: "Todo el mundo es bienvenido, solo se necesitan ganas de ayudar!",
@@ -363,14 +369,17 @@ let activities = [
       lng: -4.0000611
     },
     imgPath: "https://www.reforesta.es/images/Que_Hacemos/05_Voluntariado/05_Voluntariado_1.jpg",
-    category: "ambiental",
+    category: {
+      name: "ambiental",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/mk0fd45cbpj9howsjff1.jpg"
+    },
     minParticipants: 10,
     maxParticipants: 25,
     requirements: "Estar en buena forma física para poder pasar un día casi completo en el monte realizando las tareas especificadas. El material necesario lo aporta la organización.",
     organization: arrOrganizationsId[1]
   },
   {
-    title: "Vallado y mantenimiento de árboles en la Colada de Manzanares el Real",
+    title: "Vallado y mantenimiento de árboles en Manzanares el Real",
     description: `Los trabajos a realizar durante esta actividad serán los siguientes: vallados con postes de madera y malla ganadera para evitar que el ganado y los corzos dañen los árboles. Mantenimiento, incluyendo riego estival. Censo del estado de los árboles y arbustos plantados.`,
     dates: getDates(),
     time: "9:00 h - 17:00 h",
@@ -380,7 +389,10 @@ let activities = [
       lng: -3.8723282
     },
     imgPath: "https://www.reforesta.es/images/Que_Hacemos/05_Voluntariado/05_Corporativo_1.jpg",
-    category: "ambiental",
+    category: {
+      name: "ambiental",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/mk0fd45cbpj9howsjff1.jpg"
+    },
     minParticipants: 10,
     maxParticipants: 25,
     requirements: "Estar en buena forma física para poder pasar un día casi completo en el monte realizando las tareas especificadas. El material necesario lo aporta la organización.",
@@ -398,7 +410,10 @@ let activities = [
       lng: -3.6867341
     },
     imgPath: "https://valenciaextra.com/wp-content/uploads/2020/01/031-escuela-acogida-2-680x365_c.jpg",
-    category: "ambiental",
+    category: {
+      name: "educativo",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492536/ironhack-project3/t1yw7o7on7p10giirbni.jpg"
+    },
     minParticipants: 1,
     maxParticipants: 4,
     requirements: "Para este taller necesitamos especialmente personas con estudios medios o superiores y con capacidad pedagógica.",
@@ -416,7 +431,10 @@ let activities = [
       lng: -3.676186
     },
     imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583268032/ironhack-project3/akmutoc3d6sj5flwdzyk.png",
-    category: "social",
+    category: {
+      name: "social",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
+    },
     minParticipants: 4,
     maxParticipants: 10,
     requirements: "En este ámbito necesitamos voluntarios que sean psicólogos, sociólogos o trabajadores sociales. Además, todos los voluntarios que trabajan como orientadores del Teléfono ANAR deben pasar por un periodo formativo previo, que va desde la teoría a la práctica en tres fases o niveles.",
@@ -433,7 +451,10 @@ let activities = [
       lng: -3.676186
     },
     imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583268032/ironhack-project3/akmutoc3d6sj5flwdzyk.png",
-    category: "social",
+    category: {
+      name: "social",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
+    },
     minParticipants: 4,
     maxParticipants: 10,
     requirements: "En este ámbito necesitamos voluntarios que sean psicólogos, sociólogos o trabajadores sociales. Además, todos los voluntarios que trabajan como orientadores del Teléfono ANAR deben pasar por un periodo formativo previo, que va desde la teoría a la práctica en tres fases o niveles.",
@@ -450,7 +471,10 @@ let activities = [
       lng: -3.7414765
     },
     imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583269280/ironhack-project3/nnhghpbzmnc1ibskkfwj.png",
-    category: "deportivo",
+    category: {
+      name: "deportivo",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493118/ironhack-project3/vpyxhad8vklho9ji4a16.jpg"
+    },
     minParticipants: 2,
     maxParticipants: 6,
     requirements: "Los voluntarios son personas relacionadas con el deporte (INEFs, Maestros de Educación Física, TAFAD, técnicos deportivos...) que ofrecen su tiempo y experiencia para beneficio de las personas con discapacidad intelectual.",
@@ -467,7 +491,10 @@ let activities = [
       lng: -3.7414765
     },
     imgPath: "http://www.femaddi.org/sites/default/files/gimansiaritmicafemaddi.jpg",
-    category: "deportivo",
+    category: {
+      name: "deportivo",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493118/ironhack-project3/vpyxhad8vklho9ji4a16.jpg"
+    },
     minParticipants: 2,
     maxParticipants: 6,
     requirements: "Los voluntarios son personas relacionadas con el deporte (INEFs, Maestros de Educación Física, TAFAD, técnicos deportivos...) que ofrecen su tiempo y experiencia para beneficio de las personas con discapacidad intelectual.",
@@ -489,7 +516,10 @@ let activities = [
       lng: -3.7053683
     },
     imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2018/10/Domiciliio_Enriqueta2.jpg",
-    category: "comunitario",
+    category: {
+      name: "comunitario",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/ofpctk5zinroexnkotpb.jpg"
+    },
     minParticipants: 2,
     maxParticipants: 15,
     requirements: "Para ser voluntario de Desarrollo y Asistencia solo es necesario tener ganas de ayudar y más de 16 años con permiso paterno. Si quieres iniciarte en el voluntariado con Desarrollo y Asistencia, primero ven a una sesión de iniciación al voluntariado.",
@@ -531,7 +561,10 @@ let activities = [
       lng: -3.7053683
     },
     imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2018/10/residencias-inicio-1024x682.jpg",
-    category: "comunitario",
+    category: {
+      name: "comunitario",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/ofpctk5zinroexnkotpb.jpg"
+    },
     minParticipants: 2,
     maxParticipants: 15,
     requirements: "Para ser voluntario de Desarrollo y Asistencia solo es necesario tener ganas de ayudar y más de 16 años con permiso paterno. Si quieres iniciarte en el voluntariado con Desarrollo y Asistencia, primero ven a una sesión de iniciación al voluntariado.",
@@ -550,7 +583,10 @@ let activities = [
       lng: -3.7053683
     },
     imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2019/03/zapatillas-nota-de-prensa2-1024x681.jpg",
-    category: "social",
+    category: {
+      name: "social",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
+    },
     minParticipants: 2,
     maxParticipants: 8,
     requirements: "Para ser voluntario de Desarrollo y Asistencia solo es necesario tener ganas de ayudar y más de 16 años con permiso paterno. Si quieres iniciarte en el voluntariado con Desarrollo y Asistencia, primero ven a una sesión de iniciación al voluntariado.",

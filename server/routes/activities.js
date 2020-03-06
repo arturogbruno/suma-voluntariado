@@ -5,7 +5,7 @@ const Activities = require("../models/Activity");
 // Get all activities:
 router.get("/all", (req, res, next) => {
     Activities.find()
-    .then(allActivities => res.status(200).json({ allActivities }))
+    .then(allActivities => res.status(200).json( allActivities ))
     .catch(err => console.log(err))
 });
 
@@ -13,17 +13,60 @@ router.get("/all", (req, res, next) => {
 // Get specific activity:
 router.get("/:id", (req, res, next) => {
     Activities.findById(req.params.id)
-    .then(activity => res.status(200).json({ activity }))
+    .then(activity => res.status(200).json( activity ))
     .catch(err => console.log(err))
 });
 
 
 // Create new activity:
 router.post('/new', (req, res, next) => {
+    let categoryWithImage = createCategory(req.body.category);
+    req.body.category = categoryWithImage;
     Activities.create(req.body)
       .then(createdActivity => res.status(200).json(createdActivity))
       .catch(err => console.log(err))
 })
+
+const createCategory = (categoryName) => {
+    imgPath = "";
+    switch(categoryName) {
+        case "ambiental":
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/mk0fd45cbpj9howsjff1.jpg";
+            break;
+        case "comunitario":
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/ofpctk5zinroexnkotpb.jpg";
+            break;
+        case "cultural":
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492528/ironhack-project3/hs5gyqp7mofnlvdumxlg.jpg";
+            break;
+        case "deportivo":
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493118/ironhack-project3/vpyxhad8vklho9ji4a16.jpg";
+            break;
+        case "educativo":
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492536/ironhack-project3/t1yw7o7on7p10giirbni.jpg";
+            break;
+        case "ocio y tiempo libre":
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/v4x6ixibt1yzst0ezuwp.jpg";
+            break;
+        case "proteccion civil":
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493729/ironhack-project3/t6emwx7oclntllyk3kdl.jpg";
+            break;
+        case "socio-sanitario":
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/v8qsfjmpviisn8ysw5jc.jpg";
+            break;
+        case "social":
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg";
+            break;
+        case "otro":
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493396/ironhack-project3/as8xogqhzr2gmqgpb9a9.jpg";
+            break;
+    }
+    let categoryWithImage = {
+        name: categoryName,
+        imgPath: imgPath
+    }
+    return categoryWithImage;
+}
 
 
 // Update a specific activity:
