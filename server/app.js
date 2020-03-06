@@ -94,6 +94,12 @@ app.use('/api/auth', authRoutes);
 const activitiesRoutes = require('./routes/activities');
 app.use('/api/activities', activitiesRoutes);
 
+const organizationsRoutes = require('./routes/organizations');
+app.use('/api/organizations', organizationsRoutes);
+
+const usersRoutes = require('./routes/users');
+app.use('/api/users', usersRoutes);
+
 
 app.use((req, res) => {
   res.sendFile(__dirname + "/public/index.html");
