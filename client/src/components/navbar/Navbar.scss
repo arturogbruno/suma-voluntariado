@@ -1,6 +1,9 @@
 .navbar {
     margin-bottom: 40px;
 
+    .navbar-brand {
+        padding: 5px 50px;
+    }
 
     .navLink, .navLink-create {
         border: 1px solid rgb(18, 119, 251);
@@ -13,6 +16,10 @@
             color: #fff;
             background-color: rgb(18, 119, 251);
         }
+    }
+
+    .navLink-right {
+        margin-right: 50px;
     }
 
     .navLink-create {

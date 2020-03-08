@@ -14,4 +14,6 @@ export default class Services {
     getUserDetails = id => this.service.get(`/${id}`).then(response => response.data);
 
     updateUser = (id, fieldToUpdate) => this.service.put(`/${id}`, fieldToUpdate).then(response => response.data);
+
+    updateUserFav = (userId, activityId) => this.service.put(`/${userId}/favActivities/add`, activityId).then(response => response.data);
 }

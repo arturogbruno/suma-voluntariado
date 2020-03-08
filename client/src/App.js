@@ -8,7 +8,8 @@ import Login from './components/auth/Login';
 import Categories from './components/categories/Categories';
 import Activities from './components/activities/Activities';
 import ActivityDetails from './components/activityDetails/ActivityDetails';
-import NewOrganization from './components/newOrganization/NewOrganization'
+import NewOrganization from './components/newOrganization/NewOrganization';
+import NewActivity from './components/newActivity/NewActivity'
 
 
 export default class App extends React.Component {
@@ -91,8 +92,9 @@ export default class App extends React.Component {
               <Route exact path="/signup" render={() => <Signup setUser={(user) => this.setUser(user)} />} />
               <Route exact path="/categories" render={() => <Categories {...this.state} />} /> 
               <Route exact path="/categories/:name" render={props => <Activities {...props} />} />
-              <Route exact path="/activities/:id" render={props => <ActivityDetails {...props} loggedInUser={this.state.loggedInUser}/>} /> 
+              <Route exact path="/activities/details/:id" render={props => <ActivityDetails {...props} loggedInUser={this.state.loggedInUser}/>} /> 
               <Route exact path="/organizations/new" render={props => <NewOrganization {...props} loggedInUser={this.state.loggedInUser}/>} /> 
+              <Route exact path="/activities/new" render={props => <NewActivity {...props} loggedInUser={this.state.loggedInUser}/>} /> 
             </Switch>
           </div>
         ) : (

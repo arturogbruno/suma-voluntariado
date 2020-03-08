@@ -31,13 +31,13 @@ export default class ActivityDetails extends React.Component {
     }
 
     addActivityToFav = () => {
-        this.usersServices.updateUser(this.props.loggedInUser._id, {favActivities: this.state.specificActivity._id})
+        this.usersServices.updateUserFav(this.props.loggedInUser._id, { favActivities: this.state.specificActivity._id})
         .then(updatedUser => console.log(updatedUser))
         .catch(err => console.log(err))
     }
 
     addParticipant = () => {
-        this.activitiesServices.updateActivity(this.state.specificActivity._id, {participants: this.props.loggedInUser._id})
+        this.activitiesServices.addParticipant(this.state.specificActivity._id, { newParticipant: this.props.loggedInUser._id })
         .then(updatedActivity => this.setState({ specificActivity: updatedActivity }))
         .catch(err => console.log(err))
     }
@@ -46,7 +46,6 @@ export default class ActivityDetails extends React.Component {
 
     render() {
         let activity = this.state.specificActivity;
-        console.log(activity)
         return (    
             <div>
                 {this.state.specificActivity ? (
@@ -97,14 +96,14 @@ export default class ActivityDetails extends React.Component {
                             <h6>Máx. participantes: {activity.maxParticipants}</h6>
                         </Col>
                         <Col>
-                            <h6>Plazas vancantes: {activity.maxParticipants - activity.participants.length}</h6>
+                            <h6>Plazas vacantes: {activity.maxParticipants - activity.participants.length}</h6>
                         </Col>
                     </Row>
                     <Row className="activityDetails-participants">
                         <Col>
                             <h6>Participantes:</h6>
                             {activity.participants.map((participant, idx) => (
-                                <span className="activityDetails-partipantAvatar" key={idx}><img src={participant.imgPath} alt="user image"/>{participant.username}</span>
+                                <Link to={`/users/${participant._id}`} className="activityDetails-partipant" key={idx}><img src={participant.imgPath} alt="user image"/>{participant.username}</Link>
                             ))}
                         </Col>
                     </Row>

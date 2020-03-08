@@ -10,7 +10,7 @@ router.get("/all", (req, res, next) => {
 });
 
 
-// Get specific organization:
+// Get specific organization by id:
 router.get("/:id", (req, res, next) => {
     Organizations.findById(req.params.id)
     .then(organization => res.status(200).json( organization ))
@@ -18,13 +18,20 @@ router.get("/:id", (req, res, next) => {
 });
 
 
+
+// Get organization created by specific user:
+router.get("/createdByUser/:idUser", (req, res, next) => {
+    Organizations.find({ 'user': req.params.idUser })
+    .then(organization => res.status(200).json( organization ))
+    .catch(err => console.log(err))
+});
+
+
 // Create new organization:
 router.post('/new', (req, res, next) => {
-    console.log("BEFORE: " + req.body);
     if(req.body.imgPath === "") {
         delete req.body.imgPath;
     }
-    console.log("AFTER: " + req.body)
     Organizations.create(req.body)
       .then(createdOrganization => res.status(200).json(createdOrganization))
       .catch(err => console.log(err))

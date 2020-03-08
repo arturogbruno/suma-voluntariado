@@ -3,7 +3,7 @@ import {Container, Form, Col, Button} from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal'
 import OrganizationsServices from '../../services/organizations';
 import FilesServices from "../../services/files";
-import './newOrganization.scss';
+import './NewOrganization.scss';
 
 export default class NewOrganization extends React.Component {
     constructor(props) {
@@ -48,8 +48,8 @@ export default class NewOrganization extends React.Component {
     }
 
     handleSubmit = e => {
-        e.preventDefault()
-        this.createOrganization()
+        e.preventDefault();
+        this.createOrganization();
     }
 
     createOrganization() {

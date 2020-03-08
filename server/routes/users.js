@@ -26,6 +26,14 @@ router.put("/:id", (req, res, next) => {
 });
 
 
+// Update user's favorite activities:
+router.put("/:userId/favActivities/add", (req, res, next) => {
+    Users.findByIdAndUpdate(req.params.userId, { $push: { favActivities: req.body.favActivities }}, { new: true })
+    .then(updatedUser => res.status(200).json(updatedUser))
+    .catch(err => console.log(err))
+});
+
+
 // Delete a specific user:
 router.delete("/:id", (req, res, next) => {
     Users.findByIdAndDelete(req.params.id)

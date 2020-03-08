@@ -48,6 +48,16 @@ router.put("/:id", (req, res, next) => {
 });
 
 
+// Add participant to specific activity:
+router.put("/:activityId/participants/add", (req, res, next) => {
+    Activities.findByIdAndUpdate(req.params.activityId, { $push: { participants: req.body.newParticipant }}, { new: true })
+    .populate('organization')
+    .populate('participants')
+    .then(updatedActivity => res.status(200).json(updatedActivity))
+    .catch(err => console.log(err))
+});
+
+
 // Delete a specific activity:
 router.delete("/:id", (req, res, next) => {
     Activities.findByIdAndDelete(req.params.id)

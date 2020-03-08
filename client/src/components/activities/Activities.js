@@ -32,7 +32,7 @@ export default class Activities extends React.Component {
                 <h1>Actividades por categoría: {categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h1>
                 {this.state.activities.length ? (
                     <div className="activitiesList">
-                        {this.state.activities.map((activity, idx) => <li><Link to={`/activities/${activity._id}`} key={idx}>{activity.title}</Link></li>)}
+                        {this.state.activities.map((activity, idx) => <li key={idx}><Link to={`/activities/details/${activity._id}`} key={idx}>{activity.title}</Link></li>)}
                     </div>
                 ) : (
                     <Spinner animation="border" role="status">
