@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import AuthServices from "../../services/auth";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Button from "react-bootstrap/Button";
 import "./NavBar.scss";
 
 export default class NavBar extends React.Component {
@@ -26,57 +24,41 @@ export default class NavBar extends React.Component {
   render() {
     if (this.state.loggedInUser) {
       return (
-        <Navbar bg="light" expand="lg">
-          <Navbar.Brand><Link to="/">+SUMA</Link></Navbar.Brand>
+        <Navbar sticky="top" bg="light" expand="lg">
+          <Navbar.Brand><Link to="/"><img className="navbar-logo" src="https://res.cloudinary.com/yelpcampagb/image/upload/v1583620107/ironhack-project3/inemcz4pjwjcfqppheev.png" alt="SUMA logo"/></Link></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Nav.Link as={Link} to="/">Home</Nav.Link>
+              <Nav.Link as={Link} to="/categories">Categorías</Nav.Link>
+              <Nav.Link as={Link} to="/activities">Actividades</Nav.Link>
             </Nav>
-              <Button className="navButton" variant="outline-primary"><Link to="/profile" className="navLink">{this.state.loggedInUser.username}</Link></Button>
-              <Button className="navButton" variant="outline-primary"><Link to="/" className="navLink" onClick={this.handleLogout}>Logout</Link></Button>
+            {this.state.loggedInUser.role === 'organization' ? (
+              <>
+                <Link to="/organizations/new" className="navLink-create">Crear organización</Link>
+                <Link to="/activities/new" className="navLink-create">Crear actividad</Link>
+              </>
+            ) : (
+              <span></span>
+            )}
+            <Link to="/profile" className="navLink">{this.state.loggedInUser.username}</Link>
+            <Link to="/" className="navLink" onClick={this.handleLogout}>Logout</Link>
           </Navbar.Collapse>
         </Navbar>
       );
     } else {
       return (
-        <Navbar bg="light" expand="lg">
-          <Navbar.Brand><Link to="/">+SUMA</Link></Navbar.Brand>
+        <Navbar sticky="top" bg="light" expand="lg">
+          <Navbar.Brand><Link to="/"><img className="navbar-logo" src="https://res.cloudinary.com/yelpcampagb/image/upload/v1583620107/ironhack-project3/inemcz4pjwjcfqppheev.png" alt="SUMA logo"/></Link></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
+              <Nav.Link as={Link} to="/">Home</Nav.Link>
+              <Nav.Link as={Link} to="/categories">Categorías</Nav.Link>
+              <Nav.Link as={Link} to="/activities">Actividades</Nav.Link>
             </Nav>
-              <Button className="navButton" variant="outline-primary"><Link to="/signup" className="navLink">Regístrate</Link></Button>
-              <Button className="navButton" variant="outline-primary"><Link to="/login" className="navLink">Inicia sesión</Link></Button>
+              <Link to="/signup" className="navLink">Regístrate</Link>
+              <Link to="/login" className="navLink">Inicia sesión</Link>
           </Navbar.Collapse>
         </Navbar>
       );

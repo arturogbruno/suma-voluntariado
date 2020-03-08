@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import './CategoryCard.scss';
 
 export default class CategoryCard extends React.Component {
     constructor(props) {
@@ -10,22 +12,22 @@ export default class CategoryCard extends React.Component {
         };
     }
 
-
     render() {
+        let category = this.props.category;
         return (
-            <div>
-                <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={"holder.js/100px180"} />
-                <Card.Body>
-                    <Card.Title>{this.props.category.name}</Card.Title>
-                    <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
+            <>
+                <Card className="categoryCard">
+                    <Card.Img variant="top" src={category.imgPath} />
+                    <Card.Body>
+                        <Card.Title>{category.name.charAt(0).toUpperCase() + category.name.slice(1)}</Card.Title>
+                        <Card.Text>
+                        Some quick example text to build on the card title and make up the bulk of
+                        the card's content.
+                        </Card.Text>
+                        <Link to={`/categories/${category.name}`}><Button variant="primary">Ver actividades</Button></Link>
+                    </Card.Body>
                 </Card>
-            </div>
+            </>
         );
     }
 }

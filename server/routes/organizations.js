@@ -20,6 +20,11 @@ router.get("/:id", (req, res, next) => {
 
 // Create new organization:
 router.post('/new', (req, res, next) => {
+    console.log("BEFORE: " + req.body);
+    if(req.body.imgPath === "") {
+        delete req.body.imgPath;
+    }
+    console.log("AFTER: " + req.body)
     Organizations.create(req.body)
       .then(createdOrganization => res.status(200).json(createdOrganization))
       .catch(err => console.log(err))

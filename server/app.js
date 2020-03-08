@@ -100,6 +100,9 @@ app.use('/api/organizations', organizationsRoutes);
 const usersRoutes = require('./routes/users');
 app.use('/api/users', usersRoutes);
 
+const filesRoutes = require('./routes/files');
+app.use('/api/files', filesRoutes);
+
 
 app.use((req, res) => {
   res.sendFile(__dirname + "/public/index.html");

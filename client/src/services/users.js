@@ -9,7 +9,9 @@ export default class Services {
         })
     }
 
-    getAllUsers = () => this.service.get('/all').then(response => response.data)
+    getAllUsers = () => this.service.get('/all').then(response => response.data);
 
-    getUserDetails = id => this.service.get(`/${id}`).then(response => response.data)
+    getUserDetails = id => this.service.get(`/${id}`).then(response => response.data);
+
+    updateUser = (id, fieldToUpdate) => this.service.put(`/${id}`, fieldToUpdate).then(response => response.data);
 }

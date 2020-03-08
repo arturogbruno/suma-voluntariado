@@ -13,7 +13,17 @@ router.get("/all", (req, res, next) => {
 // Get specific activity:
 router.get("/:id", (req, res, next) => {
     Activities.findById(req.params.id)
+    .populate('organization')
+    .populate('participants')
     .then(activity => res.status(200).json( activity ))
+    .catch(err => console.log(err))
+});
+
+
+// Get activities by category:
+router.get("/categories/:category", (req, res, next) => {
+    Activities.find({ 'category.name': req.params.category })
+    .then(activities => res.status(200).json( activities ))
     .catch(err => console.log(err))
 });
 
@@ -26,6 +36,25 @@ router.post('/new', (req, res, next) => {
       .then(createdActivity => res.status(200).json(createdActivity))
       .catch(err => console.log(err))
 })
+
+
+// Update a specific activity:
+router.put("/:id", (req, res, next) => {
+    Activities.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    .populate('organization')
+    .populate('participants')
+    .then(updatedActivity => res.status(200).json(updatedActivity))
+    .catch(err => console.log(err))
+});
+
+
+// Delete a specific activity:
+router.delete("/:id", (req, res, next) => {
+    Activities.findByIdAndDelete(req.params.id)
+    .then(_ => res.status(200).json({ deleted: true }))
+    .catch(err => console.log(err))
+});
+
 
 const createCategory = (categoryName) => {
     imgPath = "";
@@ -67,22 +96,6 @@ const createCategory = (categoryName) => {
     }
     return categoryWithImage;
 }
-
-
-// Update a specific activity:
-router.put("/:id", (req, res, next) => {
-    Activities.findByIdAndUpdate(req.params.id, req.body, { new: true })
-    .then(updatedActivity => res.status(200).json(updatedActivity))
-    .catch(err => console.log(err))
-});
-
-
-// Delete a specific activity:
-router.delete("/:id", (req, res, next) => {
-    Activities.findByIdAndDelete(req.params.id)
-    .then(_ => res.status(200).json({ deleted: true }))
-    .catch(err => console.log(err))
-});
 
 
 module.exports = router;

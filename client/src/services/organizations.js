@@ -9,9 +9,9 @@ export default class Services {
         })
     }
 
-    getAllOrganizations = () => this.service.get('/all').then(response => response.data)
+    getAllOrganizations = () => this.service.get('/all').then(response => response.data);
 
-    getOrganizationDetails = id => this.service.get(`/${id}`).then(response => response.data)
+    getOrganizationDetails = id => this.service.get(`/${id}`).then(response => response.data);
     
-    createOrganization = organization => this.service.post('/new', organization).then(response => response.data)
+    createOrganization = newOrganization => this.service.post('/new', newOrganization).then(response => response.data);
 }

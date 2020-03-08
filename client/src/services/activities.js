@@ -9,9 +9,13 @@ export default class Services {
         })
     }
 
-    getAllActivities = () => this.service.get('/all').then(response => response.data)
+    getAllActivities = () => this.service.get('/all').then(response => response.data);
 
-    getActivityDetails = id => this.service.get(`/${id}`).then(response => response.data)
+    getActivityDetails = id => this.service.get(`/${id}`).then(response => response.data);
 
-    createActivity = activity => this.service.post('/new', activity).then(response => response.data)
+    getActivitiesByCategory = category => this.service.get(`/categories/${category}`).then(response => response.data);
+
+    createActivity = activity => this.service.post('/new', activity).then(response => response.data);
+
+    updateActivity = (id, fieldToUpdate) => this.service.put(`/${id}`, fieldToUpdate).then(response => response.data);
 }

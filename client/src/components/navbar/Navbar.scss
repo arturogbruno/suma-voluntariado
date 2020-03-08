@@ -1,8 +1,26 @@
-.navButton{
-    margin-left: 15px;
-    
-    .navLink:hover{
-        color: white;
-        text-decoration: none;
+.navbar {
+    margin-bottom: 40px;
+
+
+    .navLink, .navLink-create {
+        border: 1px solid rgb(18, 119, 251);
+        border-radius: 4px;
+        padding: 4px 13px;
+        margin-left: 20px;
+        
+        &:hover {
+            text-decoration: none;
+            color: #fff;
+            background-color: rgb(18, 119, 251);
+        }
+    }
+
+    .navLink-create {
+        background-color: rgb(235, 243, 255);
+        color: rgb(18, 119, 251);
+    }
+
+    .navbar-logo {
+        width: 120px;
     }
 }

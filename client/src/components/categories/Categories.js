@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner'
+import Container from 'react-bootstrap/Container';
 import ActivitiesServices from "../../services/activities";
 import CategoryCard from "../categoryCard/CategoryCard";
+import "./Categories.scss";
 
-export default class Home extends React.Component {
+export default class Categories extends React.Component {
   constructor(props) {
     super(props);
 
@@ -21,7 +23,7 @@ export default class Home extends React.Component {
     if (this.state.allActivities.length === 0) {
       this.activitiesServices.getAllActivities()
         .then(allActivities => {
-          let allCategories = [...new Set(allActivities.map(activity => activity.category))]
+          let allCategories = [...new Set(allActivities.map(activity => JSON.stringify(activity.category)))].map(x => JSON.parse(x));
           this.setState({ allActivities: allActivities, allCategories: allCategories })
         })
         .catch(err => console.log(err));
@@ -32,18 +34,18 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Estás en la Home</h1>
+      <Container>
+        <h1>Voluntariado por categorías</h1>
         {this.state.allCategories.length ? (
-          <div>
-            {this.state.allCategories.map(category => <CategoryCard category={category}> </CategoryCard>)}
+          <div className="categoryList">
+            {this.state.allCategories.map((category, idx) => <CategoryCard key={idx} category={category} />)}
           </div>
         ) : (
           <Spinner animation="border" role="status">
             <span className="sr-only">Cargando...</span>
           </Spinner>
         )}
-      </div>
+      </Container>
     );
   }
 }

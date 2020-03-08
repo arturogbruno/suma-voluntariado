@@ -2,6 +2,7 @@
 // $ node bin/seeds.js
 
 require('dotenv').config();
+
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
@@ -250,8 +251,7 @@ let organizations = [
     phone: getPhoneNumber(),
     webpage: "http://eculturas.org/index.html",
     description: `Educación, Cultura y Solidaridad es una Asociación de Ámbito Autonómico, (Comunidad de Madrid) declarada de Utilidad Pública. Sus principales actividades se desarrollan desde el Centro Educación Cultura y Solidaridad (Proyecto San Cristóbal) en el Barrio San Cristóbal de los Ángeles (Villaverde). 
-    El Centro está consolidado y reconocido en San Cristóbal como referente para familias, niños y jóvenes, especialmente inmigrantes y jóvenes en riesgo de exclusión, a los que les ofrece la posibilidad de reinserción sociolaboral y académica. Es  también un referente para mujeres norteafricanas y subsaharianas, que encuentran en él, un aliado para su desarrollo personal e integración social. La asociación ECyS está reconocida como una activa participante en cuantas plataformas, mesas, y grupos de interés funcionan en el barrio.
-    `,
+    El Centro está consolidado y reconocido en San Cristóbal como referente para familias, niños y jóvenes, especialmente inmigrantes y jóvenes en riesgo de exclusión, a los que les ofrece la posibilidad de reinserción sociolaboral y académica. Es  también un referente para mujeres norteafricanas y subsaharianas, que encuentran en él, un aliado para su desarrollo personal e integración social. La asociación ECyS está reconocida como una activa participante en cuantas plataformas, mesas, y grupos de interés funcionan en el barrio`,
     imgPath: "http://eculturas.org/images/logo-64x61.gif",
     user: arrUsersId[2]
   },
@@ -289,7 +289,138 @@ let organizations = [
     Comenzamos nuestra actividad en diciembre de 1995. Desde entonces hemos ido creciendo apoyándonos siempre en el deseo de ayudar con nuestro acompañamiento persona a persona y nuestros valores fundamentales como son el reconocimiento de la dignidad de la persona y el respeto a su libertad, el apoyo a la familia y la constancia y el compromiso en el trabajo.`,
     imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2020/03/Positivo-nadiesolo-transicion.png",
     user: arrUsersId[5]
+  },
+  {
+    _id: arrOrganizationsId[6],
+    name: "Fundación Amoverse",
+    address: "Calle Geranios, 30, 28029 Madrid",
+    email: "fundacionamoverse@fundacionamoverse.org",
+    phone: getPhoneNumber(),
+    webpage: "https://fundacionamoverse.org/",
+    description: `Acompañar a niños, niñas, adolescentes, jóvenes y sus familias en situación de vulnerabilidad social, impulsando sus oportunidades de crecimiento personal, familiar y profesional, promoviendo su dignificación y su plena integración en la sociedad.
+    La Fundación Amoverse se desarrolla una intervención socioeducativa integral con niños, niñas, adolescentes, jóvenes y sus familias, desde un enfoque de prevención, a través de la educación no-formal, ocio y tiempo libre, acompañamiento personal y académico, y está a su vez dirigido a la promoción de la familia y la transformación social del barrio.
+    Este programa se implementa en dos barrios, Pozo-Entrevías en el distrito de Vallecas y La Ventilla en Tetuán, ambos en Madrid.`,
+    imgPath: "https://fundacionamoverse.org/wp-content/uploads/2019/11/cropped-logo_ALTA-01-1.png",
+    user: arrUsersId[6]
+  },
+  {
+    _id: arrOrganizationsId[7],
+    name: "Asociación manos de ayuda social",
+    address: "Calle Reina de África, 10, 28018 Madrid",
+    email: "comedorsocial@manosayudasocial.org",
+    phone: getPhoneNumber(),
+    webpage: "https://manosayudasocial.org/",
+    description: `La Asociación Manos de Ayuda Social se constituyó en 2011 gracias a la iniciativa de un grupo de voluntarios que, en plena crisis económica, se unieron para crear un comedor social para familias en el Distrito de Ciudad Lineal. Con mucho esfuerzo e ilusión por impactar en nuestro entorno, creamos el Comedor Social Ventas que funcionó hasta 2018. En él se repartieron alrededor de 157000 comidas y se ayudó de manera continuada a unas 1409 personas.
+    Tras esos siete años de trabajo, Manos de Ayuda Social traslada su labor al Distrito Puente de Vallecas, donde inicia un nuevo comedor social en el barrio de Palomeras Bajas.
+    Nuestro objetivo es proporcionar una correcta nutrición y promover un ambiente cálido para que las personas que allí acuden se sientan acogidas, fomentando además la búsqueda activa de empleo para conseguir que sean autónomas en el menor tiempo posible.
+    Manos de Ayuda Social ha sido declarada Entidad de Utilidad Pública por el Ministerio del Interior, reconociéndose así nuestra labor de ayuda a los más necesitados.`,
+    imgPath: "https://manosayudasocial.org/images/logos-ventas/ms_logo_white2.png",
+    user: arrUsersId[7]
+  },
+  {
+    _id: arrOrganizationsId[8],
+    name: "Fundación Concordia y Libertad",
+    address: "Bravo Murillo, 120, 28020 Madrid",
+    email: "hmasd@hmasd.org",
+    phone: getPhoneNumber(),
+    webpage: "http://hmasd.org/",
+    description: `La Fundación Concordia y Libertad, antes Humanismo y Democracia, es una organización privada sin ánimo de lucro que sirve a un interés general. Fue constituida en octubre de 1977, comenzando sus actividades en enero de 1978 como fundación cultural privada al servicio de los derechos humanos y de los valores democráticos, contribuyendo a la transición hacia la democracia en España y a la consolidación del sistema de derechos y libertades configurado en la Constitución Española de 1978.
+    La Fundación se centra en proyectos de desarrollo rural integral y necesidades sociales básicas tales como educación, sanidad , agua y saneamiento.
+    Como criterio general, ofrece un enfoque preferente en favor del fortalecimiento de las instituciones, públicas y privadas.
+    Dedica también una especial atención a las migraciones, a la integración de inmigrantes y al vínculo entre cooperación y desarrollo y los fenómenos migratorios; así como a la sensibilización social en todas estas materias.`,
+    imgPath: "http://hmasd.org/wp-content/themes/h%2Bd/assets/img/hmasd-logoH.svg",
+    user: arrUsersId[8]
+  },
+  {
+    _id: arrOrganizationsId[9],
+    name: "Adóptalo.com-Madrid",
+    address: "Calle Lituania, 4, 28030 Madrid",
+    email: "infoadoptalo@yahoo.es",
+    phone: getPhoneNumber(),
+    webpage: "http://adoptalomadrid.com/",
+    description: `La protectora de animales Adoptalo.com-Madrid es una entidad sin ánimo de lucro que se fundó en el año 2006. Estamos legalmente constituidos e inscritos en el Registro de Asociaciones de la Comunidad de Madrid con el número 29.206.
+    Surgimos como respuesta al elevado número de animales que son abandonados y/o maltratados a diario en este país y como una alternativa útil y humanitaria para mejorar la situación actual.
+    Nuestro trabajo se centra en la protección y defensa de los animales en un sentido amplio, tanto a corto plazo, proporcionando un hogar a los animales abandonados, como a largo plazo, difundiendo una cultura y educación basadas en el conocimiento y respeto hacia los animales y fomentando una tenencia responsable de cualquier ser vivo.
+    Puedes elegir una de las muchas formas que tenemos según tus necesidades de tiempo y espacio: hazte casa de acogida temporal, voluntario en el albergue, adopta a unos de nuestros animales, apadrínalo o hazte socio, se padrino de vuelo en tus viajes al extranjero, compra en nuestra tienda solidaria …`,
+    imgPath: "http://adoptalomadrid.com/wp-content/uploads/2016/04/apotalomadrid-logo-medium-2.png",
+    user: arrUsersId[9]
+  },
+  {
+    _id: arrOrganizationsId[10],
+    name: "Fundación San Patricio",
+    address: "Serrano, 208, 28002 Madrid",
+    email: "info@fundacionsanpatricio.org",
+    phone: getPhoneNumber(),
+    webpage: "https://www.fundacionsanpatricio.org/es/",
+    description: `La Fundación San Patricio trabaja por encontrar vías para mejorar la educación en nuestro país y compartir nuestra convicción de que una sociedad avanza si mejora la formación de los ciudadanos que la componen. Bajo el lema “Otras formas de enseñar, otras formas de aprender” desarrollamos nuestra misión.
+    La Fundación tiene la misión de desarrollar programas que faciliten a los centros docentes, tanto públicos como privados, la posibilidad de abrir sus aulas a nuevas experiencias de aprendizaje, que complementen la formación académica con una sólida educación en valores. Así mismo, la Fundación, como parte de la Institución San Patricio, tiene la misión de educar hombres y mujeres de bien, a través de un modelo educativo que les permita adaptarse personal y profesionalmente a la sociedad que les toque vivir.
+    Nuestra visión es:
+    - Encontrar vías de mejora de la educación en nuestro país, y compartir nuestra convicción de que una sociedad avanza si mejora la formación de los ciudadanos que la componen.
+    - Mantener la confianza de las familias y de la sociedad, por ser motor de cambio y de mejora en el sistema educativo español y por alcanzar una amplia proyección internacional.`,
+    imgPath: "https://www.fundacionsanpatricio.org/es/images/logocole.jpg",
+    user: arrUsersId[10]
+  },
+  {
+    _id: arrOrganizationsId[11],
+    name: "Recrearte Teatro Social",
+    address: "Miguel de Cervantes, 2, 28430 Madrid",
+    email: "recrearteteatrosocial@yahoo.es",
+    phone: getPhoneNumber(),
+    webpage: "https://ladarsenacm.com/recrearte-teatro-social",
+    description: `RECREARTE Teatro Social es una Asociación sin ánimo de lucro de intervención y acción social, que tiene como fin general la creación, preparación y representación de obras teatrales para la dinamización, entretenimiento y sensibilización de toda la población en general y, especialmente, de las personas mayores, la infancia y la juventud.
+    Desde la creación de la asociación, en marzo del 2010, hemos desarrollado nuestra actividad en colaboración con diversas residencias geriátricas, tanto privadas como particulares, llevando nuestras representaciones para disfrute de nuestros mayores con obras como: Sancho Panza en la ínsula de Barataria, Farsa y justicia del señor Corregidor, el rey Tiburcio busca novia, recitales de poesía y música, etc.
+    Asimismo hemos colaborado con diversos Observatorios contra la violencia de género, sensibilizando a alumnos de institutos y al público en general con obras tales como: La palabra arrincona al miedo, Lágrimas negras, La sal de la vida y otras.
+    También hemos llevado obras sensibilizando en igualdad hombre/mujer, especialmente en el Día Internacional de la Mujer.
+    Este año y por primera vez, hemos decidido ampliar el objeto de nuestra Asociación llevando también distracción a los niños/as que sufren algún tipo de enfermedad que les obliga a permanecer hospitalizados`,
+    imgPath: "https://i2.wp.com/www.fetam.es/fetam/blog/wp-content/uploads/2017/07/logo-recrearte.jpg",
+    user: arrUsersId[11]
+  },
+  {
+    _id: arrOrganizationsId[12],
+    name: "SAMUR-Protección Civil. Formación al voluntariado",
+    address: "Ronda de las Provincias, 7, 28011 Madrid",
+    email: "unidadformacion@samurpc.es",
+    phone: getPhoneNumber(),
+    webpage: "https://www.formatemadrid.com/",
+    description: `Unidad de Formación al Voluntariado es la unidad encargada de elaborar y gestionar los planes de formación interna del voluntario y la de sus alumnos de nuevo ingreso. Impulsa y apoya con su esfuerzo diario el proceso de modernización, haciendo posible el mantenimiento y la mejora de los conocimientos, habilidades y capacidades del personal al servicio de la institución para su mejor desarrollo profesional, su fácil adaptación a los cambios y la innovación en cualquiera de sus formas bajo la supervisión de la División de Formación.
+    Asimismo, para dar una mayor difusión del Cuerpo de Voluntarios de Protección Civil esta unidad ha desarrollado un proyecto educativo llamado ”Fórmate Madrid”, que dará respuesta a las necesidades de SAMUR Protección Civil, de sus actuales voluntarios y nuevas incorporaciones, además de concienciar y animar a la ciudadanía a que formen parte del Cuerpo de Voluntarios.
+    El Cuerpo de Voluntarios te ofrece la posibilidad de colaborar con SAMUR Protección Civil en las diferentes áreas de ayudas y asistencias que realiza:
+    -Planificación, prevención y cobertura de servicios programados con riesgos previsibles.
+    -Prevención Operativa.
+    -Asistencia sanitaria extrahospitalaria.
+    -Coordinación y atención sanitaria en catástrofes.`,
+    imgPath: "https://www.formatemadrid.com/wp-content/uploads/2018/05/logo-fm-300x300.png",
+    user: arrUsersId[12]
+  },
+  {
+    _id: arrOrganizationsId[13],
+    name: "Cruz Roja Española",
+    address: "Santa Leonor, 8, 28037 Madrid",
+    email: "uinforma@cruzroja.es",
+    phone: getPhoneNumber(),
+    webpage: "https://www2.cruzroja.es/",
+    description: `Cruz Roja Española (CRE) es una institución humanitaria, de carácter voluntario y de interés público, que desarrolla su actividad bajo la protección del Gobierno de España y el Alto Patronazgo de los Reyes de España. Fue fundada en el año 1.864 y, en sus más de 150 años de historia, siempre ha estado al lado de la población vulnerable, salvaguardando la vida y aliviando el sufrimiento humano, en función de las necesidades y demandas de cada momento, ya sea dentro o fuera de nuestras fronteras.
+    Actualmente, Cruz Roja Española como organización humanitaria de carácter voluntario, fuertemente arraigada en la sociedad, dará respuestas integrales a las personas vulnerables desde una perspectiva de desarrollo humano y comunitario reforzando sus capacidades individuales en su contexto social.
+    Dichas respuestas se realizarán estando cada vez más cerca de las personas vulnerables en los ámbitos nacional e internacional, a través de acciones integradas, realizadas esencialmente por voluntariado y con una amplia participación social y presencia territorial.
+    Cruz Roja Española es miembro de la Federación Internacional de Sociedades Nacionales de la Cruz Roja y la Media Luna Roja, organización que agrupa a todas las Cruces Rojas y Medias Lunas Rojas del mundo, así como del Movimiento Internacional de la Cruz Roja, una red de solidaridad con presencia en la casi todos los países del mundo.`,
+    imgPath: "https://www2.cruzroja.es/o/cruzroja-web-theme/images/logo.svg",
+    user: arrUsersId[13]
+  },
+  {
+    _id: arrOrganizationsId[14],
+    name: "Banco de Alimentos de Madrid",
+    address: "Colegio San Fernando, Carretera de Colmenar, Km 13.600, 28049 Madridd",
+    email: "ugrvoluntarios@bamadrid.org",
+    phone: getPhoneNumber(),
+    webpage: "https://bamadrid.org/",
+    description: `El Banco de Alimentos de Madrid es una organización benéfica sin ánimo de lucro cuyo fin es conseguir gratuitamente alimentos para distribuirlos, también de manera gratuita, entre entidades benéficas dedicadas a la asistencia y cuidado directo de personas necesitadas dentro de la Comunidad de Madrid.
+    El Banco de Alimentos es miembro de la Federación Española de Bancos de Alimentos (FESBAL) que agrupa en la actualidad a 54 Bancos de Alimentos de toda España, y a través de ella a la Federación Europea de Bancos de Alimentos (FEBA) que engloba a 271 Bancos de Alimentos en toda Europa.
+    El objetivo del Banco de Alimentos de Madrid es trabajar para que las personas más desfavorecidas puedan llevar una vida más digna.
+    Su misión es concienciar a la sociedad y promover su solidaridad frente a los problemas originados por el hambre, el paro, el abandono familiar, el despilfarro de alimentos y en general de la falta de los recursos necesarios para tener una vida conforme a la dignidad humana. Colaborar a la solución de estos problemas y tratar de paliar sus efectos mediante el reparto gratuito de alimentos.`,
+    imgPath: "https://granrecogidamadrid.org/public/img/logo.png",
+    user: arrUsersId[14]
   }
+
 ];
 
 
@@ -543,7 +674,10 @@ let activities = [
       lng: -3.7053683
     },
     imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2018/10/hospitales-inicio-1024x680.jpg",
-    category: "comunitario",
+    category: {
+      name: "comunitario",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/ofpctk5zinroexnkotpb.jpg"
+    },
     minParticipants: 2,
     maxParticipants: 15,
     requirements: "Para ser voluntario de Desarrollo y Asistencia solo es necesario tener ganas de ayudar y más de 16 años con permiso paterno. Si quieres iniciarte en el voluntariado con Desarrollo y Asistencia, primero ven a una sesión de iniciación al voluntariado.",
@@ -591,7 +725,264 @@ let activities = [
     maxParticipants: 8,
     requirements: "Para ser voluntario de Desarrollo y Asistencia solo es necesario tener ganas de ayudar y más de 16 años con permiso paterno. Si quieres iniciarte en el voluntariado con Desarrollo y Asistencia, primero ven a una sesión de iniciación al voluntariado.",
     organization: arrOrganizationsId[5]
+  },
+  {
+    title: "Refuerzo escolar con menores",
+    description: `Necesitamos voluntarios para nuestro programa de aprendizaje individualizado con adolescentes de 12 a 17 años. Nuestro objetivo es acompañarles en la adquisición de conocimientos, habilidades y técnicas para el éxito escolar en grupos reducidos. Son chicos y chicas desmotivados hacia el aprendizaje con dificultades muy específicas que pueden superar con el apoyo de personas con los conocimientos necesarios: matemáticas, física, química, inglés, biología, lengua, etc. El voluntario participará en las reuniones de programación y evaluación de las actividades.`,
+    dates: getDates(),
+    time: "16:30 h - 18:30 h",
+    location: "Calle Palmera, 21, 28029 Madrid",
+    coord: {
+      lat: 40.4720856,
+      lng: -3.6949809
+    },
+    imgPath: "https://fundacionamoverse.org/wp-content/uploads/2019/04/foto-3-test.jpg",
+    category: {
+      name: "educativo",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492536/ironhack-project3/t1yw7o7on7p10giirbni.jpg"
+    },
+    minParticipants: 2,
+    maxParticipants: 6,
+    requirements: "Personas a partir de 21 años con conocimientos de las asignaturas correspondientes. Paciencia y habilidades básicas de enseñanza y pedagogía.",
+    organization: arrOrganizationsId[6]
+  },
+  {
+    title: "Recogida de alimentos",
+    description: `Esta organización ofrece un servicio de comida elaborada para llevar en envases de un solo uso para familias en riesgo de exclusión social. Se sirve alimentos a diario de lunes a viernes donde la persona acude a recoger la comida elaborada y envasada. Los voluntarios se encargan de las tareas de limpieza, acondicionamiento del local, envasado de los alimentos y entrega de los mismos a los usuarios.`,
+    dates: getDates(),
+    time: "10:45 h - 13:30 h",
+    location: "Calle Reina de África, 10, 28018 Madrid",
+    coord: {
+      lat: 40.3888594,
+      lng: -3.6719644
+    },
+    imgPath: "https://manosayudasocial.org/images/noticias/comedor.jpeg",
+    category: {
+      name: "social",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
+    },
+    minParticipants: 1,
+    maxParticipants: 3,
+    requirements: "Personas entre 18 y 65 años. En buena condición física ya que se carga peso. Responsable, madura, con equilibrio emocional, discreción y compromiso. Facilidad de comunicación y trato, y ausencia de prejuicios.",
+    organization: arrOrganizationsId[7]
+  },
+  {
+    title: "Clases de español, inglés e informática",
+    description: `Esta organización busca voluntarios para el Centro de Participación e Integración de la Comunidad de Madrid (CEPI) Usera-Villaverde, con conocimientos suficientes de inglés, español e informática para impartir talleres formativos de inglés en distintos niveles, de español y de informática. Los cursos van dirigido a adultos y jóvenes en búsqueda de empleo o para obtener una mejora del mismo. Población mayoritariamente inmigrante.`,
+    dates: getDates(),
+    time: "19:00 h - 21:00 h",
+    location: "Calle del Camino Viejo de Villaverde, 1, 28041 Madrid",
+    coord: {
+      lat: 40.3723156,
+      lng: -3.7124962
+    },
+    imgPath: "http://hmasd.org/wp-content/uploads/2018/03/IMG_3595.jpg",
+    category: {
+      name: "social",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
+    },
+    minParticipants: 2,
+    maxParticipants: 4,
+    requirements: "Mayores de edad con capacidad comunicativa y con conocimientos sobre la materia.",
+    organization: arrOrganizationsId[8]
+  },
+  {
+    title: "Actividades de ocio y tiempo libre con menores",
+    description: `Esta organización busca voluntarios para el Centro de Participación e Integración de la Comunidad de Madrid (CEPI) Usera-Villaverde, para desarrollar actividades de ocio y tiempo libre con menores de 6 a 10 años. Población mayoritariamente inmigrante.`,
+    dates: getDates(),
+    time: "18:00 h - 19:30 h",
+    location: "Calle del Camino Viejo de Villaverde, 1, 28041 Madrid",
+    coord: {
+      lat: 40.3723156,
+      lng: -3.7124962
+    },
+    imgPath: "http://hmasd.org/wp-content/uploads/2018/03/IMG_3595.jpg",
+    category: {
+      name: "social",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
+    },
+    minParticipants: 2,
+    maxParticipants: 5,
+    requirements: "Mayores de edad con capacidad comunicativa y en posesión del Diploma oficial de Monitor/a de Tiempo Libre.",
+    organization: arrOrganizationsId[8]
+  },
+  {
+    title: "Voluntariado en el albergue",
+    description: `Si te gustan los animales, te preocupa su bienestar y te indigna el enorme problema de abandono que tenemos en este país puedes aportar tu granito de arena colaborando como voluntario.
+    Nuestra asociación dispone de un albergue donde los animales están alojados, alimentados  y cuidados, y que cubre todas sus necesidades básicas mientras esperan un hogar. Pero sin la ayuda de los voluntarios carecerían de lo esencial: de que alguien vaya a pasearles, a jugar con ellos, a darles cariño, y lo más importante, a ayudarles a recuperar su confianza. Y ese alguien puedes ser tú.`,
+    dates: getDates(),
+    time: "09:30 h - 11:00 h",
+    location: "Calle Lituania, 4, 28030 Madrid",
+    coord: {
+      lat: 40.410857,
+      lng: -3.6983995
+    },
+    imgPath: "http://adoptalomadrid.com/wp-content/uploads/2015/12/voluntariado_en_el_albergue.png",
+    category: {
+      name: "otro",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493396/ironhack-project3/as8xogqhzr2gmqgpb9a9.jpg"
+    },
+    minParticipants: 5,
+    maxParticipants: 10,
+    requirements: "El único requisito es que te gusten los animales, que desees aprender a comprenderlos, tratarlos con cariño, respeto y que te apetezca compartir parte de tu tiempo con ellos.",
+    organization: arrOrganizationsId[9]
+  },
+  {
+    title: "Mesas solidarias",
+    description: `Si te gustan los animales, te preocupa su bienestar y te indigna el enorme problema de abandono que tenemos en este país puedes aportar tu granito de arena colaborando como voluntario.
+    Nuestra asociación dispone de un albergue donde los animales están alojados, alimentados  y cuidados, y que cubre todas sus necesidades básicas mientras esperan un hogar. Para ello, necesitamos voluntarios para informar en mesas solidarias sobre la labor de la asociación, y así poder recaudar fondos y hacer nuevos socios`,
+    dates: getDates(),
+    time: "12:00 h - 14:00 h",
+    location: "Calle Lituania, 4, 28030 Madrid",
+    coord: {
+      lat: 40.410857,
+      lng: -3.6983995
+    },
+    imgPath: "http://adoptalomadrid.com/wp-content/uploads/2015/12/casa_de_acogida.png",
+    category: {
+      name: "otro",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493396/ironhack-project3/as8xogqhzr2gmqgpb9a9.jpg"
+    },
+    minParticipants: 1,
+    maxParticipants: 3,
+    requirements: "Mayores de edad sensibilizados contra el maltrato y el abandono de los animales.",
+    organization: arrOrganizationsId[9]
+  },
+  {
+    title: "Reparto de alimentos a domicilio",
+    description: `Desde la Fundación San Patricio buscamos voluntarios con el objetivo principal de suplir necesidades básicas de alimentación de personas sin recursos y acompañarlas en la soledad. La labor consiste en realizar una ruta, establecida por la fundación, en la que se recogen alimentos en el local de la fundación y se reparten a las personas sin recursos, en una media de 4 domicilios. Junto con la entrega del paquete, se establece un espacio de tiempo para compartirlo con las personas beneficiarias.`,
+    dates: getDates(),
+    time: "11:30 h - 14:00 h",
+    location: "Serrano, 208, 28002 Madrid",
+    coord: {
+      lat: 40.4501666,
+      lng: -3.6730137
+    },
+    imgPath: "https://www.fundacionsanpatricio.org/es/images/slider/slide_FSPsocial6.jpg",
+    category: {
+      name: "comunitario",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/ofpctk5zinroexnkotpb.jpg"
+    },
+    minParticipants: 8,
+    maxParticipants: 15,
+    requirements: "Dirigido a personas con empatía, activas y sociables.",
+    organization: arrOrganizationsId[10]
+  },
+  {
+    title: "Teatro solidario Alpedrete",
+    description: `Participar en un proyecto con diez años de experiencia, representando obras de teatro con el fin de promover el derecho y acceso a la cultura y sensibilizar en valores respecto a la violencia de género, igualdad entre hombres y mujeres, respecto a la homofobia, xenofobia, etc. Llevar el teatro a niños en hospitales, mayores en residencias, internos en centros penitenciarios, etc. 
+    Esta actividad se puede realizar en grupos.
+    El voluntario adquirirá las sigueintes competencias: iniciativa y autonomía, capacidad de aprendizaje, optimismo y entusiasmo, capacidad para liderar iniciativas, organización y planificación, fiabilidad técnica y personal, comunicación interpersonal, trabajo en equipo y diplomacia.`,
+    dates: getDates(),
+    time: "19:30 h - 21:00 h",
+    location: "Miguel de Cervantes, 2, 28430 Madrid",
+    coord: {
+      lat: 40.6458074,
+      lng: -4.0245239
+    },
+    imgPath: "http://1.bp.blogspot.com/-96B7BO1LzDo/VKO-NJQkQvI/AAAAAAAAADY/Qt8zW3lM_L8/s1600/NJ-10-100.jpg",
+    category: {
+      name: "cultural",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492528/ironhack-project3/hs5gyqp7mofnlvdumxlg.jpg"
+    },
+    minParticipants: 5,
+    maxParticipants: 6,
+    requirements: "Dirigido a personas responsables, amantes del teatro, extrovertidas, con ganas de sensibilizar y comprometidas.",
+    organization: arrOrganizationsId[11]
+  },
+  {
+    title: "Prevención operativa",
+    description: `¿Quieres pertenecer a una de las Agrupaciones de Voluntarios de Protección Civil mejor valoradas por parte de la de la Comunidad de Madrid? ¡Te necesitamos! El cuerpo de Voluntarios te ofrece la posibilidad de colaborar con SAMUR Protección Civil en el área de prevención operativa para el Análisis y verificación de prevención de riesgos en edificios y locales de la Ciudad de Madrid y para el apoyo a la intervención de otros servicios de emergencia y auxilio a la Ciudadanía en caso de fenómenos metereológicos adversos`,
+    dates: getDates(),
+    time: "10:30 h - 17:00 h",
+    location: "Ronda de las Provincias, 7, 28011 Madrid",
+    coord: {
+      lat: 40.4116536,
+      lng: -3.7460944
+    },
+    imgPath: "https://www.moralzarzal.es/wp-content/uploads/2016/11/Voluntarios-protecci%C3%B3n-civil-1.jpg",
+    category: {
+      name: "protección civil",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493729/ironhack-project3/t6emwx7oclntllyk3kdl.jpg"
+    },
+    minParticipants: 5,
+    maxParticipants: 10,
+    requirements: "Si tienes un poco de tiempo libre, capacidad de compromiso, la formación requerida y ganas de ayudar a los demás de una manera voluntaria y altruista. ¡NO LO DUDES!, únete a nuestro equipo de Protección Civil. Será necesario haber realizado un curso básico de voluntariado y, al menos, uno específico, enmarcados en el Plan de Formación de SAMUR-Protección Civil (dentro del Plan de Formación del Centro Integral de Formación y Seguridad del Ayuntamiento de Madrid, CIFSE). Además, será necesario tener cumplidos 18 años, tener nacionalidad española o permiso de residencia en España, residir en la Comunidad de Madrid, presentar declaración responsable de no tener antedecentes penales, presentar certificación negativa de los datos inscritos en el Registro Central de Delicuentes Sexuales, presentar certificado de salud y superar las pruebas de admisión",
+    organization: arrOrganizationsId[12]
+  },
+  {
+    title: "Formación en medio ambiente",
+    description: `¿Te preocupa la salud de nuestro planeta? ¿Eres consciente de que todos nosotros y nosotras podemos hacer actos cada día para preservar el Medio Ambiente? Si la respuesta es sí, estamos seguras de que este voluntariado te va a encantar. Y, lo más importante, ¡que lo vas a saber transmitir!
+    Estamos buscando 2 personas voluntarias para el proyecto de Medio Ambiente en Pozuelo. Realizarán sesiones informativas y talleres sobre Medio Ambiente, ahorro energético y huertos urbanos en el centros educativo asignado.
+    ¿Quieres unirte al reto? ¡Anímate, toda ayuda será bienvenida`,
+    dates: getDates(),
+    time: "09:00 h - 14:00 h",
+    location: "Calle Diego de Velázquez, 5, 28223 Pozuelo de Alarcón, Madrid",
+    coord: {
+      lat: 40.4502059,
+      lng: -3.7799268
+    },
+    imgPath: "https://www.hacesfalta.org/IO/usuarios/tufoto/7b9097f0b7374c07a4d1df47952903d9_749X500_s.jpg",
+    category: {
+      name: "ambiental",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/mk0fd45cbpj9howsjff1.jpg"
+    },
+    minParticipants: 1,
+    maxParticipants: 2,
+    requirements: "Personas extrovertidas y comprometidas con nuestro planeta, con dotes de comunicación y trabajo en equipo. Que estén concienciadas sobre la importancia de cuidar el Medio Ambiente y quieran colaborar transmitiendo su preocupación haciendo voluntariado.",
+    organization: arrOrganizationsId[13]
+  },
+  {
+    title: "Voluntariado en la recogida de alimentos",
+    description: `Ser voluntario del Banco de Alimentos de Madrid significa...que con tu trabajo, con tus 4 horas de dedicación, vas a poder ayudar a las más de 140.000 personas que, actualmente, están pasando graves dificultades para conseguir alimentos.
+    Gracias a los voluntarios, el Banco de Alimentos puede organizar la Gran Recogida. Necesitamos que seas generoso con tu tiempo y dediques, 4 horas a las personas más desfavorecidas.
+    ¿Qué trabajo realizará el coluntario? Informar y animar al público que entra en el supermercado a que colaboren con la Gran Recogida, facilitándoles una bolsa de plástico y una octavilla informativa. Además, junto con el resto de voluntarias recibe y agradece la donación y pre-clasifica los alimentos recibidos por tipología.
+    Buscamos entre 5 y 6 voluntarias para realizar la recogida en el Mercadona de Lopez de Hoyos`,
+    dates: getDates(),
+    time: "10:00 h - 14:00 h",
+    location: "Calle de López de Hoyos, 151, 28002 Madrid",
+    coord: {
+      lat: 40.4484526,
+      lng: -3.67115
+    },
+    imgPath: "https://www.hola.com/imagenes/sociedad/20191104153155/gran-recogida-alimentos-madrid-2019/0-741-393/recogida-alimentos-t.jpg",
+    category: {
+      name: "social",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
+    },
+    minParticipants: 4,
+    maxParticipants: 6,
+    requirements: "Mayoría de de edad. Podrán participar y ocupar puesto de voluntario con una autorización paterna los jóvenes de entre 14 y 17 años. Los menores entre 8 y 13 años podrán ir acompañando a sus padres o responsables, pero no ocuparán plaza de voluntario.",
+    organization: arrOrganizationsId[14]
+  },
+  {
+    title: "Coordinación para la recogida de alimentos",
+    description: `El objetivo de la recogida de alimentos es conseguir la mayor cantidad de kilos de alimentos NO PERECEDEROS solicitados por el Banco: latas de conservas de carne y de pescado, aceite, alimentos infantiles, pasta, arroz y legumbres.
+    Para lograr los objetivos es muy importante trabajar en equipo, con un buen clima de trabajo
+    El coordinador es la persona que representa al Banco de Alimentos en el punto de donación. Establece la relación con el responsable del supermercado y organiza a los voluntarios en el puesto de donación. Permanece durante la apertura, los cambios de turno y el cierre y reporta a su supervisor de distrito los kilos recogidos, así como las incidencias que puedan surgir durante la campaña.
+    Realiza ente otras las sigueintes funciones:
+    -Se asegurará de que cuenta con los voluntarios necesarios.
+    -Recibirá a los voluntarios, les facilitará los petos y les asignará sus funciones.
+    -Se pondrá en contacto con su supervisor comunicandole los resultados e informándole de las incidencias.
+    -Recogerá los petos y la documentación.`,
+    dates: getDates(),
+    time: "10:00 h - 14:00 h",
+    location: "Calle de López de Hoyos, 151, 28002 Madrid",
+    coord: {
+      lat: 40.4484526,
+      lng: -3.67115
+    },
+    imgPath: "https://d1hyrom7wmg5jx.cloudfront.net/default/0001/03/eaf6dcc2c392055dc8ba84def99c7b0c3e388db1.jpeg",
+    category: {
+      name: "social",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
+    },
+    minParticipants: 1,
+    maxParticipants: 2,
+    requirements: "Para ser coordinador solo es necesario ser mayor de edad, responsable y tener ganas de colaborar",
+    organization: arrOrganizationsId[14]
   }
+
 ]
 
 
