@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import AuthServices from "../../services/auth";
 import Navbar from "react-bootstrap/Navbar";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 import Nav from "react-bootstrap/Nav";
 import "./NavBar.scss";
 
@@ -41,8 +43,15 @@ export default class NavBar extends React.Component {
             ) : (
               <span></span>
             )}
-            <Link to={`/users/${this.state.loggedInUser._id}`} className="navLink">{this.state.loggedInUser.username}</Link>
-            <Link to="/" className="navLink navLink-right" onClick={this.handleLogout}>Logout</Link>
+            <DropdownButton className="navbar-dropdown"
+              alignRight
+              title={this.state.loggedInUser.username}
+            >
+              <Link to={`/users/${this.state.loggedInUser._id}`} className="navbar-userLink">Mi perfil</Link>
+              <Link to="/" onClick={this.handleLogout} className="navbar-userLink">Logout</Link>
+            </DropdownButton>
+
+            <span className="navbar-avatar"><img src={this.state.loggedInUser.imgPath} alt=""/></span>
           </Navbar.Collapse>
         </Navbar>
       );

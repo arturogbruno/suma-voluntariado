@@ -9,7 +9,8 @@ import Categories from './components/categories/Categories';
 import Activities from './components/activities/Activities';
 import ActivityDetails from './components/activityDetails/ActivityDetails';
 import NewOrganization from './components/newOrganization/NewOrganization';
-import NewActivity from './components/newActivity/NewActivity'
+import NewActivity from './components/newActivity/NewActivity';
+
 
 
 export default class App extends React.Component {

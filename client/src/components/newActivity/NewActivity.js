@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import ActivitiesServices from '../../services/activities';
 import OrganizationsServices from '../../services/organizations';
 import FilesServices from "../../services/files";
+import SearchBox from '../searchBox/SearchBox';
 import './NewActivity.scss';
 
 export default class NewActivity extends React.Component {
@@ -18,6 +19,10 @@ export default class NewActivity extends React.Component {
                 dates: "",
                 time: "",
                 location: "",
+                coord: {
+                    lat: null,
+                    lng: null
+                },
                 minParticipants: "",
                 maxParticipants: "",
                 requirements: "",
@@ -64,6 +69,13 @@ export default class NewActivity extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         this.createActivity();
+    }
+
+    updateStateWithLocation = dataFromChild => {
+        console.log(dataFromChild);
+        this.setState({
+            newActivity: {...this.state.newActivity, location: dataFromChild.location, coord: { lat: dataFromChild.coord.lat, lng: dataFromChild.coord.lng } } 
+        })
     }
 
     createActivity() {
@@ -134,9 +146,9 @@ export default class NewActivity extends React.Component {
                     </Form.Row>
 
                     <Form.Row>
-                        <Form.Group as={Col}>
+                        <Form.Group as={Col} xs={12}>
                             <Form.Label>Ubicación:</Form.Label>
-                            <Form.Control type="text" name="location" value={this.state.newActivity.location} onChange={this.handleChange} placeholder="Indica el punto de encuentro" required />
+                            <SearchBox selectLocation={(dataFromChild) => this.updateStateWithLocation(dataFromChild)}></SearchBox>
                         </Form.Group>
                     </Form.Row>
 
