@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import AuthServices from "../../services/auth";
 import Navbar from "react-bootstrap/Navbar";
-import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Nav from "react-bootstrap/Nav";
 import "./NavBar.scss";

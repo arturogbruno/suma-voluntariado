@@ -1,11 +1,12 @@
 import React from "react";
-import moment from "moment";
+import moment, { relativeTimeThreshold } from "moment";
 import { Link } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
 import ActivitiesServices from "../../services/activities";
 import UsersServices from "../../services/users";
 import Map from "../map/Map";
@@ -23,6 +24,12 @@ export default class ActivityDetails extends React.Component {
         this.usersServices = new UsersServices();
     }
 
+    componentDidMount = () => {
+        this.getSpecificActivity();
+        setTimeout(() => this.userIsParticipant(), 800);
+        setTimeout(() => this.activityIsFav(), 800);
+    }
+
     getSpecificActivity = () => {
         if (!this.state.specificActivity) {
             this.activitiesServices.getActivityDetails(this.props.match.params.id)
@@ -31,19 +38,31 @@ export default class ActivityDetails extends React.Component {
         }
     }
 
+    userIsParticipant = () => {
+        let alreadyParticipant = this.state.specificActivity.participants.find(participant => participant._id === this.props.loggedInUser._id);
+        let userIsParticipant = false;
+        alreadyParticipant !== undefined ? userIsParticipant = true : userIsParticipant = false;
+        this.setState({ userIsParticipant: userIsParticipant })
+    }
+
+    activityIsFav = () => {
+        let alreadyFav = this.props.loggedInUser.favActivities.find(activity => activity === this.state.specificActivity._id);
+        let activityIsFav = false;
+        alreadyFav !== undefined ? activityIsFav = true : activityIsFav = false;
+        this.setState({ activityIsFav: activityIsFav })
+    }
+
     addActivityToFav = () => {
         this.usersServices.updateUserFav(this.props.loggedInUser._id, { favActivities: this.state.specificActivity._id})
-        .then(updatedUser => console.log(updatedUser))
+        .then(() => this.setState({ activityIsFav: true }))
         .catch(err => console.log(err))
     }
 
     addParticipant = () => {
         this.activitiesServices.addParticipant(this.state.specificActivity._id, { newParticipant: this.props.loggedInUser._id })
-        .then(updatedActivity => this.setState({ specificActivity: updatedActivity }))
+        .then(updatedActivity => this.setState({ specificActivity: updatedActivity, userIsParticipant: true }))
         .catch(err => console.log(err))
     }
-
-    componentDidMount = () => {this.getSpecificActivity()}
 
     render() {
         let activity = this.state.specificActivity;
@@ -54,52 +73,55 @@ export default class ActivityDetails extends React.Component {
                         <Row className="activityDetails-mainInfo">
                             <Col xs={8} className="leftSide">
                                 <h1>{this.state.specificActivity.title}</h1>
+                                <h5 className="activityDetails-category">Categoría: <Badge pill variant="info">{activity.category.name}</Badge></h5>
                                 <div className="activityDetails-activityImg">
                                     <img src={activity.imgPath} alt="imagen de la actividad" className="activityDetails-img"/>
                                 </div>
-                                <h6>Categoría: {activity.category.name}</h6>
-                                <h6>Organización: {activity.organization.name}</h6>
-                                <h6>Descripción de la actividad:</h6>
+                                <h5>Descripción de la actividad:</h5>
                                 <p>{activity.description}</p>
-                                <h6>Requerimientos:</h6>
+                                <h5>Requerimientos:</h5>
                                 <p>{activity.requirements}</p>
                             </Col>
                             <Col className="rightSide">
                                 <img src={activity.organization.imgPath} alt={`logo de ${activity.organization.name}`} className="activityDetails-logo"/>
                                 <div>
-                                    <h6>Fechas y horas:</h6>
+                                    <h5 className="activityDetails-organization"><strong>{activity.organization.name}</strong></h5>
+                                    <h5>Fechas y horas de la actividad:</h5>
                                     <ul>
                                         {activity.dates.map((date, idx)=> <li key={idx}>{moment(date).format('DD/MM/YYYY')} - {activity.time}</li>)}
                                     </ul>
-                                    <h6>Lugar: {activity.location}</h6>
+                                </div>
+                                <div>
+                                    <h5>Mín. participantes: {activity.minParticipants}</h5>
+                                    <h5>Máx. participantes: {activity.maxParticipants}</h5>
+                                    <h5>Plazas vacantes: {activity.maxParticipants - activity.participants.length}</h5>
                                 </div>
                             </Col>
                         </Row>
+                        
                         <Row className="activityDetails-buttons">
-                            <Col>
-                                <Button onClick={this.addActivityToFav}>♥️</Button>
+                            <Col xs={1}>
+                            {this.state.activityIsFav ? (
+                                <Button className="activityDetails-addFavButton" onClick={this.addActivityToFav}>♥</Button>
+                            ) : (
+                                <Button className="activityDetails-addFavButton" onClick={this.addActivityToFav}>♡</Button>
+                            )}
                             </Col>
                             <Col>
+                            {this.state.userIsParticipant ? (
+                                <span className="activityDetails-alreadyParticipant">Estás apuntado a esta actividad</span>
+                            ) : (
                                 <Button onClick={this.addParticipant}>¡Me apunto!</Button>
+                            )}
                             </Col>
-                            <Col className="activityDetails-share">
+                            <Col xs={4} className="activityDetails-share">
                                 <h6>Compártelo:</h6>
                                 <span><iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A3000%2Factivities%2F5e6401261068a419c58a5fc7&layout=button&size=large&width=103&height=28&appId" width="103" height="28" style={{border:'none',overflow:'hidden'}} scrolling="no" allow="encrypted-media"></iframe></span>
                                 
                                 <span><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className="twitter-share-button" data-size="large" data-lang="es" data-show-count="false"><img src="https://res.cloudinary.com/yelpcampagb/image/upload/v1583674364/ironhack-project3/ery9xhqd2w0efipacfkw.png" alt="twiteer button"/></a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script></span>
                             </Col>
                         </Row>
-                        <Row className="activityDetails-secondaryInfo">
-                            <Col>
-                                <h6>Mín. participantes: {activity.minParticipants}</h6>
-                            </Col>
-                            <Col>
-                                <h6>Máx. participantes: {activity.maxParticipants}</h6>
-                            </Col>
-                            <Col>
-                                <h6>Plazas vacantes: {activity.maxParticipants - activity.participants.length}</h6>
-                            </Col>
-                        </Row>
+                        
                         <Row className="activityDetails-participants">
                             <Col>
                                 <h6>Participantes:</h6>
@@ -108,8 +130,9 @@ export default class ActivityDetails extends React.Component {
                                 ))}
                             </Col>
                         </Row>
-                        <Row className="activityDetails-imageAndMap">
+                        <Row className="activityDetails-map">
                             <Col>
+                                <h5><strong>Lugar:</strong> {activity.location}</h5>
                                 <Map
                                     google={this.props.google}
                                     center={{lat: activity.coord.lat, lng: activity.coord.lng}}

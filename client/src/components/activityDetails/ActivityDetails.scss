@@ -9,19 +9,27 @@
     .rightSide {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         padding-left: 50px;
+        margin-top: 20px;
+
+        h5 {
+            margin-top: 40px;
+        }
     }
 
-    .activityDetails-mainInfo, .activityDetails-buttons, .activityDetails-secondaryInfo, .activityDetails-participants, .activityDetails-imageAndMap {
+    .activityDetails-mainInfo, .activityDetails-buttons, .activityDetails-secondaryInfo, .activityDetails-participants {
         padding: 25px 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     }
 
+    .activityDetails-map {
+        padding: 25px 0;
+    }
+
     .activityDetails-logo {
-        max-height: 150px;
-        max-width: 300px;
-        margin-bottom: 25px;
+        max-height: 200px;
+        max-width: 400px;
     }
 
     .activityDetails-activityImg {
@@ -37,6 +45,15 @@
         }
     }
 
+    .activityDetails-alreadyParticipant {
+        font-size: 1.3em;
+        font-weight: bold;
+        border: 1px solid green;
+        padding: 6px 15px;
+        background-color: rgba(119, 173, 119, 0.233);
+        border-radius: 4px;
+    }
+
     .activityDetails-partipant {
         margin-right: 25px;
 
@@ -47,6 +64,10 @@
         }
     }
 
+    .activityDetails-secondaryInfo h6 {
+        text-align: center;
+    }
+
     .activityDetails-share {
         display: flex;
         justify-content: space-between;
@@ -54,5 +75,22 @@
 
     .twitter-share-button img {
         height: 29px;
+    }
+
+    .activityDetails-addFavButton {
+        color: #fff;
+        background-color:rgb(237, 102, 97);
+        border: none;
+        font-size: 1.2em;
+
+        &:hover {
+            background-color: rgb(240, 53, 47);
+        }
+    }
+
+    .activityDetails-category {
+        text-align: end;
+        margin-right: 50px;
+        font-style: italic;
     }
 }

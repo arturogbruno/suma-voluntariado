@@ -1,3 +1,9 @@
+.App {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 170px;
+}
+
 .page {
     margin-top: 40px;
 }

@@ -3,6 +3,7 @@ import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import AuthServices from './services/auth';
 import NavBar from './components/navbar/NavBar';
+import Footer from './components/footer/Footer';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 import Categories from './components/categories/Categories';
@@ -85,7 +86,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
         {loggedInUser ? (
-          <div>
+          <>
             {/* <Redirect to='/' /> */}
             <NavBar userInSession={this.state.loggedInUser} logout={this.logout} />
             <Switch>
@@ -97,9 +98,10 @@ export default class App extends React.Component {
               <Route exact path="/organizations/new" render={props => <NewOrganization {...props} loggedInUser={this.state.loggedInUser}/>} /> 
               <Route exact path="/activities/new" render={props => <NewActivity {...props} loggedInUser={this.state.loggedInUser}/>} /> 
             </Switch>
-          </div>
+            <Footer />
+          </>
         ) : (
-          <div>
+          <>
             <NavBar />      
 						<Switch>
 							<Route exact path="/login" render={() => <Login setUser={(user) => this.setUser(user)} />} />
@@ -108,7 +110,8 @@ export default class App extends React.Component {
               <Route exact path="/categories/:name" render={props => <Activities {...props} />} />
               <Route exact path="/activities/:id" render={props => <ActivityDetails {...props} loggedInUser={this.state.loggedInUser}/>} /> 
 						</Switch>
-          </div>
+            <Footer />
+          </>
         )}
       </div>
     )
