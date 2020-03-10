@@ -10,6 +10,18 @@ router.get("/all", (req, res, next) => {
 });
 
 
+// Get activities by search term:
+router.get("/search/:searchTerm", (req, res, next) => {
+    console.log(`Estoy en la ruta de back: ${req.params.searchTerm}`);
+    Activities.find({ $or: [{ title: new RegExp(req.params.searchTerm, "gi") }, { description: new RegExp(req.params.searchTerm, "gi") }] })
+    // .populate('organization')
+    // .populate('participants')
+    // .then(activities => console.log(activities))
+    .then(activities => res.json( activities ))
+    .catch(err => console.log(err))
+});
+
+
 // Get specific activity:
 router.get("/:id", (req, res, next) => {
     Activities.findById(req.params.id)

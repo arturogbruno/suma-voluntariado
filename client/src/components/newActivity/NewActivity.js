@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import ActivitiesServices from '../../services/activities';
 import OrganizationsServices from '../../services/organizations';
 import FilesServices from "../../services/files";
-import SearchBox from '../searchBox/SearchBox';
+import GoogleSearchBox from "../../components/googleSearchBox/googleSearchBox";
 import './NewActivity.scss';
 
 export default class NewActivity extends React.Component {
@@ -38,7 +38,7 @@ export default class NewActivity extends React.Component {
         this.filesServices = new FilesServices();
     }
 
-    componentDidMount= () => this.fetchOrganization();
+    componentDidMount = () => this.fetchOrganization();
 
     fetchOrganization() {
         this.organizationsServices.getOrganizationByUser(this.props.loggedInUser._id)
@@ -147,7 +147,7 @@ export default class NewActivity extends React.Component {
                     <Form.Row>
                         <Form.Group as={Col} xs={12}>
                             <Form.Label>Ubicación:</Form.Label>
-                            <SearchBox selectLocation={(dataFromChild) => this.updateStateWithLocation(dataFromChild)}></SearchBox>
+                            <GoogleSearchBox selectLocation={(dataFromChild) => this.updateStateWithLocation(dataFromChild)}></GoogleSearchBox>
                         </Form.Group>
                     </Form.Row>
 

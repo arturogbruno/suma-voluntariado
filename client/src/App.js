@@ -6,11 +6,13 @@ import NavBar from './components/navbar/NavBar';
 import Footer from './components/footer/Footer';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
+import Home from './components/home/Home';
 import Categories from './components/categories/Categories';
 import Activities from './components/activities/Activities';
 import ActivityDetails from './components/activityDetails/ActivityDetails';
 import NewOrganization from './components/newOrganization/NewOrganization';
 import NewActivity from './components/newActivity/NewActivity';
+import SearchResult from './components/searchResult/SearchResult';
 
 
 
@@ -65,9 +67,11 @@ export default class App extends React.Component {
           <>
             <Redirect to="/home" />
             <Switch>
+              <Route exact path="/home" component={Home} /> 
               <Route exact path="/categories" render={() => <Categories {...this.state} />} /> 
               <Route exact path="/categories/:name" render={props => <Activities {...props} />} />
               <Route exact path="/activities/details/:id" render={props => <ActivityDetails {...props} loggedInUser={this.state.loggedInUser}/>} /> 
+              <Route exact path="/activities/search/:searchTerm" render={(props) => <SearchResult {...props} loggedInUser={this.state.loggedInUser} />} />
               <Route exact path="/organizations/new" render={props => <NewOrganization {...props} loggedInUser={this.state.loggedInUser}/>} /> 
               <Route exact path="/activities/new" render={props => <NewActivity {...props} loggedInUser={this.state.loggedInUser}/>} /> 
             </Switch>
@@ -78,6 +82,7 @@ export default class App extends React.Component {
 						<Switch>
 							<Route exact path="/login" render={() => <Login setUser={(user) => this.setUser(user)} />} />
 							<Route exact path="/signup" render={() => <Signup setUser={(user) => this.setUser(user)} />} />
+              <Route exact path="/home" component={Home} /> 
               <Route exact path="/categories" render={() => <Categories {...this.state} />} /> 
               <Route exact path="/categories/:name" render={props => <Activities {...props} />} />
               <Route exact path="/activities/:id" render={props => <ActivityDetails {...props} loggedInUser={this.state.loggedInUser}/>} /> 
