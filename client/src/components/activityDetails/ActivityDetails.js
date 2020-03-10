@@ -26,14 +26,15 @@ export default class ActivityDetails extends React.Component {
 
     componentDidMount = () => {
         this.getSpecificActivity();
-        setTimeout(() => this.userIsParticipant(), 800);
-        setTimeout(() => this.activityIsFav(), 800);
     }
 
     getSpecificActivity = () => {
         if (!this.state.specificActivity) {
             this.activitiesServices.getActivityDetails(this.props.match.params.id)
-                .then(specificActivity => this.setState({ specificActivity: specificActivity }))
+                .then(specificActivity => this.setState({ specificActivity: specificActivity }, () => {
+                    this.userIsParticipant();
+                    this.activityIsFav();
+                }))
                 .catch(err => console.log(err))
         }
     }
@@ -102,9 +103,9 @@ export default class ActivityDetails extends React.Component {
                         <Row className="activityDetails-buttons">
                             <Col xs={1}>
                             {this.state.activityIsFav ? (
-                                <Button className="activityDetails-addFavButton" onClick={this.addActivityToFav}>♥</Button>
+                                <button variant="light" className={`activityDetails-addFavButton ${this.state.activityIsFav ? 'disabled' : ''}`} onClick={this.addActivityToFav} disabled>♥</button>
                             ) : (
-                                <Button className="activityDetails-addFavButton" onClick={this.addActivityToFav}>♡</Button>
+                                <button className="activityDetails-addFavButton" onClick={this.addActivityToFav}>♡</button>
                             )}
                             </Col>
                             <Col>

@@ -72,7 +72,6 @@ export default class NewActivity extends React.Component {
     }
 
     updateStateWithLocation = dataFromChild => {
-        console.log(dataFromChild);
         this.setState({
             newActivity: {...this.state.newActivity, location: dataFromChild.location, coord: { lat: dataFromChild.coord.lat, lng: dataFromChild.coord.lng } } 
         })

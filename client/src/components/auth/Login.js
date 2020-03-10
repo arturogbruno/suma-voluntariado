@@ -28,9 +28,9 @@ export default class Login extends React.Component {
     postUser = () => {
         this.authServices.login(this.state)
         .then(theLoggedUser => {
-            this.setState({ username: '', password: '' })
-            this.props.setUser(theLoggedUser)
-            this.props.history.push('/')
+            this.setState({ username: '', password: '' }, () => {
+                this.props.setUser(theLoggedUser)
+            })
         })
         .catch(err => {
             this.setState({

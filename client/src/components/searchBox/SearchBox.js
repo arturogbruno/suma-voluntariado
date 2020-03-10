@@ -22,10 +22,8 @@ export default class SearchBox extends React.Component {
   handleSelect = location => {
     geocodeByAddress(location)
       .then(results => getLatLng(results[0]))
-      .then(latLng => this.setState({ location: location, coord: { lat: latLng.lat, lng: latLng.lng } } ))
-      setTimeout(() => this.props.selectLocation(this.state), 1000);
-    //   .then(this.props.selectLocation(this.state))
-    //   .catch(err => console.error('Error', err));
+      .then(latLng => this.setState({ location: location, coord: { lat: latLng.lat, lng: latLng.lng } }, () => this.props.selectLocation(this.state) ))
+      .catch(err => console.error('Error', err));
   };
 
  

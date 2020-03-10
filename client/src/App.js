@@ -54,44 +54,17 @@ export default class App extends React.Component {
   };
 
 
-  // render() {
-	// 	const { loggedInUser } = this.state;
-	// 	return (
-	// 		<div className="App">
-	// 			{loggedInUser ? (
-	// 				<div>
-	// 					<Redirect to="/" />
-	// 					<NavBar userInSession={loggedInUser} logout={this.logout} />
-	// 					<Switch>
-	// 						<Route exact path="/" render={() => <Home {...this.state} />} />
-	// 						<Route exact path="/trainers" component={Home} />
-	// 					</Switch>
-	// 				</div>
-	// 			) : (
-	// 				<div>
-						// <NavBar />
-						// <Switch>
-						// 	<Route exact path="/" render={() => <Home {...this.state} />} /> /}
-						// 	<Route exact path="/login" render={() => <Login setUser={(user) => this.setUser(user)} />} />
-						// 	<Route exact path="/signup" render={() => <Signup setUser={(user) => this.setUser(user)} />} />
-						// </Switch>
-	// 				</div>
-	// 			)}
-	// 		</div>
-	// 	);
-	// }
-
   render() {
     const { loggedInUser } = this.state;
+
     return (
       <div className="App">
+        <NavBar userInSession={this.state.loggedInUser} logout={this.logout} />
+
         {loggedInUser ? (
           <>
-            {/* <Redirect to='/' /> */}
-            <NavBar userInSession={this.state.loggedInUser} logout={this.logout} />
+            <Redirect to="/home" />
             <Switch>
-              <Route exact path="/login" render={() => <Login setUser={(user) => this.setUser(user)} />} />
-              <Route exact path="/signup" render={() => <Signup setUser={(user) => this.setUser(user)} />} />
               <Route exact path="/categories" render={() => <Categories {...this.state} />} /> 
               <Route exact path="/categories/:name" render={props => <Activities {...props} />} />
               <Route exact path="/activities/details/:id" render={props => <ActivityDetails {...props} loggedInUser={this.state.loggedInUser}/>} /> 
@@ -102,7 +75,6 @@ export default class App extends React.Component {
           </>
         ) : (
           <>
-            <NavBar />      
 						<Switch>
 							<Route exact path="/login" render={() => <Login setUser={(user) => this.setUser(user)} />} />
 							<Route exact path="/signup" render={() => <Signup setUser={(user) => this.setUser(user)} />} />

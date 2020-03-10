@@ -9,13 +9,8 @@ import "./NavBar.scss";
 export default class NavBar extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = { loggedInUser: null };
+    
     this.authServices = new AuthServices();
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    this.setState({ ...this.state, loggedInUser: nextProps["userInSession"] });
   }
 
   handleLogout = e => {
@@ -23,7 +18,7 @@ export default class NavBar extends React.Component {
   };
 
   render() {
-    if (this.state.loggedInUser) {
+    if (this.props.userInSession) {
       return (
         <Navbar sticky="top" bg="light" expand="lg">
           <Navbar.Brand className="navbar-brand"><Link to="/"><img className="navbar-logo" src="https://res.cloudinary.com/yelpcampagb/image/upload/v1583620107/ironhack-project3/inemcz4pjwjcfqppheev.png" alt="SUMA logo"/></Link></Navbar.Brand>
@@ -34,7 +29,7 @@ export default class NavBar extends React.Component {
               <Nav.Link as={Link} to="/categories">Categorías</Nav.Link>
               <Nav.Link as={Link} to="/activities">Actividades</Nav.Link>
             </Nav>
-            {this.state.loggedInUser.role === 'organization' ? (
+            {this.props.userInSession.role === 'organization' ? (
               <>
                 <Link to="/organizations/new" className="navLink-create">Crear organización</Link>
                 <Link to="/activities/new" className="navLink-create">Crear actividad</Link>
@@ -44,13 +39,13 @@ export default class NavBar extends React.Component {
             )}
             <DropdownButton className="navbar-dropdown"
               alignRight
-              title={this.state.loggedInUser.username}
+              title={this.props.userInSession.username}
             >
-              <Link to={`/users/${this.state.loggedInUser._id}`} className="navbar-userLink">Mi perfil</Link>
+              <Link to={`/users/${this.props.userInSession._id}`} className="navbar-userLink">Mi perfil</Link>
               <Link to="/" onClick={this.handleLogout} className="navbar-userLink">Logout</Link>
             </DropdownButton>
 
-            <span className="navbar-avatar"><img src={this.state.loggedInUser.imgPath} alt=""/></span>
+            <span className="navbar-avatar"><img src={this.props.userInSession.imgPath} alt=""/></span>
           </Navbar.Collapse>
         </Navbar>
       );
