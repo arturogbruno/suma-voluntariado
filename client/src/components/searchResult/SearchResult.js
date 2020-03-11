@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+import Spinner from 'react-bootstrap/Spinner';
 import ActivitiesServices from '../../services/activities';
+import ActivityOverview from '../activityOverview/ActivityOverview';
 
 
 export default class SearchResult extends React.Component {
@@ -13,11 +16,10 @@ export default class SearchResult extends React.Component {
         this.activitiesServices = new ActivitiesServices();
     }
 
-    componentDidMount = () => { this.getSearchResults() };
+    componentDidMount = () => this.getSearchResults();
 
 
     getSearchResults = () => {
-        console.log(this.props)
         if (this.state.searchResult.length === 0){
             this.activitiesServices.getActivitiesByTerm(this.props.match.params.searchTerm)
             .then(activities => {this.setState({ searchResult: activities })})
@@ -26,18 +28,21 @@ export default class SearchResult extends React.Component {
     }
 
     render() {
-        // console.log(this.state);
-        if(this.state.searchResult){
-            return(
-                <div>
-                    {this.state.searchResult.map(activity => (
-                        <h1>Holi</h1>
-                    ))}
-                </div>
-            )
-        }else{
-            return <h1>Buscando...</h1>
-        }
-      
+        return (    
+            <div>
+                <h1>Resultados de la búsqueda</h1>
+                {this.state.searchResult.length ? (
+                    <div className="activitiesList">
+                        {this.state.searchResult.map((activity, idx) => (
+                            <ActivityOverview key={idx} activity={activity} />
+                        ))}
+                    </div>
+                ) : (
+                    <Spinner animation="border" role="status">
+                        <span className="sr-only">Cargando...</span>
+                    </Spinner>
+                )}
+            </div>
+        );
     }
 }

@@ -9,8 +9,8 @@ export default class Login extends React.Component {
         super(props);
 
         this.state = {
-            username: '',
-            password: ''
+            username: 'arturo',
+            password: 'arturo'
         }
         this.authServices = new AuthServices()
     }
@@ -28,17 +28,11 @@ export default class Login extends React.Component {
     postUser = () => {
         this.authServices.login(this.state)
         .then(theLoggedUser => {
-            this.setState({ username: '', password: '' }, () => {
+                this.setState({ username: '', password: '' })
                 this.props.setUser(theLoggedUser)
+                this.props.history.push('/home')
             })
-        })
-        .catch(err => {
-            this.setState({
-                username: this.state.username,
-                password: this.state.password,
-                error: true
-            });
-        });
+            .catch(err => console.log({ err }))
     }
 
     render() {

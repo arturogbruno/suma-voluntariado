@@ -1,5 +1,5 @@
 .footer {
-    height: 140px;
+    height: 120px;
     border-top: 1px solid rgb(237, 102, 97);
     background: rgb(248, 249, 250);
     position: absolute; 
@@ -15,5 +15,11 @@
 
     a {
         display: block;
+        color: rgb(237, 102, 97);
+
+        &:hover {
+            text-decoration: none;
+            color: rgb(201, 7, 0);
+        }
     }
 }

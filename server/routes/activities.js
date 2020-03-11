@@ -14,10 +14,9 @@ router.get("/all", (req, res, next) => {
 router.get("/search/:searchTerm", (req, res, next) => {
     console.log(`Estoy en la ruta de back: ${req.params.searchTerm}`);
     Activities.find({ $or: [{ title: new RegExp(req.params.searchTerm, "gi") }, { description: new RegExp(req.params.searchTerm, "gi") }] })
-    // .populate('organization')
-    // .populate('participants')
-    // .then(activities => console.log(activities))
-    .then(activities => res.json( activities ))
+    .populate('organization')
+    .populate('participants')
+    .then(activities => res.status(200).json( activities ))
     .catch(err => console.log(err))
 });
 
@@ -35,6 +34,7 @@ router.get("/:id", (req, res, next) => {
 // Get activities by category:
 router.get("/categories/:category", (req, res, next) => {
     Activities.find({ 'category.name': req.params.category })
+    .populate('organization')
     .then(activities => res.status(200).json( activities ))
     .catch(err => console.log(err))
 });
