@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import moment, { relativeTimeThreshold } from "moment";
+import moment from "moment";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -24,7 +24,7 @@ export default class ActivityOverview extends React.Component {
             <Container fluid className="activityOverview">
                 <Row>
                     <Col lg={4} className="imageCol">
-                        <img className="activityImage" src={activity.imgPath} alt={`${activity.title} image`} />
+                        <img className="activityImage" src={activity.imgPath} alt={`${activity.title}`} />
                     </Col>
                     <Col lg={8}>
                         <Row>
@@ -39,7 +39,7 @@ export default class ActivityOverview extends React.Component {
                             </Col>
                             <Col lg={5} className="organizationCol">
                                 <h6>Organización: {activity.organization.name}</h6>
-                                <img src={activity.organization.imgPath} />
+                                <img src={activity.organization.imgPath} alt={`${activity.organization.name}`} />
                             </Col>
                         </Row>
                         <Row>

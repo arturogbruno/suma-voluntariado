@@ -1,5 +1,5 @@
 import React from "react";
-import moment, { relativeTimeThreshold } from "moment";
+import moment from "moment";
 import { Link, Redirect } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 import Container from 'react-bootstrap/Container';
@@ -77,7 +77,7 @@ export default class ActivityDetails extends React.Component {
                                     <h1>{this.state.specificActivity.title}</h1>
                                     <h5 className="activityDetails-category">Categoría: <Badge pill variant="info">{activity.category.name}</Badge></h5>
                                     <div className="activityDetails-activityImg">
-                                        <img src={activity.imgPath} alt="imagen de la actividad" className="activityDetails-img"/>
+                                        <img src={activity.imgPath} alt={`${activity.title}`} className="activityDetails-img"/>
                                     </div>
                                     <h5>Descripción de la actividad:</h5>
                                     <p>{activity.description}</p>
@@ -118,7 +118,7 @@ export default class ActivityDetails extends React.Component {
                                 </Col>
                                 <Col xs={4} className="activityDetails-share">
                                     <h6>Compártelo:</h6>
-                                    <span><iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A3000%2Factivities%2F5e6401261068a419c58a5fc7&layout=button&size=large&width=103&height=28&appId" width="103" height="28" style={{border:'none',overflow:'hidden'}} scrolling="no" allow="encrypted-media"></iframe></span>
+                                    <span><iframe title="facebook button" src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A3000%2Factivities%2F5e6401261068a419c58a5fc7&layout=button&size=large&width=103&height=28&appId" width="103" height="28" style={{border:'none',overflow:'hidden'}} scrolling="no" allow="encrypted-media"></iframe></span>
                                     
                                     <span><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className="twitter-share-button" data-size="large" data-lang="es" data-show-count="false"><img src="https://res.cloudinary.com/yelpcampagb/image/upload/v1583674364/ironhack-project3/ery9xhqd2w0efipacfkw.png" alt="twiteer button"/></a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script></span>
                                 </Col>
@@ -128,7 +128,7 @@ export default class ActivityDetails extends React.Component {
                                 <Col>
                                     <h6>Participantes:</h6>
                                     {activity.participants.map((participant, idx) => (
-                                        <Link to={`/users/${participant._id}`} className="activityDetails-partipant" key={idx}><img src={participant.imgPath} alt="user image"/>{participant.username}</Link>
+                                        <Link to={`/users/${participant._id}`} className="activityDetails-partipant" key={idx}><img src={participant.imgPath} alt={`${participant.name}`}/>{participant.username}</Link>
                                     ))}
                                 </Col>
                             </Row>

@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import moment, { relativeTimeThreshold } from "moment";
+import moment from "moment";
 import ActivitiesServices from "../../services/activities";
 import ActivityOverview from '../activityOverview/ActivityOverview';
 
@@ -23,6 +23,8 @@ export default class AllActivities extends React.Component {
 
         this.activitiesServices = new ActivitiesServices();
     }
+
+    componentDidMount = () => this.getAllActivities();
 
     getAllActivities = () => {
         if (this.state.allActivities.length === 0) {
@@ -51,8 +53,6 @@ export default class AllActivities extends React.Component {
         let selectedDate = e.target.value;
         this.setState({ selectedDate: selectedDate });
     } 
-
-    componentDidMount = () => this.getAllActivities();
 
     render() {
         return (    
