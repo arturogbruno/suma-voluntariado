@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 import ActivitiesServices from '../../services/activities';
 import ActivityOverview from '../activityOverview/ActivityOverview';
