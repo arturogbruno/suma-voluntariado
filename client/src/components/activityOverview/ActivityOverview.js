@@ -21,7 +21,7 @@ export default class ActivityOverview extends React.Component {
     render() {
         let activity = this.props.activity;
         return (
-            <Container className="activityOverview">
+            <Container fluid className="activityOverview">
                 <Row>
                     <Col lg={4} className="imageCol">
                         <img className="activityImage" src={activity.imgPath} alt={`${activity.title} image`} />

@@ -5,6 +5,7 @@ const Activities = require("../models/Activity");
 // Get all activities:
 router.get("/all", (req, res, next) => {
     Activities.find()
+    .populate('organization')
     .then(allActivities => res.status(200).json( allActivities ))
     .catch(err => console.log(err))
 });

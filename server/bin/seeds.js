@@ -300,12 +300,12 @@ let organizations = [
     description: `Acompañar a niños, niñas, adolescentes, jóvenes y sus familias en situación de vulnerabilidad social, impulsando sus oportunidades de crecimiento personal, familiar y profesional, promoviendo su dignificación y su plena integración en la sociedad.
     La Fundación Amoverse se desarrolla una intervención socioeducativa integral con niños, niñas, adolescentes, jóvenes y sus familias, desde un enfoque de prevención, a través de la educación no-formal, ocio y tiempo libre, acompañamiento personal y académico, y está a su vez dirigido a la promoción de la familia y la transformación social del barrio.
     Este programa se implementa en dos barrios, Pozo-Entrevías en el distrito de Vallecas y La Ventilla en Tetuán, ambos en Madrid.`,
-    imgPath: "https://fundacionamoverse.org/wp-content/uploads/2019/11/cropped-logo_ALTA-01-1.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583926357/ironhack-project3/yylzwtaqw1ocobwr6ji0.png",
     user: arrUsersId[6]
   },
   {
     _id: arrOrganizationsId[7],
-    name: "Asociación manos de ayuda social",
+    name: "Asociación Manos de Ayuda Social",
     address: "Calle Reina de África, 10, 28018 Madrid",
     email: "comedorsocial@manosayudasocial.org",
     phone: getPhoneNumber(),
@@ -314,7 +314,7 @@ let organizations = [
     Tras esos siete años de trabajo, Manos de Ayuda Social traslada su labor al Distrito Puente de Vallecas, donde inicia un nuevo comedor social en el barrio de Palomeras Bajas.
     Nuestro objetivo es proporcionar una correcta nutrición y promover un ambiente cálido para que las personas que allí acuden se sientan acogidas, fomentando además la búsqueda activa de empleo para conseguir que sean autónomas en el menor tiempo posible.
     Manos de Ayuda Social ha sido declarada Entidad de Utilidad Pública por el Ministerio del Interior, reconociéndose así nuestra labor de ayuda a los más necesitados.`,
-    imgPath: "https://manosayudasocial.org/images/logos-ventas/ms_logo_white2.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583925550/ironhack-project3/zvuoc4uwoeh05ouayaow.png",
     user: arrUsersId[7]
   },
   {
@@ -747,7 +747,7 @@ let activities = [
     organization: arrOrganizationsId[6]
   },
   {
-    title: "Recogida de alimentos",
+    title: "Colabora en un comedor social",
     description: `Esta organización ofrece un servicio de comida elaborada para llevar en envases de un solo uso para familias en riesgo de exclusión social. Se sirve alimentos a diario de lunes a viernes donde la persona acude a recoger la comida elaborada y envasada. Los voluntarios se encargan de las tareas de limpieza, acondicionamiento del local, envasado de los alimentos y entrega de los mismos a los usuarios.`,
     dates: getDates(),
     time: "10:45 h - 13:30 h",
@@ -756,7 +756,7 @@ let activities = [
       lat: 40.3888594,
       lng: -3.6719644
     },
-    imgPath: "https://manosayudasocial.org/images/noticias/comedor.jpeg",
+    imgPath: "https://ue-vidauniversitaria-production-files.s3.amazonaws.com/uploads/post/detail_image/4823/large_comedorLARGA.jpg",
     category: {
       name: "social",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
@@ -796,10 +796,10 @@ let activities = [
       lat: 40.3723156,
       lng: -3.7124962
     },
-    imgPath: "http://hmasd.org/wp-content/uploads/2018/03/IMG_3595.jpg",
+    imgPath: "https://autismomadrid.es/wp-content/uploads/2016/07/Antares-Curso-Ocio-y-Tiempo-Libre-1080x661.jpg",
     category: {
-      name: "social",
-      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
+      name: "ocio y tiempo libre",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/v4x6ixibt1yzst0ezuwp.jpg"
     },
     minParticipants: 2,
     maxParticipants: 5,
@@ -817,7 +817,7 @@ let activities = [
       lat: 40.410857,
       lng: -3.6983995
     },
-    imgPath: "http://adoptalomadrid.com/wp-content/uploads/2015/12/voluntariado_en_el_albergue.png",
+    imgPath: "https://blog.gudog.com/wp-content/uploads/2019/08/dogs-with-bows-and-touch.jpg",
     category: {
       name: "otro",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493396/ironhack-project3/as8xogqhzr2gmqgpb9a9.jpg"

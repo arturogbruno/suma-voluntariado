@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 import ActivitiesServices from "../../services/activities";
 import ActivityOverview from '../activityOverview/ActivityOverview';
@@ -24,7 +23,7 @@ export default class Activities extends React.Component {
         }
     }
 
-    componentDidMount = () => {this.getActivitiesByCategory()}
+    componentDidMount = () => this.getActivitiesByCategory();
 
     render() {
         let categoryName = this.props.match.params.name;
