@@ -47,9 +47,6 @@ export default class AllActivities extends React.Component {
         this.setState({ filteredCategories: newFilter })
     }
 
-
-    // {moment(date).format('DD/MM/YYYY')}
-
     handleDateFilter = (e) => {
         let selectedDate = e.target.value;
         this.setState({ selectedDate: selectedDate });
