@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
+import moment, { relativeTimeThreshold } from "moment";
 import ActivitiesServices from "../../services/activities";
 import ActivityOverview from '../activityOverview/ActivityOverview';
 
@@ -16,7 +17,8 @@ export default class AllActivities extends React.Component {
             allActivities: [],
             allCategories: [],
             filteredActivities: [],
-            filteredCategories: []
+            filteredCategories: [],
+            selectedDate: ""
         }
 
         this.activitiesServices = new ActivitiesServices();
@@ -33,7 +35,7 @@ export default class AllActivities extends React.Component {
         }
     }
 
-    getFilteredActivities = (e) => {
+    handleCategoryFilter = (e) => {
         let category = e.target.id;
         let newFilter = [...this.state.filteredCategories];
         let categoryIndex = this.state.filteredCategories.indexOf(category);
@@ -45,12 +47,17 @@ export default class AllActivities extends React.Component {
         this.setState({ filteredCategories: newFilter })
     }
 
+
+    // {moment(date).format('DD/MM/YYYY')}
+
+    handleDateFilter = (e) => {
+        let selectedDate = e.target.value;
+        this.setState({ selectedDate: selectedDate });
+    } 
+
     componentDidMount = () => this.getAllActivities();
 
     render() {
-
-        console.log(this.state.filteredCategories);
-
         return (    
             <div>
                 <h1>Todas nuestras actividades</h1>
@@ -61,20 +68,28 @@ export default class AllActivities extends React.Component {
                                 <h5>Filtro de actividades:</h5>
                                 <Form.Group>
                                     <Form.Label>Fecha:</Form.Label>
-                                    <Form.Control type="date" />
+                                    <Form.Control type="date" onChange={this.handleDateFilter}/>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label>Categoría:</Form.Label>
                                     {this.state.allCategories.map((category, idx) => (
-                                        <Form.Check key={idx} type="checkbox" name="category" id={category.name} label={category.name} onChange={this.getFilteredActivities}/>
+                                        <Form.Check key={idx} type="checkbox" name="category" id={category.name} label={category.name} onChange={this.handleCategoryFilter}/>
                                     ))}
                                 </Form.Group>
                             </Col>
                             <Col>
-                                {this.state.filteredCategories.length === 0 ? (
-                                    this.state.allActivities.map((activity, idx) => <ActivityOverview key={idx} activity={activity} />)
+                                {this.state.selectedDate ? (
+                                    this.state.filteredCategories.length ? (
+                                        this.state.allActivities.filter(activity => activity.dates.map(date => moment(date).format('YYYY-MM-DD')).includes(this.state.selectedDate)).filter(activityFilteredByDate => this.state.filteredCategories.includes(activityFilteredByDate.category.name)).map((activity, idx) => <ActivityOverview key={idx} activity={activity} />)
+                                    ) : (
+                                        this.state.allActivities.filter(activity => activity.dates.map(date => moment(date).format('YYYY-MM-DD')).includes(this.state.selectedDate)).map((activity, idx) => <ActivityOverview key={idx} activity={activity} />)
+                                    )
                                 ) : (
-                                    this.state.allActivities.filter(activity => this.state.filteredCategories.includes(activity.category.name)).map((activity, idx) => <ActivityOverview key={idx} activity={activity} />)
+                                    this.state.filteredCategories.length ? (
+                                        this.state.allActivities.filter(activity => this.state.filteredCategories.includes(activity.category.name)).map((activity, idx) => <ActivityOverview key={idx} activity={activity} />) 
+                                    ) : (
+                                        this.state.allActivities.map((activity, idx) => <ActivityOverview key={idx} activity={activity} />)
+                                    )   
                                 )}
                             </Col>
                         </Row>
