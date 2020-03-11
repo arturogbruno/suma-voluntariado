@@ -225,7 +225,7 @@ let organizations = [
     address: "Paseo de la Habana, 31, 28036 Madrid",
     email: "info@bokatas.org",
     phone: getPhoneNumber(),
-    webpage: "http://bokatas.org",
+    webpage: "http://www.bokatas.org",
     description: `La Asociación Bokatas es una historia de personas, con nombre y apellidos. Es una historia de encuentros, de “acercarse”, de relatos concretos, de caminos cruzados y de escucha mutua. Ayudamos a las personas a las que acompañamos siempre y cuando sea un trabajo mutuo, ellos son los protagonistas de su vida, nosotros les tendemos la mano cada vez que les vemos para ser su oportunidad de cambio. 
     Buscamos ser el puente entre las personas sin hogar y las instituciones sociales, trabajando en red, para ello, formamos parte de varios grupos de trabajo con otras entidades que trabajan en la misma dirección. En la actualidad contamos con 420 voluntarios, tenemos presencia en tres ciudades españolas, realizamos acompañamiento a unas 500 personas sin hogar y cada año pasamos más de 3.000 horas en la calle.`,
     imgPath: "http://bokatas.org/wp-content/uploads/2016/11/LOGO-1.png",
@@ -249,7 +249,7 @@ let organizations = [
     address: "Calle Paterna, 57, 28021 Madrid",
     email: "info@aecys.es",
     phone: getPhoneNumber(),
-    webpage: "http://eculturas.org/index.html",
+    webpage: "http://www.eculturas.org/index.html",
     description: `Educación, Cultura y Solidaridad es una Asociación de Ámbito Autonómico, (Comunidad de Madrid) declarada de Utilidad Pública. Sus principales actividades se desarrollan desde el Centro Educación Cultura y Solidaridad (Proyecto San Cristóbal) en el Barrio San Cristóbal de los Ángeles (Villaverde). 
     El Centro está consolidado y reconocido en San Cristóbal como referente para familias, niños y jóvenes, especialmente inmigrantes y jóvenes en riesgo de exclusión, a los que les ofrece la posibilidad de reinserción sociolaboral y académica. Es  también un referente para mujeres norteafricanas y subsaharianas, que encuentran en él, un aliado para su desarrollo personal e integración social. La asociación ECyS está reconocida como una activa participante en cuantas plataformas, mesas, y grupos de interés funcionan en el barrio`,
     imgPath: "http://eculturas.org/images/logo-64x61.gif",
@@ -284,7 +284,7 @@ let organizations = [
     address: "Calle Artistas, 2, 28020 Madrid",
     email: "info@desarrolloyasistencia.org",
     phone: getPhoneNumber(),
-    webpage: "http://desarrolloyasistencia.org/",
+    webpage: "http://www.desarrolloyasistencia.org/",
     description: `En Nadiesolo llevamos a cabo programas de acompañamiento a personas que se encuentran en situación de necesidad por soledad, enfermedad, exclusión, discapacidad u otras causas.
     Comenzamos nuestra actividad en diciembre de 1995. Desde entonces hemos ido creciendo apoyándonos siempre en el deseo de ayudar con nuestro acompañamiento persona a persona y nuestros valores fundamentales como son el reconocimiento de la dignidad de la persona y el respeto a su libertad, el apoyo a la familia y la constancia y el compromiso en el trabajo.`,
     imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2020/03/Positivo-nadiesolo-transicion.png",
@@ -296,7 +296,7 @@ let organizations = [
     address: "Calle Geranios, 30, 28029 Madrid",
     email: "fundacionamoverse@fundacionamoverse.org",
     phone: getPhoneNumber(),
-    webpage: "https://fundacionamoverse.org/",
+    webpage: "https://www.fundacionamoverse.org/",
     description: `Acompañar a niños, niñas, adolescentes, jóvenes y sus familias en situación de vulnerabilidad social, impulsando sus oportunidades de crecimiento personal, familiar y profesional, promoviendo su dignificación y su plena integración en la sociedad.
     La Fundación Amoverse se desarrolla una intervención socioeducativa integral con niños, niñas, adolescentes, jóvenes y sus familias, desde un enfoque de prevención, a través de la educación no-formal, ocio y tiempo libre, acompañamiento personal y académico, y está a su vez dirigido a la promoción de la familia y la transformación social del barrio.
     Este programa se implementa en dos barrios, Pozo-Entrevías en el distrito de Vallecas y La Ventilla en Tetuán, ambos en Madrid.`,
@@ -309,7 +309,7 @@ let organizations = [
     address: "Calle Reina de África, 10, 28018 Madrid",
     email: "comedorsocial@manosayudasocial.org",
     phone: getPhoneNumber(),
-    webpage: "https://manosayudasocial.org/",
+    webpage: "https://www.manosayudasocial.org/",
     description: `La Asociación Manos de Ayuda Social se constituyó en 2011 gracias a la iniciativa de un grupo de voluntarios que, en plena crisis económica, se unieron para crear un comedor social para familias en el Distrito de Ciudad Lineal. Con mucho esfuerzo e ilusión por impactar en nuestro entorno, creamos el Comedor Social Ventas que funcionó hasta 2018. En él se repartieron alrededor de 157000 comidas y se ayudó de manera continuada a unas 1409 personas.
     Tras esos siete años de trabajo, Manos de Ayuda Social traslada su labor al Distrito Puente de Vallecas, donde inicia un nuevo comedor social en el barrio de Palomeras Bajas.
     Nuestro objetivo es proporcionar una correcta nutrición y promover un ambiente cálido para que las personas que allí acuden se sientan acogidas, fomentando además la búsqueda activa de empleo para conseguir que sean autónomas en el menor tiempo posible.
@@ -323,7 +323,7 @@ let organizations = [
     address: "Bravo Murillo, 120, 28020 Madrid",
     email: "hmasd@hmasd.org",
     phone: getPhoneNumber(),
-    webpage: "http://hmasd.org/",
+    webpage: "http://www.hmasd.org/",
     description: `La Fundación Concordia y Libertad, antes Humanismo y Democracia, es una organización privada sin ánimo de lucro que sirve a un interés general. Fue constituida en octubre de 1977, comenzando sus actividades en enero de 1978 como fundación cultural privada al servicio de los derechos humanos y de los valores democráticos, contribuyendo a la transición hacia la democracia en España y a la consolidación del sistema de derechos y libertades configurado en la Constitución Española de 1978.
     La Fundación se centra en proyectos de desarrollo rural integral y necesidades sociales básicas tales como educación, sanidad , agua y saneamiento.
     Como criterio general, ofrece un enfoque preferente en favor del fortalecimiento de las instituciones, públicas y privadas.
@@ -337,7 +337,7 @@ let organizations = [
     address: "Calle Lituania, 4, 28030 Madrid",
     email: "infoadoptalo@yahoo.es",
     phone: getPhoneNumber(),
-    webpage: "http://adoptalomadrid.com/",
+    webpage: "http://www.adoptalomadrid.com/",
     description: `La protectora de animales Adoptalo.com-Madrid es una entidad sin ánimo de lucro que se fundó en el año 2006. Estamos legalmente constituidos e inscritos en el Registro de Asociaciones de la Comunidad de Madrid con el número 29.206.
     Surgimos como respuesta al elevado número de animales que son abandonados y/o maltratados a diario en este país y como una alternativa útil y humanitaria para mejorar la situación actual.
     Nuestro trabajo se centra en la protección y defensa de los animales en un sentido amplio, tanto a corto plazo, proporcionando un hogar a los animales abandonados, como a largo plazo, difundiendo una cultura y educación basadas en el conocimiento y respeto hacia los animales y fomentando una tenencia responsable de cualquier ser vivo.
@@ -366,7 +366,7 @@ let organizations = [
     address: "Miguel de Cervantes, 2, 28430 Madrid",
     email: "recrearteteatrosocial@yahoo.es",
     phone: getPhoneNumber(),
-    webpage: "https://ladarsenacm.com/recrearte-teatro-social",
+    webpage: "https://www.ladarsenacm.com/recrearte-teatro-social",
     description: `RECREARTE Teatro Social es una Asociación sin ánimo de lucro de intervención y acción social, que tiene como fin general la creación, preparación y representación de obras teatrales para la dinamización, entretenimiento y sensibilización de toda la población en general y, especialmente, de las personas mayores, la infancia y la juventud.
     Desde la creación de la asociación, en marzo del 2010, hemos desarrollado nuestra actividad en colaboración con diversas residencias geriátricas, tanto privadas como particulares, llevando nuestras representaciones para disfrute de nuestros mayores con obras como: Sancho Panza en la ínsula de Barataria, Farsa y justicia del señor Corregidor, el rey Tiburcio busca novia, recitales de poesía y música, etc.
     Asimismo hemos colaborado con diversos Observatorios contra la violencia de género, sensibilizando a alumnos de institutos y al público en general con obras tales como: La palabra arrincona al miedo, Lágrimas negras, La sal de la vida y otras.
@@ -412,7 +412,7 @@ let organizations = [
     address: "Colegio San Fernando, Carretera de Colmenar, Km 13.600, 28049 Madridd",
     email: "ugrvoluntarios@bamadrid.org",
     phone: getPhoneNumber(),
-    webpage: "https://bamadrid.org/",
+    webpage: "https://www.bamadrid.org/",
     description: `El Banco de Alimentos de Madrid es una organización benéfica sin ánimo de lucro cuyo fin es conseguir gratuitamente alimentos para distribuirlos, también de manera gratuita, entre entidades benéficas dedicadas a la asistencia y cuidado directo de personas necesitadas dentro de la Comunidad de Madrid.
     El Banco de Alimentos es miembro de la Federación Española de Bancos de Alimentos (FESBAL) que agrupa en la actualidad a 54 Bancos de Alimentos de toda España, y a través de ella a la Federación Europea de Bancos de Alimentos (FEBA) que engloba a 271 Bancos de Alimentos en toda Europa.
     El objetivo del Banco de Alimentos de Madrid es trabajar para que las personas más desfavorecidas puedan llevar una vida más digna.

@@ -24,9 +24,7 @@ export default class ActivityDetails extends React.Component {
         this.usersServices = new UsersServices();
     }
 
-    componentDidMount = () => {
-        this.getSpecificActivity();
-    }
+    componentDidMount = () => this.getSpecificActivity();
 
     getSpecificActivity = () => {
         if (!this.state.specificActivity) {
@@ -87,7 +85,7 @@ export default class ActivityDetails extends React.Component {
                                 <Col className="rightSide">
                                     <img src={activity.organization.imgPath} alt={`logo de ${activity.organization.name}`} className="activityDetails-logo"/>
                                     <div>
-                                        <h5 className="activityDetails-organization"><strong>{activity.organization.name}</strong></h5>
+                                        <Link to={`/organizations/details/${activity.organization._id}`}><h5 className="activityDetails-organization"><strong>{activity.organization.name}</strong></h5></Link>
                                         <h5>Fechas y horas de la actividad:</h5>
                                         <ul>
                                             {activity.dates.map((date, idx)=> <li key={idx}>{moment(date).format('DD/MM/YYYY')} - {activity.time}</li>)}

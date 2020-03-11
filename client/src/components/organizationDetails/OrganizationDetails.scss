@@ -1,0 +1,30 @@
+.organizationDetails {
+
+    .mainInfo {
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+
+        h1 {
+            margin-bottom: 25px;
+        }
+    }
+
+    .organizationDetails-logo {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-height: 200px;
+            max-width: 300px;
+        }
+    }
+
+    .contactInfo {
+        h4 {
+            margin-bottom: 20px;
+        }
+    }
+}
