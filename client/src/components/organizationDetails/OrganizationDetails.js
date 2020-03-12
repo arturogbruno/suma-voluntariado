@@ -18,7 +18,13 @@ export default class OrganizationDetails extends React.Component {
         this.organizationsServices = new OrganizationsServices();
     }
 
-    componentDidMount = () => this.getOrganization();
+    componentDidMount = () => {
+        if(this.props.organization) {
+            this.setState({ organization: this.props.organization});
+        } else {
+            this.getOrganization();
+        }
+    }
 
     getOrganization = () => {
         this.organizationsServices.getOrganizationDetails(this.props.match.params.id)

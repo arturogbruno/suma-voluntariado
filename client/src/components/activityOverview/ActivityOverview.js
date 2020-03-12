@@ -34,7 +34,7 @@ export default class ActivityOverview extends React.Component {
                                 <h6>Plazas vacantes: {activity.maxParticipants - activity.participants.length}</h6>
                             </Col>
                             <Col lg={5} className="organizationCol">
-                                <h6>Organización: {activity.organization.name}</h6>
+                                <h6>Organización: <Link to={`/organizations/details/${activity.organization._id}`}>{activity.organization.name}</Link></h6>
                                 <img src={activity.organization.imgPath} alt={`${activity.organization.name}`} />
                             </Col>
                         </Row>

@@ -199,7 +199,7 @@ let users = [
 // ==================== ORGANIZATIONS ====================
 
 // ID's for organizations:
-const arrOrganizationsId = Array(15)
+const arrOrganizationsId = Array(20)
 .fill()
 .map(() => {
   return new mongoose.mongo.ObjectId()
@@ -419,6 +419,18 @@ let organizations = [
     Su misión es concienciar a la sociedad y promover su solidaridad frente a los problemas originados por el hambre, el paro, el abandono familiar, el despilfarro de alimentos y en general de la falta de los recursos necesarios para tener una vida conforme a la dignidad humana. Colaborar a la solución de estos problemas y tratar de paliar sus efectos mediante el reparto gratuito de alimentos.`,
     imgPath: "https://granrecogidamadrid.org/public/img/logo.png",
     user: arrUsersId[14]
+  },
+  {
+    _id: arrOrganizationsId[15],
+    name: "Asociación Parkinson Madrid",
+    address: "Andrés Torrejon, 18, 28014 Madrid",
+    email: "parkinson@parkinsonmadrid.org",
+    phone: getPhoneNumber(),
+    webpage: "https://www.parkinsonmadrid.org/",
+    description: `Somos una entidad sin ánimo de lucro de carácter privado formada por más de 2.000 socios y constituida en mayo de 1994 para atender, orientar, formar e informar a personas afectadas, sus familiares y/o cuidadores, profesionales y sociedad en general sobre todo lo referente a la enfermedad de Parkinson. El 12 de diciembre de 2001, el Ministerio del Interior nos declaró de Utilidad Pública, consiguiendo un importante certificado que denota calidad,claridad y buen hacer. Además, también contamos con esta declaración por parte del Ayuntamiento de Madrid.
+    Formamos parte de entidades y redes del Tercer Sector para unir fortalezas y defender los derechos de las personas con párkinson, dándoles voz. Por ello, pertenecemos a la Federación Española de Párkinson y, a través de ella, a la European Parkinson´s Disease Association (EPDA). También estamos integrados en la Federación Madrileña para la Defensa del Enfermo Neurológico (FEMADEN) y, a través de ella, en el CERMI y en la Plataforma de Entidades de Voluntariado de la Comunidad de Madrid (FEVOCAM).`,
+    imgPath: "https://www.parkinsonmadrid.org/wp-content/uploads/logo.png",
+    user: arrUsersId[15]
   }
 
 ];
@@ -460,6 +472,7 @@ let activities = [
     imgPath: "http://bokatas.org/wp-content/uploads/2016/11/foto-seccion-1.jpg",
     category: {
       name: "social",
+      description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
     },
     minParticipants: 3,
@@ -482,6 +495,7 @@ let activities = [
     imgPath: "http://bokatas.org/wp-content/uploads/2016/11/foto-seccion-2.jpg",
     category: {
       name: "social",
+      description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
     },
     minParticipants: 2,
@@ -502,6 +516,7 @@ let activities = [
     imgPath: "https://www.reforesta.es/images/Que_Hacemos/05_Voluntariado/05_Voluntariado_1.jpg",
     category: {
       name: "ambiental",
+      description: "Persigue disminuir el impacto negativo del ser humano sobre el medio ambiente y poner en valor el patrimonio natural existente, las especies animales y vegetales, los ecosistemas y los recursos naturales.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/mk0fd45cbpj9howsjff1.jpg"
     },
     minParticipants: 10,
@@ -522,6 +537,7 @@ let activities = [
     imgPath: "https://www.reforesta.es/images/Que_Hacemos/05_Voluntariado/05_Corporativo_1.jpg",
     category: {
       name: "ambiental",
+      description: "Persigue disminuir el impacto negativo del ser humano sobre el medio ambiente y poner en valor el patrimonio natural existente, las especies animales y vegetales, los ecosistemas y los recursos naturales.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/mk0fd45cbpj9howsjff1.jpg"
     },
     minParticipants: 10,
@@ -543,6 +559,7 @@ let activities = [
     imgPath: "https://valenciaextra.com/wp-content/uploads/2020/01/031-escuela-acogida-2-680x365_c.jpg",
     category: {
       name: "educativo",
+      description: "Mejora las posibilidades de realización de actividades extraescolares contribuyendo a compensar las desigualdades que pudieran existir entre los alumnos por diferencias sociales, personales o económicas, mediante la utilización de programas de aprendizaje-servicio.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492536/ironhack-project3/t1yw7o7on7p10giirbni.jpg"
     },
     minParticipants: 1,
@@ -564,6 +581,7 @@ let activities = [
     imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583268032/ironhack-project3/akmutoc3d6sj5flwdzyk.png",
     category: {
       name: "social",
+      description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
     },
     minParticipants: 4,
@@ -584,6 +602,7 @@ let activities = [
     imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583268032/ironhack-project3/akmutoc3d6sj5flwdzyk.png",
     category: {
       name: "social",
+      description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
     },
     minParticipants: 4,
@@ -604,6 +623,7 @@ let activities = [
     imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583269280/ironhack-project3/nnhghpbzmnc1ibskkfwj.png",
     category: {
       name: "deportivo",
+      description: "Contribuye a la cohesión social, sumando los valores propios del voluntariado con aquellos otros inherentes al deporte, fomentando la práctica deportiva en cualquiera de sus manifestaciones.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493118/ironhack-project3/vpyxhad8vklho9ji4a16.jpg"
     },
     minParticipants: 2,
@@ -624,6 +644,7 @@ let activities = [
     imgPath: "http://www.femaddi.org/sites/default/files/gimansiaritmicafemaddi.jpg",
     category: {
       name: "deportivo",
+      description: "Contribuye a la cohesión social, sumando los valores propios del voluntariado con aquellos otros inherentes al deporte, fomentando la práctica deportiva en cualquiera de sus manifestaciones.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493118/ironhack-project3/vpyxhad8vklho9ji4a16.jpg"
     },
     minParticipants: 2,
@@ -649,6 +670,7 @@ let activities = [
     imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2018/10/Domiciliio_Enriqueta2.jpg",
     category: {
       name: "comunitario",
+      description: "Favorece la mejora de la comunidad, y promueve la participación para resolver los problemas y exigir mayor calidad de vida en los espacios vitales más cercanos, vertebrando una sociedad solidaria, activa, crítica, comprometida y corresponsable.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/ofpctk5zinroexnkotpb.jpg"
     },
     minParticipants: 2,
@@ -676,6 +698,7 @@ let activities = [
     imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2018/10/hospitales-inicio-1024x680.jpg",
     category: {
       name: "comunitario",
+      description: "Favorece la mejora de la comunidad, y promueve la participación para resolver los problemas y exigir mayor calidad de vida en los espacios vitales más cercanos, vertebrando una sociedad solidaria, activa, crítica, comprometida y corresponsable.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/ofpctk5zinroexnkotpb.jpg"
     },
     minParticipants: 2,
@@ -697,6 +720,7 @@ let activities = [
     imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2018/10/residencias-inicio-1024x682.jpg",
     category: {
       name: "comunitario",
+      description: "Favorece la mejora de la comunidad, y promueve la participación para resolver los problemas y exigir mayor calidad de vida en los espacios vitales más cercanos, vertebrando una sociedad solidaria, activa, crítica, comprometida y corresponsable.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/ofpctk5zinroexnkotpb.jpg"
     },
     minParticipants: 2,
@@ -719,6 +743,7 @@ let activities = [
     imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2019/03/zapatillas-nota-de-prensa2-1024x681.jpg",
     category: {
       name: "social",
+      description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
     },
     minParticipants: 2,
@@ -739,6 +764,7 @@ let activities = [
     imgPath: "https://fundacionamoverse.org/wp-content/uploads/2019/04/foto-3-test.jpg",
     category: {
       name: "educativo",
+      description: "Mejora las posibilidades de realización de actividades extraescolares contribuyendo a compensar las desigualdades que pudieran existir entre los alumnos por diferencias sociales, personales o económicas, mediante la utilización de programas de aprendizaje-servicio.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492536/ironhack-project3/t1yw7o7on7p10giirbni.jpg"
     },
     minParticipants: 2,
@@ -759,6 +785,7 @@ let activities = [
     imgPath: "https://ue-vidauniversitaria-production-files.s3.amazonaws.com/uploads/post/detail_image/4823/large_comedorLARGA.jpg",
     category: {
       name: "social",
+      description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
     },
     minParticipants: 1,
@@ -779,6 +806,7 @@ let activities = [
     imgPath: "http://hmasd.org/wp-content/uploads/2018/03/IMG_3595.jpg",
     category: {
       name: "social",
+      description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
     },
     minParticipants: 2,
@@ -799,6 +827,7 @@ let activities = [
     imgPath: "https://autismomadrid.es/wp-content/uploads/2016/07/Antares-Curso-Ocio-y-Tiempo-Libre-1080x661.jpg",
     category: {
       name: "ocio y tiempo libre",
+      description: "Forma y sensibiliza en los principios y valores de la acción voluntaria mediante el desarrollo de actividades en el ámbito de la educación no formal que favorezcan la solidaridad y la inclusión, y logren el compromiso, la participación y la implicación social.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/v4x6ixibt1yzst0ezuwp.jpg"
     },
     minParticipants: 2,
@@ -820,6 +849,7 @@ let activities = [
     imgPath: "https://blog.gudog.com/wp-content/uploads/2019/08/dogs-with-bows-and-touch.jpg",
     category: {
       name: "otro",
+      description: "Incluye aquellas actividades de voluntariado que por razón del ámbito de actuación, por el lugar en el que se realizan o por la especiallidad de las actividades no se encuentra incluida en el resto de categorías.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493396/ironhack-project3/as8xogqhzr2gmqgpb9a9.jpg"
     },
     minParticipants: 5,
@@ -841,6 +871,7 @@ let activities = [
     imgPath: "http://adoptalomadrid.com/wp-content/uploads/2015/12/casa_de_acogida.png",
     category: {
       name: "otro",
+      description: "Incluye aquellas actividades de voluntariado que por razón del ámbito de actuación, por el lugar en el que se realizan o por la especiallidad de las actividades no se encuentra incluida en el resto de categorías.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493396/ironhack-project3/as8xogqhzr2gmqgpb9a9.jpg"
     },
     minParticipants: 1,
@@ -861,6 +892,7 @@ let activities = [
     imgPath: "https://www.fundacionsanpatricio.org/es/images/slider/slide_FSPsocial6.jpg",
     category: {
       name: "comunitario",
+      description: "Favorece la mejora de la comunidad, y promueve la participación para resolver los problemas y exigir mayor calidad de vida en los espacios vitales más cercanos, vertebrando una sociedad solidaria, activa, crítica, comprometida y corresponsable.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/ofpctk5zinroexnkotpb.jpg"
     },
     minParticipants: 8,
@@ -883,6 +915,7 @@ let activities = [
     imgPath: "http://1.bp.blogspot.com/-96B7BO1LzDo/VKO-NJQkQvI/AAAAAAAAADY/Qt8zW3lM_L8/s1600/NJ-10-100.jpg",
     category: {
       name: "cultural",
+      description: "Promueve y defiende el derecho de acceso a la cultura y la promoción y protección de la identidad cultural, la defensa del patrimonio cultural y la participación en la vida cultural de la comunidad.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492528/ironhack-project3/hs5gyqp7mofnlvdumxlg.jpg"
     },
     minParticipants: 5,
@@ -903,6 +936,7 @@ let activities = [
     imgPath: "https://www.moralzarzal.es/wp-content/uploads/2016/11/Voluntarios-protecci%C3%B3n-civil-1.jpg",
     category: {
       name: "protección civil",
+      description: "Colabora regularmente en la gestión de las emergencias o catástrofes, como expresión y medio eficaz de participación ciudadana en la respuesta social a estos fenómenos.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493729/ironhack-project3/t6emwx7oclntllyk3kdl.jpg"
     },
     minParticipants: 5,
@@ -925,6 +959,7 @@ let activities = [
     imgPath: "https://www.hacesfalta.org/IO/usuarios/tufoto/7b9097f0b7374c07a4d1df47952903d9_749X500_s.jpg",
     category: {
       name: "ambiental",
+      description: "Persigue disminuir el impacto negativo del ser humano sobre el medio ambiente y poner en valor el patrimonio natural existente, las especies animales y vegetales, los ecosistemas y los recursos naturales.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/mk0fd45cbpj9howsjff1.jpg"
     },
     minParticipants: 1,
@@ -948,6 +983,7 @@ let activities = [
     imgPath: "https://www.hola.com/imagenes/sociedad/20191104153155/gran-recogida-alimentos-madrid-2019/0-741-393/recogida-alimentos-t.jpg",
     category: {
       name: "social",
+      description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
     },
     minParticipants: 4,
@@ -975,12 +1011,40 @@ let activities = [
     imgPath: "https://d1hyrom7wmg5jx.cloudfront.net/default/0001/03/eaf6dcc2c392055dc8ba84def99c7b0c3e388db1.jpeg",
     category: {
       name: "social",
+      description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
       imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg"
     },
     minParticipants: 1,
     maxParticipants: 2,
     requirements: "Para ser coordinador solo es necesario ser mayor de edad, responsable y tener ganas de colaborar",
     organization: arrOrganizationsId[14]
+  },
+  {
+    title: "Acompañamiento a personas son parkinson",
+    description: `La Asociación Parkinson Madrid cuenta actualmente con más de 150 voluntarios que comparten su tiempo y habilidades para mejorar el bienestar de los afectados y familiares, así como sensibilizar sobre la enfermedad de Parkinson. Todos ellos disponen de un seguro obligatorio, carné y participan de un programa de formación continua sobre voluntariado y párkinson.Tenemos proyectos de acompañamiento, sensibilización y cuestación, apoyo a actividades y otros proyectos. 
+    Actualmente necesitamos 2 voluntarios para aocmpañamiento que engloba:
+    -Telefónico: llamadas de seguimiento a personas en fases avanzadas de la enfermedad y en riesgo de aislamiento social.
+    -En el centro de día: actividades lúdicas y de ocio con personas en fases avanzadas de la enfermedad.
+    -A necesidades puntuales (médico, terapias, etc.) a personas con párkinson que se encuentran en una situación de soledad cuyo apoyo social y familiar es insuficiente o carente.
+    -A domicilio a personas con enfermedad de Parkinson en fase avanzada y en riesgo de aislamiento social.
+    `,
+    dates: getDates(),
+    time: "10:00 h - 14:00 h",
+    location: "Poeta Esteban Villegas, 12, 28014 Madrid",
+    coord: {
+      lat: 40.4079943,
+      lng: -3.6823819
+    },
+    imgPath: "https://www.parkinsonmadrid.org/wp-content/uploads/fondosolidario.jpg",
+    category: {
+      name: "socio-sanitario",
+      description: "Combina la promoción de la salud, la prevención de la enfermedad, la asistencia sanitaria, la rehabilitación y la atención social que va dirigida al conjunto de la sociedad o a los colectivos en situación de vulnerabilidad y ofrece apoyo y orientación a las familias.",
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/v8qsfjmpviisn8ysw5jc.jpg"
+    },
+    minParticipants: 1,
+    maxParticipants: 2,
+    requirements: "Para ser voluntario solo es necesario ser mayor de edad, responsable y tener ganas de colaborar",
+    organization: arrOrganizationsId[15]
   }
 
 ]

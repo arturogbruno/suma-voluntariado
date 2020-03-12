@@ -14,6 +14,8 @@ export default class Services {
     getOrganizationDetails = id => this.service.get(`/${id}`).then(response => response.data);
 
     getOrganizationByUser = idUser => this.service.get(`/createdByUser/${idUser}`).then(response => response.data);
+
+    updateOrganization = (id, updatedObject) => this.service.put(`/${id}`, updatedObject).then(response => response.data);
     
     createOrganization = newOrganization => this.service.post('/new', newOrganization).then(response => response.data);
 }

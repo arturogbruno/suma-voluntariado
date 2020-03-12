@@ -20,6 +20,7 @@ const activitySchema = new Schema(
     },
     category: {
       name: String,
+      description: String,
       imgPath: String
     },
     minParticipants: Number,

@@ -92,34 +92,44 @@ const createCategory = (categoryName) => {
     imgPath = "";
     switch(categoryName) {
         case "ambiental":
-            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/mk0fd45cbpj9howsjff1.jpg";
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/mk0fd45cbpj9howsjff1.jpg",
+            description = "Persigue disminuir el impacto negativo del ser humano sobre el medio ambiente y poner en valor el patrimonio natural existente, las especies animales y vegetales, los ecosistemas y los recursos naturales."
             break;
         case "comunitario":
-            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/ofpctk5zinroexnkotpb.jpg";
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/ofpctk5zinroexnkotpb.jpg", 
+            description = "Favorece la mejora de la comunidad, y promueve la participación para resolver los problemas y exigir mayor calidad de vida en los espacios vitales más cercanos, vertebrando una sociedad solidaria, activa, crítica, comprometida y corresponsable."
             break;
         case "cultural":
-            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492528/ironhack-project3/hs5gyqp7mofnlvdumxlg.jpg";
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492528/ironhack-project3/hs5gyqp7mofnlvdumxlg.jpg",
+            description = "Promueve y defiende el derecho de acceso a la cultura y la promoción y protección de la identidad cultural, la defensa del patrimonio cultural y la participación en la vida cultural de la comunidad."
             break;
         case "deportivo":
-            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493118/ironhack-project3/vpyxhad8vklho9ji4a16.jpg";
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493118/ironhack-project3/vpyxhad8vklho9ji4a16.jpg",
+            description = "Contribuye a la cohesión social, sumando los valores propios del voluntariado con aquellos otros inherentes al deporte, fomentando la práctica deportiva en cualquiera de sus manifestaciones."
             break;
         case "educativo":
-            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492536/ironhack-project3/t1yw7o7on7p10giirbni.jpg";
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492536/ironhack-project3/t1yw7o7on7p10giirbni.jpg",
+            description = "Mejora las posibilidades de realización de actividades extraescolares contribuyendo a compensar las desigualdades que pudieran existir entre los alumnos por diferencias sociales, personales o económicas, mediante la utilización de programas de aprendizaje-servicio."
             break;
         case "ocio y tiempo libre":
-            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/v4x6ixibt1yzst0ezuwp.jpg";
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/v4x6ixibt1yzst0ezuwp.jpg",
+            description = "Forma y sensibiliza en los principios y valores de la acción voluntaria mediante el desarrollo de actividades en el ámbito de la educación no formal que favorezcan la solidaridad y la inclusión, y logren el compromiso, la participación y la implicación social."
             break;
         case "proteccion civil":
-            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493729/ironhack-project3/t6emwx7oclntllyk3kdl.jpg";
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493729/ironhack-project3/t6emwx7oclntllyk3kdl.jpg",
+            description = "Colabora regularmente en la gestión de las emergencias o catástrofes, como expresión y medio eficaz de participación ciudadana en la respuesta social a estos fenómenos."
             break;
         case "socio-sanitario":
-            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/v8qsfjmpviisn8ysw5jc.jpg";
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/v8qsfjmpviisn8ysw5jc.jpg",
+            description = "Combina la promoción de la salud, la prevención de la enfermedad, la asistencia sanitaria, la rehabilitación y la atención social que va dirigida al conjunto de la sociedad o a los colectivos en situación de vulnerabilidad y ofrece apoyo y orientación a las familias."
             break;
         case "social":
-            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg";
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/pvx0vhllzri7zjg8iual.jpg",
+            description = "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social."
             break;
         case "otro":
-            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493396/ironhack-project3/as8xogqhzr2gmqgpb9a9.jpg";
+            imgPath = "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493396/ironhack-project3/as8xogqhzr2gmqgpb9a9.jpg",
+            description = "Incluye aquellas actividades de voluntariado que por razón del ámbito de actuación, por el lugar en el que se realizan o por la especiallidad de las actividades no se encuentra incluida en el resto de categorías."
             break;
     }
     let categoryWithImage = {
