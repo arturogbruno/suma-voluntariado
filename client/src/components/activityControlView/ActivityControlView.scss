@@ -1,0 +1,29 @@
+.activityControlView {
+    border: 1px solid rgb(163, 163, 163);
+    margin-bottom: 40px;
+    padding-top: 30px;
+
+    .activityControlView-participants {
+        margin-top: 25px;
+
+        .participant {
+            margin-right: 25px;
+        
+            img {
+                max-width: 60px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .activityControlView-buttons {
+        display: flex;
+        justify-content: space-evenly;
+        
+
+        button {
+            margin-right: 50px;
+        }
+    }
+}

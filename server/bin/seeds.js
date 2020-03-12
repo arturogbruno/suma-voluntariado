@@ -1020,7 +1020,7 @@ let activities = [
     organization: arrOrganizationsId[14]
   },
   {
-    title: "Acompañamiento a personas son parkinson",
+    title: "Acompañamiento a personas con parkinson",
     description: `La Asociación Parkinson Madrid cuenta actualmente con más de 150 voluntarios que comparten su tiempo y habilidades para mejorar el bienestar de los afectados y familiares, así como sensibilizar sobre la enfermedad de Parkinson. Todos ellos disponen de un seguro obligatorio, carné y participan de un programa de formación continua sobre voluntariado y párkinson.Tenemos proyectos de acompañamiento, sensibilización y cuestación, apoyo a actividades y otros proyectos. 
     Actualmente necesitamos 2 voluntarios para aocmpañamiento que engloba:
     -Telefónico: llamadas de seguimiento a personas en fases avanzadas de la enfermedad y en riesgo de aislamiento social.

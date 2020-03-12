@@ -50,6 +50,16 @@ router.get("/participants/:participant", (req, res, next) => {
 });
 
 
+// Get activities by organization:
+router.get("/organization/:organization", (req, res, next) => {
+    Activities.find({ organization: {_id: req.params.organization }})
+    .populate('organization')
+    .populate('participants')
+    .then(activities => res.status(200).json( activities ))
+    .catch(err => console.log(err))
+});
+
+
 // Create new activity:
 router.post('/new', (req, res, next) => {
     let categoryWithImage = createCategory(req.body.category);

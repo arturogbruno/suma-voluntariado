@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import Modal from 'react-bootstrap/Modal';
 import OrganizationDetails from '../organizationDetails/OrganizationDetails';
 import EditOrganizationForm from '../editOrganizationForm/EditOrganizationForm';
+import ActivityControlView from '../activityControlView/ActivityControlView';
 import OrganizationsServices from "../../services/organizations";
 import ActivitiesServices from "../../services/activities";
 import './ControlPanel.scss';
@@ -19,6 +20,7 @@ export default class ControlPanel extends React.Component {
 
         this.state = {
             organization: null,
+            activities: [],
             showModal: false
         }
 
@@ -31,9 +33,21 @@ export default class ControlPanel extends React.Component {
     getOrganization = () => {
         this.organizationsServices.getOrganizationByUser(this.props.loggedInUser._id)
         .then(organization => {
-            this.setState({ organization: organization[0] })
+            this.setState({ organization: organization[0] }, () => this.getActivitiesByOrganization())
         })
         .catch(err => console.log(err));
+    }
+
+    getActivitiesByOrganization = () => {
+        this.activitiesServices.getActivitiesByOrganization(this.state.organization._id)
+        .then(foundActivities => this.setState({ activities: foundActivities }))
+        .catch(err => console.log(err))
+    }
+
+    deleteActivity(activityId) {
+        this.activitiesServices.deleteActivity(activityId)
+        .then(() => this.getActivitiesByOrganization())
+        .catch(err => console.log(err))
     }
 
     openModal = () => this.setState({ showModal: true });
@@ -80,7 +94,11 @@ export default class ControlPanel extends React.Component {
                                     <Tab.Pane eventKey="activitiesManagement">
                                         <div className="activitiesManagement">
                                             <h3>Gestión de actividades</h3>
-                                            <p>dlkfjdlkjgflñdsajfldjs</p>
+                                            {this.state.activities.length ? (
+                                                this.state.activities.map((activity, idx) => <ActivityControlView key={idx} activity={activity} onDeleteClick={activityId => this.deleteActivity(activityId)}/>)
+                                            ) : (
+                                                <h5>Esta organización aún no ha dado de alta actividades.</h5>
+                                            )}
                                         </div>
                                     </Tab.Pane>
                                 </Tab.Content>

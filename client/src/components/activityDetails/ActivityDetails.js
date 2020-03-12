@@ -126,7 +126,7 @@ export default class ActivityDetails extends React.Component {
                                 <Col>
                                     <h6>Participantes:</h6>
                                     {activity.participants.map((participant, idx) => (
-                                        <Link to={`/users/${participant._id}`} className="activityDetails-partipant" key={idx}><img src={participant.imgPath} alt={`${participant.name}`}/>{participant.username}</Link>
+                                        <Link to={`/users/${participant._id}`} className="activityDetails-participant" key={idx}><img src={participant.imgPath} alt={`${participant.name}`}/>{participant.username}</Link>
                                     ))}
                                 </Col>
                             </Row>
