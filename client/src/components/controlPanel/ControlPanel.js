@@ -9,6 +9,7 @@ import Modal from 'react-bootstrap/Modal';
 import OrganizationDetails from '../organizationDetails/OrganizationDetails';
 import EditOrganizationForm from '../editOrganizationForm/EditOrganizationForm';
 import ActivityControlView from '../activityControlView/ActivityControlView';
+import EditActivityForm from '../editActivityForm/EditActivityForm';
 import OrganizationsServices from "../../services/organizations";
 import ActivitiesServices from "../../services/activities";
 import './ControlPanel.scss';
@@ -21,7 +22,9 @@ export default class ControlPanel extends React.Component {
         this.state = {
             organization: null,
             activities: [],
-            showModal: false
+            activityToEdit: null,
+            showOrganizationModal: false,
+            showActivityModal: false
         }
 
         this.activitiesServices = new ActivitiesServices();
@@ -44,15 +47,23 @@ export default class ControlPanel extends React.Component {
         .catch(err => console.log(err))
     }
 
+    getActivityToEdit = (activityIdx) => {
+        const [activityToEdit] = this.state.activities.slice(activityIdx, activityIdx + 1);
+        this.setState({ activityToEdit: activityToEdit }, () => this.openActivityModal());
+    }
+
     deleteActivity(activityId) {
         this.activitiesServices.deleteActivity(activityId)
         .then(() => this.getActivitiesByOrganization())
         .catch(err => console.log(err))
     }
 
-    openModal = () => this.setState({ showModal: true });
+    openOrganizationModal = () => this.setState({ showOrganizationModal: true });
+    closeOrganizationModal = () => this.setState({ showOrganizationModal: false });
 
-    closeModal = () => this.setState({ showModal: false });
+    openActivityModal = () => this.setState({ showActivityModal: true });
+    closeActivityModal = () => this.setState({ showActivityModal: false });
+
     
 
     render() {
@@ -78,28 +89,36 @@ export default class ControlPanel extends React.Component {
                                         <div className="organizationProfile">
                                             <h3>Perfil de la organización</h3>
                                             <OrganizationDetails key={Math.random() * 100000} organization={this.state.organization} loggedInUser={this.props.loggedInUser}></OrganizationDetails>
-                                            <Button variant="warning" onClick={this.openModal}>Editar datos</Button>
+                                            <Button variant="warning" onClick={this.openOrganizationModal}>Editar datos</Button>
                                         </div>
 
-                                        <Modal size="lg" show={this.state.showModal} onHide={this.closeModal}>
+                                        <Modal size="lg" show={this.state.showOrganizationModal} onHide={this.closeOrganizationModal}>
                                             <Modal.Header closeButton>
                                                 <Modal.Title>Editar perfil de la organización</Modal.Title>
                                             </Modal.Header>
                                             <Modal.Body>
-                                                <EditOrganizationForm organization={this.state.organization} closeModal={this.closeModal} refreshList={this.getOrganization} />
+                                                <EditOrganizationForm organization={this.state.organization} closeModal={this.closeOrganizationModal} refreshData={this.getOrganization} />
                                             </Modal.Body>
                                         </Modal>
-
                                     </Tab.Pane>
                                     <Tab.Pane eventKey="activitiesManagement">
                                         <div className="activitiesManagement">
                                             <h3>Gestión de actividades</h3>
                                             {this.state.activities.length ? (
-                                                this.state.activities.map((activity, idx) => <ActivityControlView key={idx} activity={activity} onDeleteClick={activityId => this.deleteActivity(activityId)}/>)
+                                                this.state.activities.map((activity, idx) => <ActivityControlView key={idx} activityIdx={idx} activity={activity} onEditClick={(idx) => this.getActivityToEdit(idx)} onDeleteClick={activityId => this.deleteActivity(activityId)}/>)
                                             ) : (
                                                 <h5>Esta organización aún no ha dado de alta actividades.</h5>
                                             )}
                                         </div>
+
+                                        <Modal size="lg" show={this.state.showActivityModal} onHide={this.closeActivityModal}>
+                                            <Modal.Header closeButton>
+                                                <Modal.Title>Editar actividad</Modal.Title>
+                                            </Modal.Header>
+                                            <Modal.Body>
+                                                <EditActivityForm activity={this.state.activityToEdit} closeModal={this.closeActivityModal} refreshData={this.getActivitiesByOrganization} />
+                                            </Modal.Body>
+                                        </Modal>
                                     </Tab.Pane>
                                 </Tab.Content>
                             ) : (

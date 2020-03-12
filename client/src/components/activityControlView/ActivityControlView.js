@@ -44,7 +44,7 @@ export default class ActivityControlView extends React.Component {
                 </Row>
                 
                 <Row className="activityControlView-buttons">
-                    <Button variant="warning">Editar actividad</Button>
+                    <Button variant="warning" onClick={() => this.props.onEditClick(this.props.activityIdx)}>Editar actividad</Button>
                     <Button variant="danger" onClick={() => this.props.onDeleteClick(activity._id)}>Eliminar actividad</Button>
                 </Row>
             </Container>

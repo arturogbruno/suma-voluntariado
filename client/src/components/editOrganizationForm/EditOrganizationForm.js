@@ -59,56 +59,56 @@ export default class EditOrganizationForm extends React.Component {
 
     finishAction = () => {
         this.props.closeModal();
-        this.props.refreshList();
+        this.props.refreshData();
     }
 
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
-                    <Form.Row>
-                        <Form.Group as={Col}>
-                            <Form.Label>Nombre:</Form.Label>
-                            <Form.Control type="text" name="name" value={this.state.organization.name} onChange={this.handleChange} placeholder="" required />
-                        </Form.Group>
-                    </Form.Row>
+                <Form.Row>
+                    <Form.Group as={Col}>
+                        <Form.Label>Nombre:</Form.Label>
+                        <Form.Control type="text" name="name" value={this.state.organization.name} onChange={this.handleChange} placeholder="" required />
+                    </Form.Group>
+                </Form.Row>
 
-                    <Form.Group>
-                        <Form.Label>Dirección:</Form.Label>
-                        <Form.Control type="text" name="address" value={this.state.organization.address} onChange={this.handleChange} placeholder="" required />
+                <Form.Group>
+                    <Form.Label>Dirección:</Form.Label>
+                    <Form.Control type="text" name="address" value={this.state.organization.address} onChange={this.handleChange} placeholder="" required />
+                </Form.Group>
+
+                <Form.Row>
+                    <Form.Group as={Col}>
+                        <Form.Label>Email:</Form.Label>
+                        <Form.Control type="email" name="email" value={this.state.organization.email} onChange={this.handleChange} placeholder="" required />
                     </Form.Group>
 
-                    <Form.Row>
-                        <Form.Group as={Col}>
-                            <Form.Label>Email:</Form.Label>
-                            <Form.Control type="email" name="email" value={this.state.organization.email} onChange={this.handleChange} placeholder="" required />
-                        </Form.Group>
+                    <Form.Group as={Col}>
+                        <Form.Label>Página web:</Form.Label>
+                        <Form.Control type="text" name="webpage" value={this.state.organization.webpage} onChange={this.handleChange} placeholder="" />
+                    </Form.Group>
 
-                        <Form.Group as={Col}>
-                            <Form.Label>Página web:</Form.Label>
-                            <Form.Control type="text" name="webpage" value={this.state.organization.webpage} onChange={this.handleChange} placeholder="" />
-                        </Form.Group>
+                    <Form.Group as={Col}>
+                        <Form.Label>Teléfono:</Form.Label>
+                        <Form.Control name="phone" value={this.state.organization.phone} onChange={this.handleChange} required />
+                    </Form.Group>
+                </Form.Row>
 
-                        <Form.Group as={Col}>
-                            <Form.Label>Teléfono:</Form.Label>
-                            <Form.Control name="phone" value={this.state.organization.phone} onChange={this.handleChange} required />
-                        </Form.Group>
-                    </Form.Row>
-
-                    <Form.Row>
-                        <Form.Group as={Col}>
-                            <Form.Label>Descripción:</Form.Label>
-                            <Form.Control as="textarea" rows="6" name="description" value={this.state.organization.description} onChange={this.handleChange} required />
-                        </Form.Group>
-                    </Form.Row>
-                
-                    <Form.Row>
-                        <Form.Group as={Col}>
-                            <Form.Label>Imagen o logo de la organización:</Form.Label>
-                            <Form.Control type="file" name="imgPath" onChange={this.handleFileUpload} />
-                        </Form.Group>
-                    </Form.Row>
-                    <Button variant="primary" type="submit">Guardar cambios</Button>
-                </Form>
+                <Form.Row> 
+                    <Form.Group as={Col}>
+                        <Form.Label>Descripción:</Form.Label>
+                        <Form.Control as="textarea" rows="6" name="description" value={this.state.organization.description} onChange={this.handleChange} required />
+                    </Form.Group>
+                </Form.Row>
+            
+                <Form.Row>
+                    <Form.Group as={Col}>
+                        <Form.Label>Imagen o logo de la organización:</Form.Label>
+                        <Form.Control type="file" name="imgPath" onChange={this.handleFileUpload} />
+                    </Form.Group>
+                </Form.Row>
+                <Button variant="primary" type="submit">Guardar cambios</Button>
+            </Form>
         )
     }
 }
