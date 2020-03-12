@@ -15,6 +15,7 @@ import NewOrganization from './components/newOrganization/NewOrganization';
 import OrganizationDetails from './components/organizationDetails/OrganizationDetails';
 import NewActivity from './components/newActivity/NewActivity';
 import SearchResult from './components/searchResult/SearchResult';
+import UserProfile from './components/userProfile/UserProfile';
 
 
 
@@ -78,6 +79,7 @@ export default class App extends React.Component {
               <Route exact path="/activities/new" render={props => <NewActivity {...props} loggedInUser={this.state.loggedInUser}/>} /> 
               <Route exact path="/organizations/new" render={props => <NewOrganization {...props} loggedInUser={this.state.loggedInUser}/>} /> 
               <Route exact path="/organizations/details/:id" render={props => <OrganizationDetails {...props} loggedInUser={this.state.loggedInUser}/>} /> 
+              <Route exact path="/users/:id" render={props => <UserProfile {...props} loggedInUser={this.state.loggedInUser}/>} /> 
             </Switch>
             <Footer />
           </>

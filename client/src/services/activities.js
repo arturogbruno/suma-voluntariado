@@ -17,6 +17,8 @@ export default class Services {
 
     getActivitiesByCategory = category => this.service.get(`/categories/${category}`).then(response => response.data);
 
+    getActivitiesByParticipant = participant => this.service.get(`/participants/${participant}`).then(response => response.data);
+
     createActivity = newActivity => this.service.post('/new', newActivity).then(response => response.data);
 
     updateActivity = (id, fieldToUpdate) => this.service.put(`/${id}`, fieldToUpdate).then(response => response.data);

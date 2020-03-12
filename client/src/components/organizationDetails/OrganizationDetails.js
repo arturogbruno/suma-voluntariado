@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -66,7 +66,7 @@ export default class OrganizationDetails extends React.Component {
                                 </Col>
                                 <Col>
                                     <h5>Página web:</h5>
-                                    <a href={organization.webpage} target="_blank">{organization.webpage}</a>
+                                    <a href={organization.webpage} target="_blank" rel="noopener noreferrer">{organization.webpage}</a>
                                 </Col>
                             </Row>
                         </Container>

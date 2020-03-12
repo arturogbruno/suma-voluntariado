@@ -35,12 +35,17 @@ export default class NavBar extends React.Component {
                 <Link to="/activities/new" className="navLink-create">Crear actividad</Link>
               </>
             ) : (
-              <span></span>
+              <></>
             )}
             <DropdownButton className="navbar-dropdown"
               alignRight
               title={this.props.userInSession.username}
             >
+              {this.props.userInSession.role === 'organization' ? (
+                <Link to="/controlpanel" className="navbar-userLink">Panel de control</Link>
+              ) : (
+                <></>
+              )}
               <Link to={`/users/${this.props.userInSession._id}`} className="navbar-userLink">Mi perfil</Link>
               <Link to="/home" onClick={this.handleLogout} className="navbar-userLink">Logout</Link>
             </DropdownButton>

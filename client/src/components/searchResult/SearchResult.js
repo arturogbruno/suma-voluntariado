@@ -1,12 +1,12 @@
 import React from 'react';
 import Spinner from 'react-bootstrap/Spinner';
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-import moment, { relativeTimeThreshold } from "moment";
+import moment from "moment";
 import ActivitiesServices from '../../services/activities';
 import ActivityOverview from '../activityOverview/ActivityOverview';
+import './SearchResult.scss';
 
 
 export default class SearchResult extends React.Component {
@@ -56,23 +56,25 @@ export default class SearchResult extends React.Component {
 
     render() {
         return (    
-            <div>
-                <h1>Resultados de la búsqueda</h1>
+            <div className="searchResult">
+                <h1 className="searchResult-title">Resultados de la búsqueda</h1>
                 {this.state.foundActivities.length ? (
-                    <Container fluid className="activitiesList">
+                    <div className="activitiesList">
                         <Row>
-                            <Col md={2}>
-                                <h5>Filtro de actividades:</h5>
-                                <Form.Group>
-                                    <Form.Label>Fecha:</Form.Label>
-                                    <Form.Control type="date" onChange={this.handleDateFilter}/>
-                                </Form.Group>
-                                <Form.Group>
-                                    <Form.Label>Categoría:</Form.Label>
-                                    {this.state.allCategories.map((category, idx) => (
-                                        <Form.Check key={idx} type="checkbox" name="category" id={category.name} label={category.name} onChange={this.handleCategoryFilter}/>
-                                    ))}
-                                </Form.Group>
+                            <Col lg={2}>
+                                <div className="filterCol">   
+                                    <h5>Filtro de actividades:</h5>
+                                    <Form.Group>
+                                        <Form.Label>Fecha:</Form.Label>
+                                        <Form.Control type="date" onChange={this.handleDateFilter}/>
+                                    </Form.Group>
+                                    <Form.Group>
+                                        <Form.Label>Categoría:</Form.Label>
+                                        {this.state.allCategories.map((category, idx) => (
+                                            <Form.Check key={idx} type="checkbox" name="category" id={category.name} label={category.name} onChange={this.handleCategoryFilter}/>
+                                        ))}
+                                    </Form.Group>
+                                </div>
                             </Col>
                             <Col>
                                 {this.state.selectedDate ? (
@@ -90,7 +92,7 @@ export default class SearchResult extends React.Component {
                                 )}           
                             </Col>
                         </Row>
-                    </Container>
+                    </div>
                 ) : (
                     <Spinner animation="border" role="status">
                         <span className="sr-only">Cargando...</span>

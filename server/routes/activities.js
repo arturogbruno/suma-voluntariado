@@ -11,17 +11,6 @@ router.get("/all", (req, res, next) => {
 });
 
 
-// Get activities by search term:
-router.get("/search/:searchTerm", (req, res, next) => {
-    console.log(`Estoy en la ruta de back: ${req.params.searchTerm}`);
-    Activities.find({ $or: [{ title: new RegExp(req.params.searchTerm, "gi") }, { description: new RegExp(req.params.searchTerm, "gi") }] })
-    .populate('organization')
-    .populate('participants')
-    .then(activities => res.status(200).json( activities ))
-    .catch(err => console.log(err))
-});
-
-
 // Get specific activity:
 router.get("/:id", (req, res, next) => {
     Activities.findById(req.params.id)
@@ -35,6 +24,26 @@ router.get("/:id", (req, res, next) => {
 // Get activities by category:
 router.get("/categories/:category", (req, res, next) => {
     Activities.find({ 'category.name': req.params.category })
+    .populate('organization')
+    .then(activities => res.status(200).json( activities ))
+    .catch(err => console.log(err))
+});
+
+
+
+// Get activities by search term:
+router.get("/search/:searchTerm", (req, res, next) => {
+    Activities.find({ $or: [{ title: new RegExp(req.params.searchTerm, "gi") }, { description: new RegExp(req.params.searchTerm, "gi") }] })
+    .populate('organization')
+    .populate('participants')
+    .then(activities => res.status(200).json( activities ))
+    .catch(err => console.log(err))
+});
+
+
+// Get activities by participant:
+router.get("/participants/:participant", (req, res, next) => {
+    Activities.find({ participants: req.params.participant })
     .populate('organization')
     .then(activities => res.status(200).json( activities ))
     .catch(err => console.log(err))

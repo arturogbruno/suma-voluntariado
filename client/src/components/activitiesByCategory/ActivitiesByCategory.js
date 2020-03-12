@@ -1,12 +1,12 @@
 import React from "react";
 import Spinner from 'react-bootstrap/Spinner';
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import moment from "moment";
 import ActivitiesServices from "../../services/activities";
 import ActivityOverview from '../activityOverview/ActivityOverview';
+import './ActivitiesByCategory.scss';
 
 
 export default class Activities extends React.Component {
@@ -39,29 +39,29 @@ export default class Activities extends React.Component {
     render() {
         let categoryName = this.props.match.params.name;
         return (    
-            <div>
-                <h1>Actividades por categoría: {categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h1>
+            <div className="activitiesByCategory">
+                <h1 className="activitiesByCategory-title">Actividades por categoría: {categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h1>
                 {this.state.activities.length ? (
-                    <Container fluid className="activitiesList">
+                    <div className="activitiesList">
                         <Row>
-                            <Col md={2}>
-                                <h5>Filtro de actividades:</h5>
-                                <Form.Group>
-                                    <Form.Label>Fecha:</Form.Label>
-                                    <Form.Control type="date" onChange={this.handleDateFilter}/>
-                                </Form.Group>
+                            <Col lg={2}>
+                                <div className="filterCol">
+                                    <h5>Filtro de actividades:</h5>
+                                    <Form.Group>
+                                        <Form.Label>Fecha:</Form.Label>
+                                        <Form.Control type="date" onChange={this.handleDateFilter}/>
+                                    </Form.Group>
+                                </div>
                             </Col>
                             <Col>
                                 {this.state.selectedDate ? (
                                     this.state.activities.filter(activity => activity.dates.map(date => moment(date).format('YYYY-MM-DD')).includes(this.state.selectedDate)).map((activity, idx) => <ActivityOverview key={idx} activity={activity} />)
                                 ) : (
-                                    <div className="activitiesList">
-                                        {this.state.activities.map((activity, idx) => <ActivityOverview key={idx} activity={activity} />)}
-                                    </div>
+                                    this.state.activities.map((activity, idx) => <ActivityOverview key={idx} activity={activity} />)
                                 )}
                             </Col>
                         </Row>
-                    </Container>
+                    </div>
                 ) : (
                     <Spinner animation="border" role="status">
                         <span className="sr-only">Cargando...</span>

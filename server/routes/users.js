@@ -13,6 +13,10 @@ router.get("/all", (req, res, next) => {
 // Get specific user:
 router.get("/:id", (req, res, next) => {
     Users.findById(req.params.id)
+    .populate({
+        path: 'favActivities',
+        populate: {path: 'organization'}
+    })
     .then(user => res.status(200).json( user ))
     .catch(err => console.log(err))
 });

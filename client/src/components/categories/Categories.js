@@ -35,7 +35,7 @@ export default class Categories extends React.Component {
   render() {
     return (
       <Container>
-        <h1>Voluntariado por categorías</h1>
+        <h1 className="categories-title">Voluntariado por categorías</h1>
         {this.state.allCategories.length ? (
           <div className="categoryList">
             {this.state.allCategories.map((category, idx) => <CategoryCard key={idx} category={category} />)}

@@ -12,10 +12,6 @@ import "./ActivityOverview.scss";
 export default class ActivityOverview extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-
-        }
     }
 
     render() {
@@ -24,7 +20,7 @@ export default class ActivityOverview extends React.Component {
             <Container fluid className="activityOverview">
                 <Row>
                     <Col lg={4} className="imageCol">
-                        <img className="activityImage" src={activity.imgPath} alt={`${activity.title}`} />
+                        <img className="activityImage" src={activity.imgPath} alt={activity.title} />
                     </Col>
                     <Col lg={8}>
                         <Row>
@@ -44,12 +40,12 @@ export default class ActivityOverview extends React.Component {
                         </Row>
                         <Row>
                             <Col lg={8}>
-                                <Link to={`/activities/details/${activity._id}`}><Button>Ver detalle</Button></Link>
+                                <Link to={`/activities/details/${activity._id}`}><Button>Más info</Button></Link>
                             </Col>
                         </Row>
                     </Col>
                 </Row>
             </Container>
         )
-    }
+    }  
 }
