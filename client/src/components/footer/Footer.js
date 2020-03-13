@@ -17,7 +17,10 @@ const Footer = () => {
                 <Link to="#">Contacto</Link>
             </Col>
             <Col>
-                Social
+                <img src="https://res.cloudinary.com/yelpcampagb/image/upload/v1584100201/ironhack-project3/lub9wr1pussxcbslmnrz.png" alt="facebook icon" className="socialIcon"/>
+                <img src="https://res.cloudinary.com/yelpcampagb/image/upload/v1584100201/ironhack-project3/ms4fuuy3yrvqc2cxztpw.png" alt="instagram icon" className="socialIcon"/>
+                <img src="https://res.cloudinary.com/yelpcampagb/image/upload/v1584100201/ironhack-project3/rap7hmsx1uqlwxcjttxr.png" alt="youtube icon" className="socialIcon"/>
+                <img src="https://res.cloudinary.com/yelpcampagb/image/upload/v1584100201/ironhack-project3/nk6xfzehvrxjomjjwsa6.png" alt="twitter icon" className="socialIcon"/>
             </Col>
         </Row>
         </Container>

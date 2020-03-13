@@ -38,8 +38,8 @@ export default class SearchBox extends React.Component {
             <div>
             <Form.Control type="text" name="location"
                 {...getInputProps({
-                placeholder: 'Busca la dirección',
-                className: 'location-search-input',
+                    placeholder: 'Busca la dirección',
+                    className: 'location-search-input',
                 })}
             />
             <div className="autocomplete-dropdown-container">

@@ -18,10 +18,14 @@ export default class CategoryCard extends React.Component {
             <>
                 <Card className="categoryCard">
                     <Card.Img variant="top" src={category.imgPath} />
-                    <Card.Body>
-                        <Card.Title>{category.name.charAt(0).toUpperCase() + category.name.slice(1)}</Card.Title>
-                        <Card.Text>{category.description}</Card.Text>
-                        <Link to={`/categories/${category.name}`}><Button variant="primary">Ver actividades</Button></Link>
+                    <Card.Body className="categoryCard-body">
+                        <div className="categoryCard-text">
+                            <Card.Title>{category.name.charAt(0).toUpperCase() + category.name.slice(1)}</Card.Title>
+                            <Card.Text>{category.description}</Card.Text>
+                        </div>
+                        <div className="categoryCard-button">
+                            <Link to={`/categories/${category.name}`}><Button variant="primary">Ver actividades</Button></Link>
+                        </div>
                     </Card.Body>
                 </Card>
             </>

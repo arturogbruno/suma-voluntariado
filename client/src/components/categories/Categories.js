@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Spinner from 'react-bootstrap/Spinner'
+import Spinner from 'react-bootstrap/Spinner';
 import Container from 'react-bootstrap/Container';
 import ActivitiesServices from "../../services/activities";
 import CategoryCard from "../categoryCard/CategoryCard";
@@ -19,6 +18,8 @@ export default class Categories extends React.Component {
     this.activitiesServices = new ActivitiesServices();
   }
 
+  componentDidMount = () => this.getAllActivities();
+
   getAllActivities = () => {
     if (this.state.allActivities.length === 0) {
       this.activitiesServices.getAllActivities()
@@ -29,8 +30,6 @@ export default class Categories extends React.Component {
         .catch(err => console.log(err));
     }
   };
-
-  componentDidMount = () => {this.getAllActivities()}
 
   render() {
     return (

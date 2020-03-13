@@ -89,7 +89,7 @@ export default class App extends React.Component {
             <Redirect to="/home" />
 						<Switch>
 							<Route exact path="/login" render={props => <Login {...props} setUser={user => this.setUser(user)} />} />
-							<Route exact path="/signup" render={() => <Signup setUser={user => this.setUser(user)} />} />
+							<Route exact path="/signup" render={props => <Signup {...props} setUser={user => this.setUser(user)} />} />
               <Route exact path="/home" component={Home} /> 
               <Route exact path="/categories" render={() => <Categories {...this.state} />} /> 
               <Route exact path="/categories/:name" render={props => <ActivitiesByCategory {...props} />} />

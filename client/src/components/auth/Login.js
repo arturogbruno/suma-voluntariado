@@ -1,7 +1,7 @@
 import React from 'react';
-import AuthServices from '../../services/auth';
 import { Link } from 'react-router-dom';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import AuthServices from '../../services/auth';
 import './Auth.scss';
 
 export default class Login extends React.Component {
@@ -12,6 +12,7 @@ export default class Login extends React.Component {
             username: 'arturo',
             password: 'arturo'
         }
+
         this.authServices = new AuthServices()
     }
 
@@ -21,8 +22,8 @@ export default class Login extends React.Component {
     }
 
     handleSubmit = e => {
-        e.preventDefault()
-        this.postUser()
+        e.preventDefault();
+        this.postUser();
     }
 
     postUser = () => {
@@ -32,7 +33,7 @@ export default class Login extends React.Component {
                 this.props.setUser(theLoggedUser)
                 this.props.history.push('/home')
             })
-            .catch(err => console.log({ err }))
+            .catch(err => console.log( err ))
     }
 
     render() {

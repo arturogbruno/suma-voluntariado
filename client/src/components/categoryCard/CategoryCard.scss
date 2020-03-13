@@ -2,4 +2,21 @@
     width: 18rem;
     margin-right: 3rem;
     margin-bottom: 3rem;
+
+    .categoryCard-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .categoryCard-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .categoryCard-button {
+            margin-top: 20px;
+        }
+    }
 }

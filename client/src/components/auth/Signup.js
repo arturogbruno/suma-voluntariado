@@ -14,6 +14,7 @@ export default class Signup extends React.Component {
             email: '',
             role: ''
         }
+
         this.authServices = new AuthServices()
     }
 
@@ -23,8 +24,8 @@ export default class Signup extends React.Component {
     }
 
     handleSubmit = e => {
-        e.preventDefault()
-        this.postUser()
+        e.preventDefault();
+        this.postUser();
     }
 
     postUser = () => {
@@ -32,14 +33,9 @@ export default class Signup extends React.Component {
         .then(theLoggedNewUser => {
             this.setState({ username: '', password: '' })
             this.props.setUser(theLoggedNewUser)
+            this.props.history.push('/home')
         })
-        .catch(err => {
-            this.setState({
-                username: this.state.username,
-                password: this.state.password,
-                error: true
-            });
-        });
+        .catch(err => console.log(err))
     }
 
     render() {
@@ -51,7 +47,8 @@ export default class Signup extends React.Component {
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Group> 
                                 <Form.Label>Soy:</Form.Label>
-                                    <Form.Control as="select" name="role" onChange={this.handleChange} required >
+                                    <Form.Control as="select" name="role" value={this.state.role} onChange={this.handleChange} required >
+                                        <option value="" disabled defaultValue>Selecciona tu rol</option>
                                         <option value="volunteer">Voluntario</option>
                                         <option value="organization">Organización</option>
                                     </Form.Control>
