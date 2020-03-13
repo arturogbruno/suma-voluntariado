@@ -27,10 +27,12 @@ export default class ActivityOverview extends React.Component {
                             <h3>{activity.title}</h3>
                         </Row>
                         <Row>
-                            <Col lg={7}>
+                            <Col lg={7} className="secondCol">
                                 <h6>Categoría: <Badge pill variant="info">{activity.category.name}</Badge></h6>
                                 <h6>Fechas:</h6>
-                                {activity.dates.map((date, idx) => <li key={idx}>{moment(date).format('DD/MM/YYYY')}</li>)}
+                                <ul>
+                                    {activity.dates.map((date, idx) => <li key={idx}>{moment(date).format('DD/MM/YYYY')}</li>)}
+                                </ul>
                                 <h6>Plazas vacantes: {activity.maxParticipants - activity.participants.length}</h6>
                             </Col>
                             <Col lg={5} className="organizationCol">
