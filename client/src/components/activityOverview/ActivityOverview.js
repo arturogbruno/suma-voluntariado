@@ -39,8 +39,13 @@ export default class ActivityOverview extends React.Component {
                             </Col>
                         </Row>
                         <Row>
-                            <Col lg={8}>
+                            <Col lg={8} className="activityOverview-buttons">
                                 <Link to={`/activities/details/${activity._id}`}><Button>Más info</Button></Link>
+                                {this.props.clickToDelete ? (
+                                    <Button variant="danger" onClick={() => this.props.clickToDelete(activity._id)}>Retirar participación</Button>
+                                ) : (
+                                    ""
+                                )}
                             </Col>
                         </Row>
                     </Col>

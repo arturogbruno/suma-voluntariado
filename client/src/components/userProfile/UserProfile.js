@@ -52,6 +52,12 @@ export default class UserProfile extends React.Component {
         .catch(err => console.log(err))
     }
 
+    deleteParticipation = (activityId) => {
+        this.activitiesServices.deleteParticipant(activityId, { participant: this.props.loggedInUser._id })
+        .then(() => this.getActivitiesWhereUserIsParticipant())
+        .catch(err => console.log(err))
+    }
+
     render() {
         let activities = this.state.activities;
         let owner = this.state.isOwner;
@@ -85,7 +91,7 @@ export default class UserProfile extends React.Component {
                                             {this.state.activities.length ? (
                                                 <>
                                                     <h4>{`Actividades a las que está apuntado ${user.username}:`}</h4>
-                                                    {activities.map((activity, idx) => <ActivityOverview key={idx} activity={activity} />)}
+                                                    {activities.map((activity, idx) => <ActivityOverview key={idx} activity={activity} clickToDelete={(activityId) => this.deleteParticipation(activityId)} />)}
                                                 </>
                                             ) : (
                                                 <h4>{`${user.username} no está apuntado a ninguna actividad en este momento.`}</h4>
@@ -95,7 +101,7 @@ export default class UserProfile extends React.Component {
                                             {this.state.user.favActivities.length > 0 ? (
                                                 <>
                                                     <h4>{`Actividades favoritas de ${user.username}:`}</h4>
-                                                    {user.favActivities.map((activity, idx) => <ActivityOverview key={idx} activity={activity} clickToDelete={this.deleteParticipation} />)}
+                                                    {user.favActivities.map((activity, idx) => <ActivityOverview key={idx} activity={activity} />)}
                                                 </>
                                             ) : (
                                                 <h4>{`${user.username} no tiene ninguna actividad favorita`}.</h4>
@@ -103,7 +109,7 @@ export default class UserProfile extends React.Component {
                                         </Row>
                                     </Col>
                                 ) : (
-                                    console.log("hi")
+                                    ""
                                 )}
                             </Row>
                         </div>

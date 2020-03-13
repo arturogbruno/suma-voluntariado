@@ -27,5 +27,7 @@ export default class Services {
 
     addParticipant = (idActivity, idUser) => this.service.put(`/${idActivity}/participants/add`, idUser).then(response => response.data);
 
+    deleteParticipant = (idActivity, idUser) => this.service.put(`/${idActivity}/participants/delete`, idUser).then(response => response.data);
+
     deleteActivity = id => this.service.delete(`/${id}`).then(response => response.data);
 }
