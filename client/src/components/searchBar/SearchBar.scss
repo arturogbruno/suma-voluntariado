@@ -1,0 +1,19 @@
+.searchBar {
+    border: 3px solid rgb(237, 102, 97);
+    border-radius: 6px;
+    position: relative;
+    z-index: 100;
+    top: 720px;
+    box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.75);
+
+    button {
+        background-color: rgb(248, 249, 250);
+        border: 1px solid rgb(206, 206, 206);
+        color: rgb(76, 81, 85);
+        
+        &:hover {
+            background-color: rgb(237, 102, 97);
+            border: 1px solid rgb(206, 206, 206);
+        }
+    }
+}
