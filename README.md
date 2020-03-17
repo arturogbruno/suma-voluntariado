@@ -7,6 +7,8 @@
 
 SUMA es el proyecto final desarrollado durante mi bootcamp en Ironhack. Se trata de una **aplicación web full stack**, en la que he empleado las siguientes tecnologías: **React, NodeJS, Express, MongoDB, Bootstrap, Sass**.
 
+Este proyecto fue seleccionado como finalista en Ironhack.
+
 La idea de la aplicación es servir como punto de encuentro para voluntarios y organizaciones. SUMA ofrece:
 
 -  A los voluntarios: encontrar actividades de voluntariado de forma rápida y sencilla, pudiendo buscar por categoría y por fecha de la actividad.
