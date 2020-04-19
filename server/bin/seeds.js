@@ -142,7 +142,7 @@ let users = [
     username: "juan carlos",
     email: "jmateo@gmail.com",
     password: bcrypt.hashSync("juan carlos", bcrypt.genSaltSync(bcryptSalt)),
-    imgPath: "",
+    imgPath: "https://ca.slack-edge.com/T02CQ4EN4-UQFNN882V-a97ee9dc52c2-512",
     role: "organization",
   },
   {
@@ -228,7 +228,7 @@ let organizations = [
     webpage: "http://www.bokatas.org",
     description: `La Asociación Bokatas es una historia de personas, con nombre y apellidos. Es una historia de encuentros, de “acercarse”, de relatos concretos, de caminos cruzados y de escucha mutua. Ayudamos a las personas a las que acompañamos siempre y cuando sea un trabajo mutuo, ellos son los protagonistas de su vida, nosotros les tendemos la mano cada vez que les vemos para ser su oportunidad de cambio. 
     Buscamos ser el puente entre las personas sin hogar y las instituciones sociales, trabajando en red, para ello, formamos parte de varios grupos de trabajo con otras entidades que trabajan en la misma dirección. En la actualidad contamos con 420 voluntarios, tenemos presencia en tres ciudades españolas, realizamos acompañamiento a unas 500 personas sin hogar y cada año pasamos más de 3.000 horas en la calle.`,
-    imgPath: "http://bokatas.org/wp-content/uploads/2016/11/LOGO-1.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297363/ironhack-project3/logos-asociaciones/totvxmpfnthjunp9mh3j.jpg",
     user: arrUsersId[0]
   },
   {
@@ -240,7 +240,7 @@ let organizations = [
     webpage: "https://www.reforesta.es/index.php",
     description: `Reforesta es una asociación sin ánimo de lucro fundada en 1991 y declarada de Utilidad Pública. Se dedica a la promoción del desarrollo sostenible. Dentro de este amplio ámbito, en el marco de la Agenda 2030 de Naciones Unidas brindamos una especial atención a los Objetivos de Desarrollo Sostenible 13 (acción por el clima) y 15 (conservación de los ecosistemas terrestres), priorizando la recuperación de la vegetación y la lucha contra la desertificación.
     Acumulamos una notable experiencia en programas de educación, formación, voluntariado, comunicación ambiental y estudio y conservación de la naturaleza. Nuestras actividades están abiertas a la participación de diferentes colectivos: escolares, particulares, personas en riesgo de exclusión, personas con diversidad funcional, trabajadores de empresas… En nuestros programas colaboramos con empresas, administraciones públicas y otras entidades del Tercer Sector.`,
-    imgPath: "https://www.reforesta.es/images/Iconos/Head_.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297363/ironhack-project3/logos-asociaciones/ocqsyssdzccxnxdlarti.png",
     user: arrUsersId[1]
   },
   {
@@ -252,7 +252,7 @@ let organizations = [
     webpage: "http://www.eculturas.org/index.html",
     description: `Educación, Cultura y Solidaridad es una Asociación de Ámbito Autonómico, (Comunidad de Madrid) declarada de Utilidad Pública. Sus principales actividades se desarrollan desde el Centro Educación Cultura y Solidaridad (Proyecto San Cristóbal) en el Barrio San Cristóbal de los Ángeles (Villaverde). 
     El Centro está consolidado y reconocido en San Cristóbal como referente para familias, niños y jóvenes, especialmente inmigrantes y jóvenes en riesgo de exclusión, a los que les ofrece la posibilidad de reinserción sociolaboral y académica. Es  también un referente para mujeres norteafricanas y subsaharianas, que encuentran en él, un aliado para su desarrollo personal e integración social. La asociación ECyS está reconocida como una activa participante en cuantas plataformas, mesas, y grupos de interés funcionan en el barrio`,
-    imgPath: "http://eculturas.org/images/logo-64x61.gif",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297363/ironhack-project3/logos-asociaciones/cvdd6s99nr4nsvpg9xob.png",
     user: arrUsersId[2]
   },
   {
@@ -264,7 +264,7 @@ let organizations = [
     webpage: "https://www.anar.org/",
     description: `La Fundación ANAR (ayuda a niños y adolescentes en riesgo) es una organización sin ánimo de lucro, cuyos orígenes se remontan a 1970, y se dedica a la promoción y defensa de los derechos de los niños y adolescentes en situación de riesgo y desamparo, mediante el desarrollo de proyectos tanto en España como en Latinoamérica, en el marco de la Convención de los Derechos del Niño de Naciones Unidas.
     Nuestra visión es la de un mundo en el que todos los niños, niñas y adolescentes tengan derecho a que su voz sea escuchada, sobre las situaciones de vida que les afectan y siempre que se vulneren sus derechos. Conscientes de que son los más indefensos de nuestra sociedad, nuestra visión es la de un mundo en el que esos niños, niñas y adolescentes tengan plenamente protegidos sus derechos.`,
-    imgPath: "https://www.anar.org/wp-content/uploads/2014/11/Logo-home-ANAR.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297363/ironhack-project3/logos-asociaciones/kddcoosffqxwmtkubxba.jpg",
     user: arrUsersId[3]
   },
   {
@@ -275,19 +275,19 @@ let organizations = [
     phone: getPhoneNumber(),
     webpage: "https://www.feddig2008.org/",
     description: `Feddig es una entidad sin ánimo de lucro que fue constituida en 2008 y cuyas siglas corresponden a: Asociación de escuelas deportivas y de ocio para personas con diversidad funcional de Getafe. Nuestro objetivo general es conseguir la integración social de las personas con diversidad a través de actividades deportivas y de ocio dentro de un buen ambiente de unión y amistad.`,
-    imgPath: "https://cdn.website-editor.net/9d71048894394ea4af4a88fe64eb4692/dms3rep/multi/mobile/ESCUDO_NUEVO_DE_FEDDIG20081-2-768x1085-98608648.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297363/ironhack-project3/logos-asociaciones/wcndqqdj5ahd3gmbvhbf.jpg",
     user: arrUsersId[4]
   },
   {
     _id: arrOrganizationsId[5],
-    name: "Fundación Desarrollo  y Asistencia (Nadiesolo)",
+    name: "Fundación Desarrollo y Asistencia (Nadiesolo)",
     address: "Calle Artistas, 2, 28020 Madrid",
     email: "info@desarrolloyasistencia.org",
     phone: getPhoneNumber(),
     webpage: "http://www.desarrolloyasistencia.org/",
     description: `En Nadiesolo llevamos a cabo programas de acompañamiento a personas que se encuentran en situación de necesidad por soledad, enfermedad, exclusión, discapacidad u otras causas.
     Comenzamos nuestra actividad en diciembre de 1995. Desde entonces hemos ido creciendo apoyándonos siempre en el deseo de ayudar con nuestro acompañamiento persona a persona y nuestros valores fundamentales como son el reconocimiento de la dignidad de la persona y el respeto a su libertad, el apoyo a la familia y la constancia y el compromiso en el trabajo.`,
-    imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2020/03/Positivo-nadiesolo-transicion.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297363/ironhack-project3/logos-asociaciones/hutpowkryl4vdfgboiru.png",
     user: arrUsersId[5]
   },
   {
@@ -300,7 +300,7 @@ let organizations = [
     description: `Acompañar a niños, niñas, adolescentes, jóvenes y sus familias en situación de vulnerabilidad social, impulsando sus oportunidades de crecimiento personal, familiar y profesional, promoviendo su dignificación y su plena integración en la sociedad.
     La Fundación Amoverse se desarrolla una intervención socioeducativa integral con niños, niñas, adolescentes, jóvenes y sus familias, desde un enfoque de prevención, a través de la educación no-formal, ocio y tiempo libre, acompañamiento personal y académico, y está a su vez dirigido a la promoción de la familia y la transformación social del barrio.
     Este programa se implementa en dos barrios, Pozo-Entrevías en el distrito de Vallecas y La Ventilla en Tetuán, ambos en Madrid.`,
-    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583926357/ironhack-project3/yylzwtaqw1ocobwr6ji0.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297363/ironhack-project3/logos-asociaciones/vdzdmsvpxykoz2yl0dth.png",
     user: arrUsersId[6]
   },
   {
@@ -314,21 +314,21 @@ let organizations = [
     Tras esos siete años de trabajo, Manos de Ayuda Social traslada su labor al Distrito Puente de Vallecas, donde inicia un nuevo comedor social en el barrio de Palomeras Bajas.
     Nuestro objetivo es proporcionar una correcta nutrición y promover un ambiente cálido para que las personas que allí acuden se sientan acogidas, fomentando además la búsqueda activa de empleo para conseguir que sean autónomas en el menor tiempo posible.
     Manos de Ayuda Social ha sido declarada Entidad de Utilidad Pública por el Ministerio del Interior, reconociéndose así nuestra labor de ayuda a los más necesitados.`,
-    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583925550/ironhack-project3/zvuoc4uwoeh05ouayaow.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297363/ironhack-project3/logos-asociaciones/wwgbtkobolhskp8wrxh2.png",
     user: arrUsersId[7]
   },
   {
     _id: arrOrganizationsId[8],
-    name: "Fundación Concordia y Libertad",
+    name: "Fundación Humanismo y Democracia",
     address: "Bravo Murillo, 120, 28020 Madrid",
     email: "hmasd@hmasd.org",
     phone: getPhoneNumber(),
     webpage: "http://www.hmasd.org/",
-    description: `La Fundación Concordia y Libertad, antes Humanismo y Democracia, es una organización privada sin ánimo de lucro que sirve a un interés general. Fue constituida en octubre de 1977, comenzando sus actividades en enero de 1978 como fundación cultural privada al servicio de los derechos humanos y de los valores democráticos, contribuyendo a la transición hacia la democracia en España y a la consolidación del sistema de derechos y libertades configurado en la Constitución Española de 1978.
+    description: `La Fundación Humanismo y Democracia es una organización privada sin ánimo de lucro que sirve a un interés general. Fue constituida en octubre de 1977, comenzando sus actividades en enero de 1978 como fundación cultural privada al servicio de los derechos humanos y de los valores democráticos, contribuyendo a la transición hacia la democracia en España y a la consolidación del sistema de derechos y libertades configurado en la Constitución Española de 1978.
     La Fundación se centra en proyectos de desarrollo rural integral y necesidades sociales básicas tales como educación, sanidad , agua y saneamiento.
     Como criterio general, ofrece un enfoque preferente en favor del fortalecimiento de las instituciones, públicas y privadas.
     Dedica también una especial atención a las migraciones, a la integración de inmigrantes y al vínculo entre cooperación y desarrollo y los fenómenos migratorios; así como a la sensibilización social en todas estas materias.`,
-    imgPath: "http://hmasd.org/wp-content/themes/h%2Bd/assets/img/hmasd-logoH.svg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297364/ironhack-project3/logos-asociaciones/un8lmvwkqelewmyvoca6.svg",
     user: arrUsersId[8]
   },
   {
@@ -342,7 +342,7 @@ let organizations = [
     Surgimos como respuesta al elevado número de animales que son abandonados y/o maltratados a diario en este país y como una alternativa útil y humanitaria para mejorar la situación actual.
     Nuestro trabajo se centra en la protección y defensa de los animales en un sentido amplio, tanto a corto plazo, proporcionando un hogar a los animales abandonados, como a largo plazo, difundiendo una cultura y educación basadas en el conocimiento y respeto hacia los animales y fomentando una tenencia responsable de cualquier ser vivo.
     Puedes elegir una de las muchas formas que tenemos según tus necesidades de tiempo y espacio: hazte casa de acogida temporal, voluntario en el albergue, adopta a unos de nuestros animales, apadrínalo o hazte socio, se padrino de vuelo en tus viajes al extranjero, compra en nuestra tienda solidaria …`,
-    imgPath: "http://adoptalomadrid.com/wp-content/uploads/2016/04/apotalomadrid-logo-medium-2.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297362/ironhack-project3/logos-asociaciones/ksqnj3447eyh24nk70pi.png",
     user: arrUsersId[9]
   },
   {
@@ -357,7 +357,7 @@ let organizations = [
     Nuestra visión es:
     - Encontrar vías de mejora de la educación en nuestro país, y compartir nuestra convicción de que una sociedad avanza si mejora la formación de los ciudadanos que la componen.
     - Mantener la confianza de las familias y de la sociedad, por ser motor de cambio y de mejora en el sistema educativo español y por alcanzar una amplia proyección internacional.`,
-    imgPath: "https://www.fundacionsanpatricio.org/es/images/logocole.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297364/ironhack-project3/logos-asociaciones/fuucqcm4zhr4nme4g3le.jpg",
     user: arrUsersId[10]
   },
   {
@@ -372,7 +372,7 @@ let organizations = [
     Asimismo hemos colaborado con diversos Observatorios contra la violencia de género, sensibilizando a alumnos de institutos y al público en general con obras tales como: La palabra arrincona al miedo, Lágrimas negras, La sal de la vida y otras.
     También hemos llevado obras sensibilizando en igualdad hombre/mujer, especialmente en el Día Internacional de la Mujer.
     Este año y por primera vez, hemos decidido ampliar el objeto de nuestra Asociación llevando también distracción a los niños/as que sufren algún tipo de enfermedad que les obliga a permanecer hospitalizados`,
-    imgPath: "https://i2.wp.com/www.fetam.es/fetam/blog/wp-content/uploads/2017/07/logo-recrearte.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297363/ironhack-project3/logos-asociaciones/efq9dxwdlgb0cldvgl9r.jpg",
     user: arrUsersId[11]
   },
   {
@@ -389,7 +389,7 @@ let organizations = [
     -Prevención Operativa.
     -Asistencia sanitaria extrahospitalaria.
     -Coordinación y atención sanitaria en catástrofes.`,
-    imgPath: "https://www.formatemadrid.com/wp-content/uploads/2018/05/logo-fm-300x300.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297364/ironhack-project3/logos-asociaciones/tjwh5vpp3nz3ghgubjd1.png",
     user: arrUsersId[12]
   },
   {
@@ -403,7 +403,7 @@ let organizations = [
     Actualmente, Cruz Roja Española como organización humanitaria de carácter voluntario, fuertemente arraigada en la sociedad, dará respuestas integrales a las personas vulnerables desde una perspectiva de desarrollo humano y comunitario reforzando sus capacidades individuales en su contexto social.
     Dichas respuestas se realizarán estando cada vez más cerca de las personas vulnerables en los ámbitos nacional e internacional, a través de acciones integradas, realizadas esencialmente por voluntariado y con una amplia participación social y presencia territorial.
     Cruz Roja Española es miembro de la Federación Internacional de Sociedades Nacionales de la Cruz Roja y la Media Luna Roja, organización que agrupa a todas las Cruces Rojas y Medias Lunas Rojas del mundo, así como del Movimiento Internacional de la Cruz Roja, una red de solidaridad con presencia en la casi todos los países del mundo.`,
-    imgPath: "https://www2.cruzroja.es/o/cruzroja-web-theme/images/logo.svg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297362/ironhack-project3/logos-asociaciones/u1m6mu46kdl6pmgic5zj.png",
     user: arrUsersId[13]
   },
   {
@@ -417,7 +417,7 @@ let organizations = [
     El Banco de Alimentos es miembro de la Federación Española de Bancos de Alimentos (FESBAL) que agrupa en la actualidad a 54 Bancos de Alimentos de toda España, y a través de ella a la Federación Europea de Bancos de Alimentos (FEBA) que engloba a 271 Bancos de Alimentos en toda Europa.
     El objetivo del Banco de Alimentos de Madrid es trabajar para que las personas más desfavorecidas puedan llevar una vida más digna.
     Su misión es concienciar a la sociedad y promover su solidaridad frente a los problemas originados por el hambre, el paro, el abandono familiar, el despilfarro de alimentos y en general de la falta de los recursos necesarios para tener una vida conforme a la dignidad humana. Colaborar a la solución de estos problemas y tratar de paliar sus efectos mediante el reparto gratuito de alimentos.`,
-    imgPath: "https://granrecogidamadrid.org/public/img/logo.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297362/ironhack-project3/logos-asociaciones/qrgc9qk3cf0huyuay2ti.png",
     user: arrUsersId[14]
   },
   {
@@ -429,7 +429,7 @@ let organizations = [
     webpage: "https://www.parkinsonmadrid.org/",
     description: `Somos una entidad sin ánimo de lucro de carácter privado formada por más de 2.000 socios y constituida en mayo de 1994 para atender, orientar, formar e informar a personas afectadas, sus familiares y/o cuidadores, profesionales y sociedad en general sobre todo lo referente a la enfermedad de Parkinson. El 12 de diciembre de 2001, el Ministerio del Interior nos declaró de Utilidad Pública, consiguiendo un importante certificado que denota calidad,claridad y buen hacer. Además, también contamos con esta declaración por parte del Ayuntamiento de Madrid.
     Formamos parte de entidades y redes del Tercer Sector para unir fortalezas y defender los derechos de las personas con párkinson, dándoles voz. Por ello, pertenecemos a la Federación Española de Párkinson y, a través de ella, a la European Parkinson´s Disease Association (EPDA). También estamos integrados en la Federación Madrileña para la Defensa del Enfermo Neurológico (FEMADEN) y, a través de ella, en el CERMI y en la Plataforma de Entidades de Voluntariado de la Comunidad de Madrid (FEVOCAM).`,
-    imgPath: "https://www.parkinsonmadrid.org/wp-content/uploads/logo.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297364/ironhack-project3/logos-asociaciones/jhxvllzzfwvpvhiukxpc.png",
     user: arrUsersId[15]
   }
 
@@ -469,7 +469,7 @@ let activities = [
       lat: 40.4343077,
       lng: -3.7172962
     },
-    imgPath: "http://bokatas.org/wp-content/uploads/2016/11/foto-seccion-1.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297885/ironhack-project3/img-actividades/x1swhyxpgrkaugcnoqgn.jpg",
     category: {
       name: "social",
       description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
@@ -492,7 +492,7 @@ let activities = [
       lat: 40.400342,
       lng: -3.6958533
     },
-    imgPath: "http://bokatas.org/wp-content/uploads/2016/11/foto-seccion-2.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297885/ironhack-project3/img-actividades/g9oiymoklinizzdg9vit.jpg",
     category: {
       name: "social",
       description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
@@ -513,11 +513,11 @@ let activities = [
       lat: 40.7315737,
       lng: -4.0000611
     },
-    imgPath: "https://www.reforesta.es/images/Que_Hacemos/05_Voluntariado/05_Voluntariado_1.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297888/ironhack-project3/img-actividades/sflkcdbpleufyq189f8s.jpg",
     category: {
       name: "ambiental",
       description: "Persigue disminuir el impacto negativo del ser humano sobre el medio ambiente y poner en valor el patrimonio natural existente, las especies animales y vegetales, los ecosistemas y los recursos naturales.",
-      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/mk0fd45cbpj9howsjff1.jpg"
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587300118/ironhack-project3/jez2mh5p0ul1bdrur9ts.jpg"
     },
     minParticipants: 10,
     maxParticipants: 25,
@@ -534,11 +534,11 @@ let activities = [
       lat: 40.7212214,
       lng: -3.8723282
     },
-    imgPath: "https://www.reforesta.es/images/Que_Hacemos/05_Voluntariado/05_Corporativo_1.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297887/ironhack-project3/img-actividades/humkhclgai7nwgyeskmf.jpg",
     category: {
       name: "ambiental",
       description: "Persigue disminuir el impacto negativo del ser humano sobre el medio ambiente y poner en valor el patrimonio natural existente, las especies animales y vegetales, los ecosistemas y los recursos naturales.",
-      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/mk0fd45cbpj9howsjff1.jpg"
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587300118/ironhack-project3/jez2mh5p0ul1bdrur9ts.jpg"
     },
     minParticipants: 10,
     maxParticipants: 25,
@@ -556,7 +556,7 @@ let activities = [
       lat: 40.3407892,
       lng: -3.6867341
     },
-    imgPath: "https://valenciaextra.com/wp-content/uploads/2020/01/031-escuela-acogida-2-680x365_c.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297886/ironhack-project3/img-actividades/ixqkuyzilxhrymvbb0y7.jpg",
     category: {
       name: "educativo",
       description: "Mejora las posibilidades de realización de actividades extraescolares contribuyendo a compensar las desigualdades que pudieran existir entre los alumnos por diferencias sociales, personales o económicas, mediante la utilización de programas de aprendizaje-servicio.",
@@ -578,7 +578,7 @@ let activities = [
       lat: 40.4387216,
       lng: -3.676186
     },
-    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583268032/ironhack-project3/akmutoc3d6sj5flwdzyk.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587298591/ironhack-project3/img-actividades/j6bjo9qjrb3mehingwjh.jpg",
     category: {
       name: "social",
       description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
@@ -599,7 +599,7 @@ let activities = [
       lat: 40.4387216,
       lng: -3.676186
     },
-    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583268032/ironhack-project3/akmutoc3d6sj5flwdzyk.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297899/ironhack-project3/img-actividades/jull2c4efij3w0romgkv.png",
     category: {
       name: "social",
       description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
@@ -620,7 +620,7 @@ let activities = [
       lat: 40.3262453,
       lng: -3.7414765
     },
-    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583269280/ironhack-project3/nnhghpbzmnc1ibskkfwj.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297888/ironhack-project3/img-actividades/uon2rihegjl2dafx3r2j.png",
     category: {
       name: "deportivo",
       description: "Contribuye a la cohesión social, sumando los valores propios del voluntariado con aquellos otros inherentes al deporte, fomentando la práctica deportiva en cualquiera de sus manifestaciones.",
@@ -641,7 +641,7 @@ let activities = [
       lat: 40.3262453,
       lng: -3.7414765
     },
-    imgPath: "http://www.femaddi.org/sites/default/files/gimansiaritmicafemaddi.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297887/ironhack-project3/img-actividades/drkg6xrt5kapuholdysr.jpg",
     category: {
       name: "deportivo",
       description: "Contribuye a la cohesión social, sumando los valores propios del voluntariado con aquellos otros inherentes al deporte, fomentando la práctica deportiva en cualquiera de sus manifestaciones.",
@@ -667,7 +667,7 @@ let activities = [
       lat: 40.4472219,
       lng: -3.7053683
     },
-    imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2018/10/Domiciliio_Enriqueta2.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297886/ironhack-project3/img-actividades/cvjpcjdduhpnwsfgud3p.jpg",
     category: {
       name: "comunitario",
       description: "Favorece la mejora de la comunidad, y promueve la participación para resolver los problemas y exigir mayor calidad de vida en los espacios vitales más cercanos, vertebrando una sociedad solidaria, activa, crítica, comprometida y corresponsable.",
@@ -695,7 +695,7 @@ let activities = [
       lat: 40.4472219,
       lng: -3.7053683
     },
-    imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2018/10/hospitales-inicio-1024x680.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297887/ironhack-project3/img-actividades/hkicgydvof5liic0uzgw.jpg",
     category: {
       name: "comunitario",
       description: "Favorece la mejora de la comunidad, y promueve la participación para resolver los problemas y exigir mayor calidad de vida en los espacios vitales más cercanos, vertebrando una sociedad solidaria, activa, crítica, comprometida y corresponsable.",
@@ -717,7 +717,7 @@ let activities = [
       lat: 40.4472219,
       lng: -3.7053683
     },
-    imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2018/10/residencias-inicio-1024x682.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297887/ironhack-project3/img-actividades/zuz8idnrrbypa95hhrh8.jpg",
     category: {
       name: "comunitario",
       description: "Favorece la mejora de la comunidad, y promueve la participación para resolver los problemas y exigir mayor calidad de vida en los espacios vitales más cercanos, vertebrando una sociedad solidaria, activa, crítica, comprometida y corresponsable.",
@@ -740,7 +740,7 @@ let activities = [
       lat: 40.4472219,
       lng: -3.7053683
     },
-    imgPath: "http://desarrolloyasistencia.org/wp-content/uploads/2019/03/zapatillas-nota-de-prensa2-1024x681.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297887/ironhack-project3/img-actividades/isy1k3d7ewryyc2pohet.jpg",
     category: {
       name: "social",
       description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
@@ -761,7 +761,7 @@ let activities = [
       lat: 40.4720856,
       lng: -3.6949809
     },
-    imgPath: "https://fundacionamoverse.org/wp-content/uploads/2019/04/foto-3-test.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297884/ironhack-project3/img-actividades/lmoytgzxmpvz2k2ritcs.jpg",
     category: {
       name: "educativo",
       description: "Mejora las posibilidades de realización de actividades extraescolares contribuyendo a compensar las desigualdades que pudieran existir entre los alumnos por diferencias sociales, personales o económicas, mediante la utilización de programas de aprendizaje-servicio.",
@@ -782,7 +782,7 @@ let activities = [
       lat: 40.3888594,
       lng: -3.6719644
     },
-    imgPath: "https://ue-vidauniversitaria-production-files.s3.amazonaws.com/uploads/post/detail_image/4823/large_comedorLARGA.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297886/ironhack-project3/img-actividades/sxhlg514t63zigdhrssd.jpg",
     category: {
       name: "social",
       description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
@@ -803,7 +803,7 @@ let activities = [
       lat: 40.3723156,
       lng: -3.7124962
     },
-    imgPath: "http://hmasd.org/wp-content/uploads/2018/03/IMG_3595.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297886/ironhack-project3/img-actividades/oq0lpd3v5jlxaylvytom.jpg",
     category: {
       name: "social",
       description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
@@ -824,7 +824,7 @@ let activities = [
       lat: 40.3723156,
       lng: -3.7124962
     },
-    imgPath: "https://autismomadrid.es/wp-content/uploads/2016/07/Antares-Curso-Ocio-y-Tiempo-Libre-1080x661.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297886/ironhack-project3/img-actividades/rm9hhtfj6qirb4iub0yu.jpg",
     category: {
       name: "ocio y tiempo libre",
       description: "Forma y sensibiliza en los principios y valores de la acción voluntaria mediante el desarrollo de actividades en el ámbito de la educación no formal que favorezcan la solidaridad y la inclusión, y logren el compromiso, la participación y la implicación social.",
@@ -846,11 +846,11 @@ let activities = [
       lat: 40.410857,
       lng: -3.6983995
     },
-    imgPath: "https://blog.gudog.com/wp-content/uploads/2019/08/dogs-with-bows-and-touch.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297884/ironhack-project3/img-actividades/nlu9ccljng5qsmkry7zu.jpg",
     category: {
       name: "otro",
       description: "Incluye aquellas actividades de voluntariado que por razón del ámbito de actuación, por el lugar en el que se realizan o por la especiallidad de las actividades no se encuentra incluida en el resto de categorías.",
-      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493396/ironhack-project3/as8xogqhzr2gmqgpb9a9.jpg"
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587300118/ironhack-project3/qtlmbwntqj5zkq3azcdi.jpg"
     },
     minParticipants: 5,
     maxParticipants: 10,
@@ -858,9 +858,9 @@ let activities = [
     organization: arrOrganizationsId[9]
   },
   {
-    title: "Mesas solidarias",
+    title: "Recaudación de fondos para el albergue",
     description: `Si te gustan los animales, te preocupa su bienestar y te indigna el enorme problema de abandono que tenemos en este país puedes aportar tu granito de arena colaborando como voluntario.
-    Nuestra asociación dispone de un albergue donde los animales están alojados, alimentados  y cuidados, y que cubre todas sus necesidades básicas mientras esperan un hogar. Para ello, necesitamos voluntarios para informar en mesas solidarias sobre la labor de la asociación, y así poder recaudar fondos y hacer nuevos socios`,
+    Nuestra asociación dispone de un albergue donde los animales están alojados, alimentados  y cuidados, y que cubre todas sus necesidades básicas mientras esperan un hogar. Para ello, necesitamos voluntarios para informar en mesas solidarias sobre la labor de la asociación, y así poder recaudar fondos y hacer nuevos socios.`,
     dates: getDates(),
     time: "12:00 h - 14:00 h",
     location: "Calle Lituania, 4, 28030 Madrid",
@@ -868,11 +868,11 @@ let activities = [
       lat: 40.410857,
       lng: -3.6983995
     },
-    imgPath: "http://adoptalomadrid.com/wp-content/uploads/2015/12/casa_de_acogida.png",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297884/ironhack-project3/img-actividades/jilyp6fxjh8wrtxlly47.jpg",
     category: {
       name: "otro",
       description: "Incluye aquellas actividades de voluntariado que por razón del ámbito de actuación, por el lugar en el que se realizan o por la especiallidad de las actividades no se encuentra incluida en el resto de categorías.",
-      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583493396/ironhack-project3/as8xogqhzr2gmqgpb9a9.jpg"
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587300118/ironhack-project3/qtlmbwntqj5zkq3azcdi.jpg"
     },
     minParticipants: 1,
     maxParticipants: 3,
@@ -889,7 +889,7 @@ let activities = [
       lat: 40.4501666,
       lng: -3.6730137
     },
-    imgPath: "https://www.fundacionsanpatricio.org/es/images/slider/slide_FSPsocial6.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297888/ironhack-project3/img-actividades/malv9iiqtq2bryfqnp9z.jpg",
     category: {
       name: "comunitario",
       description: "Favorece la mejora de la comunidad, y promueve la participación para resolver los problemas y exigir mayor calidad de vida en los espacios vitales más cercanos, vertebrando una sociedad solidaria, activa, crítica, comprometida y corresponsable.",
@@ -912,7 +912,7 @@ let activities = [
       lat: 40.6458074,
       lng: -4.0245239
     },
-    imgPath: "http://1.bp.blogspot.com/-96B7BO1LzDo/VKO-NJQkQvI/AAAAAAAAADY/Qt8zW3lM_L8/s1600/NJ-10-100.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297888/ironhack-project3/img-actividades/wplfkkzv45qtyvo1eloo.jpg",
     category: {
       name: "cultural",
       description: "Promueve y defiende el derecho de acceso a la cultura y la promoción y protección de la identidad cultural, la defensa del patrimonio cultural y la participación en la vida cultural de la comunidad.",
@@ -933,7 +933,7 @@ let activities = [
       lat: 40.4116536,
       lng: -3.7460944
     },
-    imgPath: "https://www.moralzarzal.es/wp-content/uploads/2016/11/Voluntarios-protecci%C3%B3n-civil-1.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297888/ironhack-project3/img-actividades/ktl8xbbuxnvnxb49haxt.jpg",
     category: {
       name: "protección civil",
       description: "Colabora regularmente en la gestión de las emergencias o catástrofes, como expresión y medio eficaz de participación ciudadana en la respuesta social a estos fenómenos.",
@@ -956,11 +956,11 @@ let activities = [
       lat: 40.4502059,
       lng: -3.7799268
     },
-    imgPath: "https://www.hacesfalta.org/IO/usuarios/tufoto/7b9097f0b7374c07a4d1df47952903d9_749X500_s.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297886/ironhack-project3/img-actividades/dzzlo0cudpbuqpzje1es.jpg",
     category: {
       name: "ambiental",
       description: "Persigue disminuir el impacto negativo del ser humano sobre el medio ambiente y poner en valor el patrimonio natural existente, las especies animales y vegetales, los ecosistemas y los recursos naturales.",
-      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/mk0fd45cbpj9howsjff1.jpg"
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587300118/ironhack-project3/jez2mh5p0ul1bdrur9ts.jpg"
     },
     minParticipants: 1,
     maxParticipants: 2,
@@ -980,7 +980,7 @@ let activities = [
       lat: 40.4484526,
       lng: -3.67115
     },
-    imgPath: "https://www.hola.com/imagenes/sociedad/20191104153155/gran-recogida-alimentos-madrid-2019/0-741-393/recogida-alimentos-t.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297885/ironhack-project3/img-actividades/ffye6ithfojeyg9ujrgs.jpg",
     category: {
       name: "social",
       description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
@@ -1008,7 +1008,7 @@ let activities = [
       lat: 40.4484526,
       lng: -3.67115
     },
-    imgPath: "https://d1hyrom7wmg5jx.cloudfront.net/default/0001/03/eaf6dcc2c392055dc8ba84def99c7b0c3e388db1.jpeg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297885/ironhack-project3/img-actividades/k8puhrwdp7locwjqzynq.jpg",
     category: {
       name: "social",
       description: "Se desarrolla mediante la intervención con las personas y la realidad social, frente a situaciones de vulneración, privación o falta de derechos u oportunidades para alcanzar una mejor calidad de vida y una mayor cohesión y justicia social.",
@@ -1035,11 +1035,11 @@ let activities = [
       lat: 40.4079943,
       lng: -3.6823819
     },
-    imgPath: "https://www.parkinsonmadrid.org/wp-content/uploads/fondosolidario.jpg",
+    imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587297887/ironhack-project3/img-actividades/a47mczhpwcs7oyospwxq.jpg",
     category: {
       name: "socio-sanitario",
       description: "Combina la promoción de la salud, la prevención de la enfermedad, la asistencia sanitaria, la rehabilitación y la atención social que va dirigida al conjunto de la sociedad o a los colectivos en situación de vulnerabilidad y ofrece apoyo y orientación a las familias.",
-      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1583492530/ironhack-project3/v8qsfjmpviisn8ysw5jc.jpg"
+      imgPath: "https://res.cloudinary.com/yelpcampagb/image/upload/v1587300118/ironhack-project3/jgb7emrz1ubx1fbv6o1n.jpg"
     },
     minParticipants: 1,
     maxParticipants: 2,

@@ -12,7 +12,6 @@ const session      = require("express-session");
 const MongoStore   = require('connect-mongo')(session);
 const flash        = require("connect-flash");
 const cors         = require('cors');
-    
 
 mongoose
   .connect(`${process.env.DBURL}`, {useNewUrlParser: true, useUnifiedTopology: true})
@@ -71,7 +70,7 @@ hbs.registerHelper('ifUndefined', (value, options) => {
   
 
 // default value for title local
-app.locals.title = 'IH - Project 3';
+app.locals.title = 'SUMA Voluntariado';
 
 
 // Enable authentication using session + passport

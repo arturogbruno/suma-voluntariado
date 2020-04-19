@@ -10,10 +10,6 @@ import "./ActivityOverview.scss";
 
 
 export default class ActivityOverview extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         let activity = this.props.activity;
         return (
@@ -43,7 +39,7 @@ export default class ActivityOverview extends React.Component {
                         <Row>
                             <Col lg={8} className="activityOverview-buttons">
                                 <Link to={`/activities/details/${activity._id}`}><Button>Más info</Button></Link>
-                                {this.props.clickToDelete ? (
+                                {this.props.isOwner && this.props.clickToDelete ? (
                                     <Button variant="danger" onClick={() => this.props.clickToDelete(activity._id)}>Retirar participación</Button>
                                 ) : (
                                     ""

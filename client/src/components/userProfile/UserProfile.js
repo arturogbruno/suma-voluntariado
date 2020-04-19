@@ -59,9 +59,7 @@ export default class UserProfile extends React.Component {
     }
 
     render() {
-        let activities = this.state.activities;
-        let owner = this.state.isOwner;
-        let user = this.state.user;
+        let {activities, isOwner, user} = this.state;
         let role = "";
         if(user) {
             role = user.role === 'volunteer' ? 'voluntario' : 'organización';
@@ -79,7 +77,7 @@ export default class UserProfile extends React.Component {
                                         <h5>Rol: {role}</h5>
                                         <h5>Email: <a href={`mailto:${user.email}`}>{user.email}</a></h5>
                                     </div>
-                                    {owner ? (
+                                    {isOwner ? (
                                         <Button variant="warning">Editar datos</Button>
                                     ) : (
                                         ""
@@ -91,7 +89,7 @@ export default class UserProfile extends React.Component {
                                             {this.state.activities.length ? (
                                                 <>
                                                     <h4>{`Actividades a las que está apuntado ${user.username}:`}</h4>
-                                                    {activities.map((activity, idx) => <ActivityOverview key={idx} activity={activity} clickToDelete={(activityId) => this.deleteParticipation(activityId)} />)}
+                                                    {activities.map((activity, idx) => <ActivityOverview key={idx} activity={activity} isOwner={isOwner} clickToDelete={(activityId) => this.deleteParticipation(activityId)} />)}
                                                 </>
                                             ) : (
                                                 <h4>{`${user.username} no está apuntado a ninguna actividad en este momento.`}</h4>
